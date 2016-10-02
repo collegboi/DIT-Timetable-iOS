@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Help5</key>
+	<string>https://timothybarnard.org/images/help/refresh_classes.png</string>
+	<key>Help4</key>
+	<string>https://timothybarnard.org/images/help/edit_class_help.png</string>
+	<key>Help3</key>
+	<string>https://timothybarnard.org/images/help/notifications_help.png</string>
+	<key>Help1</key>
+	<string>https://timothybarnard.org/images/help/dit_timetable_help.png</string>
+	<key>Help2</key>
+	<string>https://timothybarnard.org/images/help/login_help.png</string>
+	<key>AppDataURL</key>
+	<string>https://timothybarnard.org/Scrap/appDataRequest.php</string>
+	<key>URL</key>
+	<string>https://timothybarnard.org/Scrap/timetable.php</string>
+</dict>
+</plist>

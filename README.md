@@ -1,2 +1,1 @@
-# DIT-Timetable-iOS
-Version 2 of DIT Timetable iOS
+# DIT Timetable iOS App Version 2
