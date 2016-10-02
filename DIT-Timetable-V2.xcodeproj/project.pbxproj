@@ -126,7 +126,7 @@
 		B2CC55531D943F010053CCAA /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B2CC55561D9441350053CCAA /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		B2CC55581D96B13B0053CCAA /* DetailClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailClassViewController.swift; sourceTree = "<group>"; };
-		B2CC555A1D96BEEE0053CCAA /* EditClassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditClassTableViewController.swift; path = ../EditClassTableViewController.swift; sourceTree = "<group>"; };
+		B2CC555A1D96BEEE0053CCAA /* EditClassTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClassTableViewController.swift; sourceTree = "<group>"; };
 		B2CC555C1D9958E20053CCAA /* GIFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIFImage.swift; sourceTree = "<group>"; };
 		B2CC555E1D9963160053CCAA /* Integer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Integer.swift; sourceTree = "<group>"; };
 		B2CC55621D99765A0053CCAA /* NavigationEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationEx.swift; sourceTree = "<group>"; };
@@ -173,66 +173,66 @@
 		B246ECE21D8F294E0039E7CE /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				B246ECA31D8ECC7A0039E7CE /* HelpViewController.swift */,
 				B246ECA11D8ECBEA0039E7CE /* HelpPageViewController.swift */,
+				B246ECA31D8ECC7A0039E7CE /* HelpViewController.swift */,
 			);
-			name = Help;
+			path = Help;
 			sourceTree = "<group>";
 		};
 		B246ECE31D8F29700039E7CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B2C037651D8B69AE00040840 /* Timetable.swift */,
 				B2739CB61D99A49000110A77 /* Enums.swift */,
+				B2C037651D8B69AE00040840 /* Timetable.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B246ECE51D8F29930039E7CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B246ECFF1D91794D0039E7CE /* PrintLn.swift */,
-				B2CC55561D9441350053CCAA /* FileManager.swift */,
 				B2753DBB1D8EB7CD00ECE240 /* Database.swift */,
-				B2753DB91D8E9B6200ECE240 /* NotificationManager.swift */,
+				B2CC55561D9441350053CCAA /* FileManager.swift */,
 				B2C037631D8B59A200040840 /* GenericAsyncTask.swift */,
+				B2753DB91D8E9B6200ECE240 /* NotificationManager.swift */,
+				B246ECFF1D91794D0039E7CE /* PrintLn.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B246ECE61D8F29C00039E7CE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B2C037601D8B302900040840 /* Main.storyboard */,
 				B2C037371D8B0EFC00040840 /* Assets.xcassets */,
 				B2C037391D8B0EFC00040840 /* LaunchScreen.storyboard */,
+				B2C037601D8B302900040840 /* Main.storyboard */,
 				B280CB1C1DA070FC007202CD /* StoryboardiPad.storyboard */,
 			);
-			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		B2739CB01D999D6C00110A77 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
-				B280CB1E1DA0723F007202CD /* iPad View */,
-				B2739CB11D999D7400110A77 /* Main */,
 				B246ECE21D8F294E0039E7CE /* Help */,
 				B2739CB21D999DA000110A77 /* Login */,
+				B2739CB11D999D7400110A77 /* Main */,
 				B246ECE31D8F29700039E7CE /* Model */,
-				B246ECE61D8F29C00039E7CE /* UI */,
 				B2739CB31D999DAC00110A77 /* Timetable */,
+				B246ECE61D8F29C00039E7CE /* UI */,
+				B280CB1E1DA0723F007202CD /* iPad View */,
 			);
-			name = Applications;
+			path = Applications;
 			sourceTree = "<group>";
 		};
 		B2739CB11D999D7400110A77 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B246ECDE1D8F25E30039E7CE /* Info.plist */,
 				B2C037301D8B0EFC00040840 /* AppDelegate.swift */,
+				B246ECDE1D8F25E30039E7CE /* Info.plist */,
 				B20EEF511D99CE250034D0AF /* Settings.plist */,
 			);
-			name = Main;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		B2739CB21D999DA000110A77 /* Login */ = {
@@ -241,19 +241,19 @@
 				B2C0375E1D8B2F0B00040840 /* DITWebViewController.swift */,
 				B2C037321D8B0EFC00040840 /* ViewController.swift */,
 			);
-			name = Login;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		B2739CB31D999DAC00110A77 /* Timetable */ = {
 			isa = PBXGroup;
 			children = (
-				B21956AB1D8B733300080E6E /* TimetableViewController.swift */,
 				B21957291D8D65C500080E6E /* ClassTableViewCell.swift */,
 				B21956A91D8B730900080E6E /* DayTableViewController.swift */,
 				B2CC55581D96B13B0053CCAA /* DetailClassViewController.swift */,
 				B2CC555A1D96BEEE0053CCAA /* EditClassTableViewController.swift */,
+				B21956AB1D8B733300080E6E /* TimetableViewController.swift */,
 			);
-			name = Timetable;
+			path = Timetable;
 			sourceTree = "<group>";
 		};
 		B280CB1E1DA0723F007202CD /* iPad View */ = {
@@ -262,7 +262,7 @@
 				B280CB1F1DA0725D007202CD /* iPadDaysTableViewController.swift */,
 				B280CB211DA07514007202CD /* iPadViewController.swift */,
 			);
-			name = "iPad View";
+			path = "iPad View";
 			sourceTree = "<group>";
 		};
 		B2C037241D8B0EFB00040840 = {
@@ -271,8 +271,8 @@
 				B2C0372F1D8B0EFC00040840 /* DIT-Timetable-V2 */,
 				B2C037441D8B0EFC00040840 /* DIT-Timetable-V2Tests */,
 				B2C0374F1D8B0EFC00040840 /* DIT-Timetable-V2UITests */,
-				B2C0372E1D8B0EFC00040840 /* Products */,
 				B21957391D8D844F00080E6E /* Frameworks */,
+				B2C0372E1D8B0EFC00040840 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -290,8 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				B2739CB01D999D6C00110A77 /* Applications */,
-				B2CC55521D943EF20053CCAA /* Extensions */,
 				B246ECE51D8F29930039E7CE /* Controller */,
+				B2CC55521D943EF20053CCAA /* Extensions */,
 				B219572F1D8D747D00080E6E /* EditClassViewController.swift */,
 			);
 			path = "DIT-Timetable-V2";
@@ -324,7 +324,7 @@
 				B2CC55621D99765A0053CCAA /* NavigationEx.swift */,
 				B20EEF4F1D99CD750034D0AF /* Plist.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,6 +549,7 @@
 				B2C0373A1D8B0EFC00040840 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		B2C037601D8B302900040840 /* Main.storyboard */ = {
@@ -557,6 +558,7 @@
 				B2C037611D8B302900040840 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -661,7 +663,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
 				FRAMEWORK_SEARCH_PATHS = "/Users/Timbarnard/CloudStation/Projects/DIT-Timetable-V2";
-				INFOPLIST_FILE = "DIT-Timetable-V2/Info.plist";
+				INFOPLIST_FILE = "DIT-Timetable-V2/Applications/Main/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable";
@@ -679,7 +681,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "DIT-Timetable-V2/Info.plist";
+				INFOPLIST_FILE = "DIT-Timetable-V2/Applications/Main/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable";
