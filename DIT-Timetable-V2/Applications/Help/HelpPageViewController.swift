@@ -20,8 +20,10 @@ class HelpPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let values = Bundle.contentsOfFile(bundleName: "Settings.plist")
-        
+        //let values = Bundle.contentsOfFile(bundleName: "Settings.plist")
+        //print(values)
+        let values = RCConfigManager.getObjectProperties(className: "HelpPageViewController", objectName: "HelpURLs")
+    
         for index in 1...5 {
             let key = "Help"+String(index)
             pageHeaders.append(values[key]! as! String)
@@ -81,35 +83,5 @@ extension HelpPageViewController : UIPageViewControllerDataSource {
 
 extension HelpPageViewController {
     
-    func readFromJSON() -> (Float, Float, Float) {
-        print("readFromJSON")
-        //print(MyFileManager.readJSONFile(parseKey: "maps", keyVal: "id"))
-        return MyFileManager.readJSONColor(parseKey: "navColor", keyVal: "", defaultCode: (38.0, 154.0, 208.0) )
-     }
-     
-     func sendRawTimetable() {
-        // Correct url and username/password
-        print("sendRawTimetable")
-        let values = Bundle.contentsOfFile(bundleName: "Settings.plist")
-        let networkURL = values["AppDataURL"]! as! String
-        let dic = [String: String]()
-        HTTPConnection.httpRequest(params: dic, url: networkURL, httpMethod: "POST") { (succeeded: Bool, data: NSData) -> () in
-            // Move to the UI thread
-     
-            DispatchQueue.main.async {
-                if (succeeded) {
-                    print("Succeeded")
-                    MyFileManager.writeJSONFile(jsonData: data)
-                    self.initAppDesign()
-                } else {
-                    print("Error")
-                }
-            }
-        }
-     }
-     
-     func initAppDesign() {
-     
-     }
 }
 

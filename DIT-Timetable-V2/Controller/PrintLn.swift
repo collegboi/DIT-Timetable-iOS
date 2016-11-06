@@ -15,7 +15,7 @@ class PrintLn {
         var debugMode = false
         if let path = Bundle.main.path(forResource: "Info", ofType: "plist"), let dict = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
             debugMode = (dict["debugMode"] != nil)
-            debugMode = ( (dict["debugMode"] as! Int) == 1) ? true : false
+            debugMode = ( (dict["debugMode"] as! Bool))
         }
         return debugMode
     }

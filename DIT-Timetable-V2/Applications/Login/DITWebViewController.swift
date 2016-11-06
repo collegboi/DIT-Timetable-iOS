@@ -17,26 +17,34 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
     
     var studentID : String = ""
     var studentPass : String = ""
-    let ditURL = "https://timetables.dit.ie/Web/Timetable"
-    let ditAuthn = "https://idp.dit.ie/idp/Authn/UserPassword"
+    var ditURL = "https://timetables.dit.ie/Web/Timetable"
+    var ditAuthn = "https://idp.dit.ie/idp/Authn/UserPassword"
     var loginTimes = 0
     var timetableLoaded : Bool = false
     
-    var gifURLs = ["https://media.giphy.com/media/ukmZRuEqc2Rbi/giphy.gif",
-                   "https://i.giphy.com/FlWgXEtj5aM5G.gif",
-                   "https://i.giphy.com/10ON6bZYZZL1UQ.gif",
-                   "https://i.giphy.com/12vJgj7zMN3jPy.gif",
-                   "https://i.giphy.com/syBlSgDbjsMHC.gif"]
+    var gifURLs = [String]()
+    
     var gifImage: UIImageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let values = RCConfigManager.getObjectProperties(className: "DITWebViewController", objectName: "giphyURL")
+        
+        for index in 1...4 {
+            let key = "giphy"+String(index)
+            gifURLs.append(values[key]! as! String)
+        }
+        
         self.showActivityIndicatory(uiView: self.view)
         self.ditWebView.delegate = self
         
+        self.ditURL = RCConfigManager.getMainSetting(name: "ditURL", defaultName: self.ditURL)
+        self.ditAuthn = RCConfigManager.getMainSetting(name: "ditAuthn", defaultName: self.ditAuthn)
+        
         self.imageTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(changeGIF), userInfo: nil, repeats: true)
         
-        self.ditWebView.loadRequest(NSURLRequest(url: NSURL(string: "https://timetables.dit.ie/Web/Timetable") as! URL) as URLRequest)
+        self.ditWebView.loadRequest(NSURLRequest(url: NSURL(string: self.ditURL) as! URL) as URLRequest)
         //self.sendRawTimetable(data: "")
     }
     
@@ -57,7 +65,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
       
         if !self.timetableLoaded {
-        
+            print(self.ditURL)
             let currentURL : NSString = (webView.request!.url?.absoluteString)! as NSString
             print(currentURL)
         
@@ -77,7 +85,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
                     self.loginTimes = 1
                 }
             } else if currentURL as String == self.ditURL {
-              
+                print(currentURL)
                 self.timetableLoaded = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(20)) {
                     let doc = webView.stringByEvaluatingJavaScript(from: "document.body.innerHTML")
@@ -89,7 +97,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
             
                 self.ditWebView.stopLoading()
                 self.actInd!.stopAnimating()
-                self.showIncorrectCred()
+                self.showIncorrectCred(message: "Your credentials are incorrect. Try again")
             }
         }
         
@@ -154,7 +162,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
     
     func cancelLogin() {
         self.ditWebView.stopLoading()
-        self.actInd!.stopAnimating()
+        //self.actInd!.stopAnimating()
         self.performSegue(withIdentifier: "unwindLogin", sender: self)
     }
     
@@ -165,6 +173,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
         var dic = [String: String]()
         dic["myTimetable"] = data
         dic["user"] = studentID
+        print(networkURL)
         HTTPConnection.httpRequest(params: dic, url: networkURL, httpMethod: "POST") { (succeeded: Bool, data: NSData) -> () in
             // Move to the UI thread
             
@@ -182,7 +191,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
                     self.actInd!.stopAnimating()
                     
                     if !HTTPConnection.parseJSONAndSave(data: data) {
-                        self.showIncorrectCred()
+                        self.showIncorrectCred(message: "No classes found! Go to DIT Timetable website and add your modules then try again")
                     } else {
                         self.performSegue(withIdentifier: "backSegue", sender: self)
                     }
@@ -195,9 +204,9 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
         
     }
     
-    func showIncorrectCred() {
+    func showIncorrectCred( message: String ) {
         
-        let alertController = UIAlertController(title: "Error", message: "Your credentials are incorrect. Try again", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
             self.actInd!.stopAnimating()

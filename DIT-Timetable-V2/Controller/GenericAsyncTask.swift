@@ -132,11 +132,37 @@ public class HTTPConnection {
         return result
     }
     
-    class func parseJSONData(data : NSData) ->Bool {
+    class func parseJSONConfigData(data : NSData) ->Bool {
         
-        MyFileManager.writeJSONFile(jsonData: data)
+        RCFileManager.writeJSONFile(jsonData: data, fileType: RCFileType.config)
         return true
     }
+    
+    class func parseJSONLangData( data: NSData ) -> Bool {
+        RCFileManager.writeJSONFile(jsonData: data, fileType: RCFileType.language)
+        return true
+    }
+    
+    class func parseJSONDic(data : NSData) -> [String:Any]? {
+        
+        var returnData : [String:Any]?
+        
+        do {
+            
+            guard let parsedData = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as? [String:Any] else {
+               return returnData
+            }
+            
+            returnData = parsedData
+            
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        return returnData
+    }
+
+
 
 
 }

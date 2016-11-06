@@ -18,64 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //self.sendRawTimetable()
-        let (colRed, colGreen, colBlue) = self.readFromJSON()
         
         //238, 50, 51
-        let navColor = UIColor(red: CGFloat(colRed)/255, green: CGFloat(colGreen)/255.0, blue: CGFloat(colBlue)/255.0, alpha: 0.5)
+        //let navColor = self.readFromJSON()//UIColor(red: CGFloat(colRed)/255, green: CGFloat(colGreen)/255.0, blue: CGFloat(colBlue)/255.0, alpha: 0.5)
        // let navColor = UIColor(red: 38.0/255, green: 154.0/255, blue: 208.0/255, alpha: 0.5)
         
         UINavigationBar.appearance().tintColor = UIColor.white
-        UINavigationBar.appearance().barTintColor = navColor
+        //UINavigationBar.appearance().barTintColor = navColor
         UINavigationBar.appearance().isTranslucent = true
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName: UIFont(name: "Avenir Next", size: 22)!]
        
         UIApplication.shared.applicationIconBadgeNumber = 0
         
-        let database = Database()
-        
-        let userDefaults = UserDefaults.standard
-        let TimetableHelp = userDefaults.bool(forKey: "TimetableHelp")
-        
-        // if we haven't shown the walkthroughs, let's show them
-        if !TimetableHelp {
-            
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            
-            var storyboard = UIStoryboard()
-            
-            if ( UIDevice.current.userInterfaceIdiom == .pad  ) {
-                storyboard = UIStoryboard(name: "StoryboardiPad", bundle: nil)
-            } else {
-                storyboard = UIStoryboard(name: "Main", bundle: nil)
-            }
-            
-            
-            let initialViewController = storyboard.instantiateViewController(withIdentifier: "HelpPageViewController")
-            
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
-
-        } else {
-            
-            if database.getSavedClassesCount() == 0 {
-                
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                
-                var storyboard = UIStoryboard()
-                
-                if ( UIDevice.current.userInterfaceIdiom == .pad  ) {
-                    storyboard = UIStoryboard(name: "StoryboardiPad", bundle: nil)
-                } else {
-                    storyboard = UIStoryboard(name: "Main", bundle: nil)
-                }
-                
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-                
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            }
-        }
         return true
     }
     
@@ -88,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        //RCConfigManager.updateConfigFiles()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -102,10 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func readFromJSON() -> (Float, Float, Float) {
-        print("readFromJSON")
+    func readFromJSON() -> UIColor {
+        //print("readFromJSON")
         //print(MyFileManager.readJSONFile(parseKey: "maps", keyVal: "id"))
-        return MyFileManager.readJSONColor(parseKey: "navColor", keyVal: "", defaultCode: (38.0, 154.0, 208.0) )
+        let defaultColor = UIColor(red: 38/255, green: 154/255, blue: 208/255, alpha: 1)
+        return RCConfigManager.getColor(name: "navColor", defaultColor: defaultColor)
     }
     
 }

@@ -121,7 +121,7 @@ class NotificationManager: NSObject {
             let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
             center.add(request) { (error) in
                 if error != nil {
-                    print(error)
+                    print(error ?? "Testing")
                 }
             }
             //print("Notification Setup")
