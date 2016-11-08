@@ -11,7 +11,6 @@ import UIKit
 
 class RCConfigManager {
     
-    
     class func getColor( name: String, defaultColor: UIColor = .black ) -> UIColor {
         
         guard let returnColor = RCFileManager.readJSONColor(keyVal: name) else {

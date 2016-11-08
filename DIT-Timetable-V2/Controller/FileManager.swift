@@ -59,8 +59,14 @@ class RCFileManager {
                 guard let controllerName = dict["name"] as? String else {
                     break
                 }
-                if controllerName == parseKey {
+                //print(value)
+                let trimmedString = parseKey.trimmingCharacters(in: .whitespaces)
+                //print(controllerName)
+                //print(trimmedString)
+               
+                if controllerName.contains(find: trimmedString) {
                     
+                    //print(dict)
                     for ( object ) in dict["objectsList"] as! NSArray {
                         
                         if let newobject = object as? [String: AnyObject ] {
@@ -68,11 +74,14 @@ class RCFileManager {
                             guard let objectName = newobject["objectName"] as? String else {
                                 break
                             }
-                            if objectName == keyVal {
+                            //print(objectName)
+                            //print(keyVal)
+                            if objectName.contains(find: keyVal) {
                                 
                                 guard let propertiesList = newobject["objectProperties"] as? [String:Any] else {
                                     break
                                 }
+                                //print(dict)
                                 returnStr = propertiesList
                             }
                             

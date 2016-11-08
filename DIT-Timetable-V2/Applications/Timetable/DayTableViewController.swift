@@ -12,7 +12,7 @@ import RealmSwift
 
 class DayTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: RCTableView!
     
     // MARK: - Data model for each walkthrough screen
     var index = 0               // the current page index
