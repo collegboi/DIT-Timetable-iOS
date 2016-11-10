@@ -12,13 +12,26 @@ import RealmSwift
 class ViewController: UIViewController, UITextFieldDelegate {
 
     
+    @IBOutlet weak var lanaugeButton: UIButton!
+    
     @IBOutlet weak var studentID: UITextField!
     
     @IBOutlet weak var studentPassword: UITextField!
+    
+    @IBOutlet weak var timetableLogin: UIButton!
+    
+    var langaugeList = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        self.langaugeList = RCConfigManager.getLangugeList()
+        
+        if self.langaugeList.count > 0 {
+
+            self.lanaugeButton.addTarget(self, action: #selector(self.addAlertSheet), for: .touchUpInside)
+        }
+        
         self.view.backgroundColor = UIColor(red: 38.0/255, green: 154.0/255, blue: 208.0/255, alpha: 0.5)
         
         /*if PrintLn.readPlistDebugMode() {
@@ -68,7 +81,60 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
-
+    
+    func addAlertSheet() {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        
+        for (index, language ) in self.langaugeList.enumerated() {
+        
+            let langAction = UIAlertAction(title: language, style: .default, handler: { (action) -> Void in
+                self.getDiffLanguage(index: index)
+            })
+            
+            alertController.addAction(langAction)
+        }
+        
+        let buttonCancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            
+        }
+        
+    
+        alertController.addAction(buttonCancel)
+        
+        alertController.popoverPresentationController?.sourceView = self.view
+        alertController.popoverPresentationController?.sourceRect = CGRect(x : self.view.bounds.size.width / 2.0, y: self.view.bounds.size.height / 2.0, width: 1.0, height: 1.0)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func getDiffLanguage( index: Int ) {
+        self.getRemoteLangFiles(language: self.langaugeList[index])
+        
+    }
+    
+    func getRemoteLangFiles( language: String )  {
+        // Correct url and username/password
+        self.timetableLogin.isEnabled = false
+        print("sendRawTimetable")
+        let networkURL = "https://timothybarnard.org/Scrap/appDataRequest.php?type=translation&language="+language
+        let dic = [String: String]()
+        HTTPConnection.httpRequest(params: dic, url: networkURL, httpMethod: "POST") { (succeeded: Bool, data: NSData) -> () in
+            // Move to the UI thread
+            
+            DispatchQueue.main.async {
+                if (succeeded) {
+                    //print("Succeeded")
+                    RCFileManager.writeJSONFile(jsonData: data, fileType: .language)
+                    
+                    UserDefaults.standard.setValue(language, forKey: "language")
+                    
+                } else {
+                    print("Error")
+                }
+                self.timetableLogin.isEnabled = true
+            }
+        }
+    }
 
 }
 

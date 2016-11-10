@@ -21,6 +21,7 @@
 		B2753DBA1D8E9B6200ECE240 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DB91D8E9B6200ECE240 /* NotificationManager.swift */; };
 		B2753DBC1D8EB7CD00ECE240 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DBB1D8EB7CD00ECE240 /* Database.swift */; };
 		B278C3B71DD2931E005DA231 /* Strings+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B61DD2931E005DA231 /* Strings+ext.swift */; };
+		B278C3B91DD48ECC005DA231 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
 		B280CB1D1DA070FC007202CD /* StoryboardiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B280CB1C1DA070FC007202CD /* StoryboardiPad.storyboard */; };
 		B280CB201DA0725D007202CD /* iPadDaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B280CB1F1DA0725D007202CD /* iPadDaysTableViewController.swift */; };
 		B280CB221DA07514007202CD /* iPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B280CB211DA07514007202CD /* iPadViewController.swift */; };
@@ -117,6 +118,7 @@
 		B2753DB91D8E9B6200ECE240 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B2753DBB1D8EB7CD00ECE240 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		B278C3B61DD2931E005DA231 /* Strings+ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+ext.swift"; sourceTree = "<group>"; };
+		B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		B280CB1C1DA070FC007202CD /* StoryboardiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardiPad.storyboard; sourceTree = "<group>"; };
 		B280CB1F1DA0725D007202CD /* iPadDaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPadDaysTableViewController.swift; sourceTree = "<group>"; };
 		B280CB211DA07514007202CD /* iPadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPadViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				B2CC55621D99765A0053CCAA /* NavigationEx.swift */,
 				B20EEF4F1D99CD750034D0AF /* Plist.swift */,
 				B278C3B61DD2931E005DA231 /* Strings+ext.swift */,
+				B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				B246ECA21D8ECBEA0039E7CE /* HelpPageViewController.swift in Sources */,
 				B2CC55541D943F010053CCAA /* Colors.swift in Sources */,
 				B2EF6E5A1DD24E0200427D4B /* TableLoad.swift in Sources */,
+				B278C3B91DD48ECC005DA231 /* Dictionary+Ext.swift in Sources */,
 				B29F06B61DCBDBFF00EC786D /* RCConfigManager.swift in Sources */,
 				B2EF6E571DD24E0200427D4B /* ButtonLoad.swift in Sources */,
 				B21956AC1D8B733300080E6E /* TimetableViewController.swift in Sources */,

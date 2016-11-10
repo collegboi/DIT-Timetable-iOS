@@ -17,12 +17,23 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - Data model for each walkthrough screen
     var index = 0               // the current page index
     var dayTimetable = [AllTimetables]()
-    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    var days = [String]()
     var pickedRow : Int = -1
     var deletedRow : Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        days.append( RCConfigManager.getTranslation(name: "monday", defaultName: "Monday") )
+        days.append( RCConfigManager.getTranslation(name: "tuesday", defaultName: "Tuesday") )
+        days.append( RCConfigManager.getTranslation(name: "wednesday", defaultName: "Wednesday") )
+        days.append( RCConfigManager.getTranslation(name: "thursday", defaultName: "Thursday") )
+        days.append( RCConfigManager.getTranslation(name: "friday", defaultName: "Friday") )
+        days.append( RCConfigManager.getTranslation(name: "saturday", defaultName: "Saturday") )
+        days.append( RCConfigManager.getTranslation(name: "sunday", defaultName: "Sunday") )
+        
+        self.tableView.setupTableView(className: self, name: "tableView")
+        
         self.tableView.tableFooterView = UIView()
         
         if( traitCollection.forceTouchCapability == .available){

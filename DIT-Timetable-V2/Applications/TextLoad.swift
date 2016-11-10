@@ -29,8 +29,8 @@ extension TextLoad where Self: UITextField {
         
         let dict = RCConfigManager.getObjectProperties(className: className, objectName: viewName )
         
-        var fontName: String = "Avenir Next"
-        var size : CGFloat = 10
+        var fontName: String = ""
+        var size : CGFloat = 0.0
         for (key, value) in dict {
             
             switch key {
@@ -66,6 +66,8 @@ extension TextLoad where Self: UITextField {
             default: break
             }
         }
-        self.font = UIFont(name: fontName, size: size)
+        if !fontName.isEmpty && size > 0.0 {
+            self.font = UIFont(name: fontName, size: size)
+        }
     }
 }

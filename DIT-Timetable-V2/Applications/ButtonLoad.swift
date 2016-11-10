@@ -31,42 +31,45 @@ extension ButtonLoad where Self: UIButton {
         
         var fontName: String = ""
         var size : CGFloat = 0.0
-        for (key, value) in dict {
+        for (key, _) in dict {
             
             switch key {
             case "title":
-                self.setTitle((value as! String), for: .normal)
+                self.setTitle( dict.tryConvertStr(forKey: key) , for: .normal)
                 break
             case "backgroundColor":
-                self.backgroundColor = RCFileManager.readJSONColor(keyVal: value as! String)
+                self.backgroundColor = RCFileManager.readJSONColor(keyVal:  dict.tryConvertStr(forKey: key) )
                 break
             case "fontName":
-                fontName = (value as! String)
+                fontName = dict.tryConvertStr(forKey: key)
                 break
             case "fontSize":
-                size = value as! CGFloat
+                size = dict.tryConvertCGFloat(forKey: key)
                 break
             case "titleColor":
-                self.setTitleColor(RCFileManager.readJSONColor(keyVal: value as! String), for: .normal)
+                self.setTitleColor(RCFileManager.readJSONColor(keyVal: dict.tryConvertStr(forKey: key)), for: .normal)
                 break
             case "cornerRadius":
                 self.layer.cornerRadius = 10
                 break
             case "clipsToBounds":
-                self.clipsToBounds = ((value as! Int)  == 1) ? true : false
+                self.clipsToBounds = dict.tryConvertBool(forKey: key)
             case "isEnabled":
-                self.isEnabled = ((value as! Int)  == 1) ? true : false
+                self.isEnabled = dict.tryConvertBool(forKey: key)
                 break
             case "isHidden":
-                self.isHidden = ((value as! Int)  == 1) ? true : false
+                self.isHidden = dict.tryConvertBool(forKey: key)
                 break
             case "isUserInteractionEnabled":
-                self.isUserInteractionEnabled = ((value as! Int)  == 1) ? true : false
+                self.isUserInteractionEnabled = dict.tryConvertBool(forKey: key)
                 break
             default: break
             }
         }
-        self.titleLabel!.font = UIFont(name: fontName, size: size)
+        
+        if fontName != "" && size != 0.0 {
+            self.titleLabel!.font = UIFont(name: fontName, size: size)
+        }
     }
     
 }

@@ -165,7 +165,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewa-vh-frD">
-                                <rect key="frame" x="134.5" y="358" width="106" height="30"/>
+                                <rect key="frame" x="135" y="358" width="106" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="106" id="eLY-8C-0W4"/>
@@ -184,7 +184,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQZ-DT-Mvv">
-                                <rect key="frame" x="134.5" y="424" width="106" height="30"/>
+                                <rect key="frame" x="135" y="415" width="106" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="106" id="g3Z-2K-fgX"/>
@@ -203,25 +203,45 @@
                                     <segue destination="Y33-3N-FHd" kind="show" id="QOZ-Bw-g1k"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTa-pl-xd3">
+                                <rect key="frame" x="134" y="476" width="106" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="q1k-1Z-vnw"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Language">
+                                    <color key="titleColor" name="selectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.37123889303734714" green="0.59671975398358046" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DQZ-DT-Mvv" firstAttribute="centerX" secondItem="1OI-9y-P3l" secondAttribute="centerX" id="7PZ-bL-1qc"/>
+                            <constraint firstItem="bTa-pl-xd3" firstAttribute="centerX" secondItem="1OI-9y-P3l" secondAttribute="centerX" id="CSy-1i-yeo"/>
                             <constraint firstItem="Ewa-vh-frD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iuq-Ls-dOg"/>
                             <constraint firstItem="gin-YY-p5E" firstAttribute="leading" secondItem="1OI-9y-P3l" secondAttribute="leading" id="Jle-DR-MHt"/>
-                            <constraint firstItem="DQZ-DT-Mvv" firstAttribute="top" secondItem="Ewa-vh-frD" secondAttribute="bottom" constant="36" id="OXj-7I-vnL"/>
+                            <constraint firstItem="DQZ-DT-Mvv" firstAttribute="top" secondItem="Ewa-vh-frD" secondAttribute="bottom" constant="27" id="OXj-7I-vnL"/>
                             <constraint firstItem="1OI-9y-P3l" firstAttribute="centerX" secondItem="Ewa-vh-frD" secondAttribute="centerX" id="TkD-6e-7hP"/>
                             <constraint firstItem="gin-YY-p5E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="bos-WH-M3N"/>
                             <constraint firstItem="gin-YY-p5E" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="160" id="hMt-y4-uTw"/>
                             <constraint firstItem="Ewa-vh-frD" firstAttribute="top" secondItem="1OI-9y-P3l" secondAttribute="bottom" constant="78" id="mq6-XN-zUG"/>
                             <constraint firstItem="1OI-9y-P3l" firstAttribute="top" secondItem="gin-YY-p5E" secondAttribute="bottom" constant="40" id="plV-yc-XhD"/>
+                            <constraint firstItem="bTa-pl-xd3" firstAttribute="top" secondItem="1OI-9y-P3l" secondAttribute="bottom" constant="196" id="rco-3j-ubw"/>
                             <constraint firstItem="gin-YY-p5E" firstAttribute="trailing" secondItem="1OI-9y-P3l" secondAttribute="trailing" id="zrm-hS-Fdz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ditWebView" destination="ECb-nN-qYO" id="KFH-jd-sfr"/>
+                        <outlet property="lanaugeButton" destination="bTa-pl-xd3" id="UNx-1W-OOW"/>
                         <outlet property="studentID" destination="gin-YY-p5E" id="RDl-Eu-Jq2"/>
                         <outlet property="studentPassword" destination="1OI-9y-P3l" id="8ue-ST-s3p"/>
+                        <outlet property="timetableLogin" destination="Ewa-vh-frD" id="OF9-zH-bAc"/>
                         <segue destination="Gbq-qa-sPo" kind="show" identifier="ditWebSegue" id="mhS-TH-uoy"/>
                     </connections>
                 </viewController>
@@ -319,7 +339,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NQ6-sS-A8o" id="2k2-aR-Uws">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="108.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WT-NP-WQR">
@@ -527,7 +547,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="29j-p9-v0h" id="l5Y-Ho-gQr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuP-K5-GgZ">
@@ -549,7 +569,7 @@
                                         <rect key="frame" x="0.0" y="78" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uO1-PE-eb4" id="LJG-Xd-YUm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Room" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yfb-E9-jWA">
@@ -570,7 +590,7 @@
                                         <rect key="frame" x="0.0" y="128" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ss2-sm-cS8" id="cRJ-6e-kQc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lecture" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K80-tj-N94">
@@ -591,7 +611,7 @@
                                         <rect key="frame" x="0.0" y="178" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wpO-w9-aBx" id="Klz-hN-qNH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Groups" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pU4-fF-vMI">
@@ -616,10 +636,10 @@
                                         <rect key="frame" x="0.0" y="256" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DMf-P2-wZI" id="clZ-05-iHS">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Quu-dz-I2D">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Quu-dz-I2D" customClass="LabelView" customModule="DIT_Timetable" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="11" width="166" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="166" id="TJl-nG-8HN"/>
@@ -645,7 +665,7 @@
                                         <rect key="frame" x="0.0" y="306" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AzW-vt-e5O" id="vsj-1W-39n">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6O6-fP-eqX">
@@ -719,7 +739,7 @@
                                         <rect key="frame" x="0.0" y="544" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZB2-ia-Pcx" id="4qZ-n7-Yoz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-p7-O4s">
@@ -765,7 +785,7 @@
                                         <rect key="frame" x="0.0" y="752" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jtr-k8-LCV" id="Q3P-iG-TE9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-vy-Sks">
@@ -788,10 +808,10 @@
                                         <rect key="frame" x="0.0" y="890" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5J1-2Z-7sr" id="GbQ-LK-7u7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJF-S6-q3B">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJF-S6-q3B" customClass="LabelView" customModule="DIT_Timetable" customModuleProvider="target">
                                                     <rect key="frame" x="82.5" y="11" width="210" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="210" id="uQS-Qe-uTW"/>
@@ -816,10 +836,10 @@
                                         <rect key="frame" x="0.0" y="968" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wyq-Em-nMG" id="w3a-lG-0Xg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIs-fA-dT1">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIs-fA-dT1" customClass="LabelView" customModule="DIT_Timetable" customModuleProvider="target">
                                                     <rect key="frame" x="82.5" y="11" width="210" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="210" id="IMX-mH-dgU"/>
@@ -851,9 +871,12 @@
                         <outlet property="classLecture" destination="K80-tj-N94" id="gI8-bJ-iOB"/>
                         <outlet property="classRoom" destination="Yfb-E9-jWA" id="8T2-9w-UMM"/>
                         <outlet property="dayPicker" destination="l1X-vy-Sks" id="jlD-mg-aZU"/>
+                        <outlet property="deleteLabel" destination="VJF-S6-q3B" id="IuB-LG-oJw"/>
                         <outlet property="moduleName" destination="PuP-K5-GgZ" id="uQs-PZ-PfL"/>
                         <outlet property="notifcationPicker" destination="6O6-fP-eqX" id="OS9-8d-LGC"/>
+                        <outlet property="notificationLabel" destination="Quu-dz-I2D" id="5WK-zq-Hl4"/>
                         <outlet property="notificationSwitch" destination="3t2-uq-RuC" id="GQH-d2-yOZ"/>
+                        <outlet property="saveLabel" destination="aIs-fA-dT1" id="6wo-Nw-9rH"/>
                         <outlet property="timePicker" destination="CDk-p7-O4s" id="cuB-Nf-Qfe"/>
                         <segue destination="036-Rz-iLF" kind="unwind" identifier="unwindSegue" unwindAction="unwindToVC:" id="rcH-qv-uEn"/>
                     </connections>
@@ -890,6 +913,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Oma-EA-51S"/>
         <segue reference="mAh-Hu-loO"/>
-        <segue reference="6Vb-aq-fYm"/>
+        <segue reference="QOZ-Bw-g1k"/>
     </inferredMetricsTieBreakers>
 </document>

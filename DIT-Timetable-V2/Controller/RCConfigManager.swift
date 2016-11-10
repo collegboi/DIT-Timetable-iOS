@@ -29,6 +29,17 @@ class RCConfigManager {
         return returnTranslation
     }
     
+    class func getLangugeList() -> [String] {
+        
+        let returnVal = [String]()
+        
+        guard let returnTranslation = RCFileManager.readJSONLanuageList() else {
+            return returnVal
+        }
+        
+        return returnTranslation
+    }
+    
     class func getMainSetting(name: String, defaultName: String = "") -> String {
         
         guard let returnSetting = RCFileManager.readJSONMainSettings(keyName: name ) else {
@@ -38,7 +49,7 @@ class RCConfigManager {
         return returnSetting
     }
     
-    class func getObjectProperties( className: String, objectName: String  ) -> [String:Any] {
+    class func getObjectProperties( className: String, objectName: String  ) -> [String:AnyObject] {
         
         return RCFileManager.getJSONDict(parseKey: className, keyVal: objectName)
     }

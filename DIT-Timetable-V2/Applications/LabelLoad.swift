@@ -54,7 +54,7 @@ extension LabelLoad where Self: UILabel {
             
             switch key {
             case "text":
-                self.text = value as? String
+                self.text = RCConfigManager.getTranslation(name: viewName)
                 break
             case "textAlignment":
                 self.textAlignment = NSTextAlignment(rawValue: (value as! Int))!

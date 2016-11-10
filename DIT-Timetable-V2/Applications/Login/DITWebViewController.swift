@@ -97,7 +97,8 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
             
                 self.ditWebView.stopLoading()
                 self.actInd!.stopAnimating()
-                self.showIncorrectCred(message: "Your credentials are incorrect. Try again")
+                let message = RCConfigManager.getTranslation(name: "incorrectMessage", defaultName: "Your credentials are incorrect. Try again")
+                self.showIncorrectCred(message: message)
             }
         }
         
@@ -111,7 +112,8 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
         
         let loadingMessage: UILabel = UILabel()
         loadingMessage.frame = CGRect(x: 0, y: 0, width: uiView.bounds.width, height: 50)
-        loadingMessage.text = "Retrieving your timetable\n This may take a while...."
+        let message = RCConfigManager.getTranslation(name: "loadingMessage", defaultName: "Retrieving your timetable\n This may take a while....")
+        loadingMessage.text = message
         loadingMessage.lineBreakMode = NSLineBreakMode.byWordWrapping
         loadingMessage.numberOfLines = 2
         loadingMessage.textAlignment = .center
@@ -191,7 +193,8 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
                     self.actInd!.stopAnimating()
                     
                     if !HTTPConnection.parseJSONAndSave(data: data) {
-                        self.showIncorrectCred(message: "No classes found! Go to DIT Timetable website and add your modules then try again")
+                        let message = RCConfigManager.getTranslation(name: "noClassesFound", defaultName: "No classes found! Go to DIT Timetable website and add your modules then try again")
+                        self.showIncorrectCred(message: message)
                     } else {
                         self.performSegue(withIdentifier: "backSegue", sender: self)
                     }

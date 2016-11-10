@@ -38,9 +38,9 @@ class RCFileManager {
         return returnData
     }
     
-    class func getJSONDict( parseKey : String, keyVal : String ) -> [String:Any] {
+    class func getJSONDict( parseKey : String, keyVal : String ) -> [String:AnyObject] {
         
-        var returnStr = [String:Any]()
+        var returnStr = [String:AnyObject]()
         
         guard let jsonData = RCFileManager.readJSONFile(fileName: .readConfigJSON) else {
             return returnStr
@@ -48,7 +48,7 @@ class RCFileManager {
         
         do {
             
-            let parsedData = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [String:Any]
+            let parsedData = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [String:AnyObject]
             
             for( value ) in parsedData["controllers"] as! NSArray {
                 
@@ -78,7 +78,7 @@ class RCFileManager {
                             //print(keyVal)
                             if objectName.contains(find: keyVal) {
                                 
-                                guard let propertiesList = newobject["objectProperties"] as? [String:Any] else {
+                                guard let propertiesList = newobject["objectProperties"] as? [String:AnyObject] else {
                                     break
                                 }
                                 //print(dict)
@@ -170,6 +170,32 @@ class RCFileManager {
         
         return returnStr
     }
+    
+    class func readJSONLanuageList() -> [String]? {
+        
+        var returnStr: [String]?
+        
+        guard let jsonData = RCFileManager.readJSONFile(fileName: .readConfigJSON) else {
+            return returnStr
+        }
+        
+        do {
+            let parsedData = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [String:Any]
+            
+            guard let translationList = parsedData["languagesList"] as? [String]  else {
+                return returnStr
+            }
+            
+            returnStr = translationList
+            
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        
+        return returnStr
+    }
+
     
     class func readJSONTranslation( keyName: String ) -> String? {
         

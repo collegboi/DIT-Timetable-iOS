@@ -148,9 +148,14 @@ class LoadingViewController: UIViewController {
     
     func getRemoteLangFiles() {
         // Correct url and username/password
+        var langugage = UserDefaults.standard.value(forKey: "language") as? String
+        
+        if langugage == nil {
+            langugage = "English"
+        }
         
         print("sendRawTimetable")
-        let networkURL = "https://timothybarnard.org/Scrap/appDataRequest.php?type=translation&language=English"
+        let networkURL = "https://timothybarnard.org/Scrap/appDataRequest.php?type=translation&language="+langugage!
         let dic = [String: String]()
         HTTPConnection.httpRequest(params: dic, url: networkURL, httpMethod: "POST") { (succeeded: Bool, data: NSData) -> () in
             // Move to the UI thread

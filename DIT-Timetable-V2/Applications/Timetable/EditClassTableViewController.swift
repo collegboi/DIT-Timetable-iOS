@@ -15,11 +15,16 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var notifcationPicker: UIDatePicker!
     
-    @IBOutlet weak var moduleName: UILabel!
-    @IBOutlet weak var classRoom: UITextField!
-    @IBOutlet weak var classLecture: UITextField!
-    @IBOutlet weak var classGroups: UITextField!
+    @IBOutlet weak var moduleName: TextField!
+    @IBOutlet weak var classRoom: TextField!
+    @IBOutlet weak var classLecture: TextField!
+    @IBOutlet weak var classGroups: TextField!
     
+    @IBOutlet weak var notificationLabel: LabelView!
+    @IBOutlet weak var deleteLabel: LabelView!
+    @IBOutlet weak var saveLabel: LabelView!
+    
+    var sectionTitles = [String]()
     
     var notificationPicked : Bool = false
     var timerPicked : Bool = false
@@ -37,14 +42,42 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
     var classRow : Int = 0
     var deleteClass : Bool = false
     
-    var dayPickerDataSource = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    var dayPickerDataSource = [String]()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.moduleName.setupLabelView(className: self, name: "moduleName")
+        self.classRoom.setupLabelView(className: self, name: "classRoom")
+        self.classLecture.setupLabelView(className: self, name: "classLecture")
+        self.classGroups.setupLabelView(className: self, name: "classGroups")
+        
+        self.deleteLabel.setupLabelView(className: self, name: "deleteLabel")
+        self.saveLabel.setupLabelView(className: self, name: "saveLabel")
+        
+        self.notificationLabel.setupLabelView(className: self, name: "notificationLabel")
+        
+        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "monday", defaultName: "Monday") )
+        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "tuesday", defaultName: "Tuesday") )
+        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "wednesday", defaultName: "Wednesday") )
+        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "thursday", defaultName: "Thursday") )
+        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "friday", defaultName: "Friday") )
+        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "saturday", defaultName: "Saturday") )
+        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "sunday", defaultName: "Sunday") )
+        
+        
+        sectionTitles.append( RCConfigManager.getTranslation(name: "classDetail", defaultName: "Class Details") )
+        sectionTitles.append(" ") //Notifications
+        sectionTitles.append( RCConfigManager.getTranslation(name: "classTime", defaultName: "Class Time") )
+        sectionTitles.append( RCConfigManager.getTranslation(name: "classDay", defaultName: "Class Day") )
+        sectionTitles.append( " " ) //save
+        sectionTitles.append( " " ) //delete
+        
         self.tableView.tableFooterView = UIView()
         
         self.tableView.backgroundColor = UIColor.groupTableViewBackground //UIColor(red: 204/255, green: 204/255, blue: 204/255, alpha: 1.0)
+        
         
         self.classLecture.delegate = self
         self.classRoom.delegate = self
@@ -67,8 +100,9 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         self.classRoom.text = self.allTimestables[self.dayNo].timetable[self.classRow].room
         self.classGroups.text = self.allTimestables[self.dayNo].timetable[self.classRow].groups
         
+        var indexPath = IndexPath(row: 0, section: 1 )
         
-        var indexPath = IndexPath(row: 0, section: 2 )
+        indexPath = IndexPath(row: 0, section: 2 )
         var cell = self.tableView.cellForRow(at: indexPath)
         cell?.detailTextLabel?.text = self.allTimestables[self.dayNo].timetable[self.classRow].timeStart
         
@@ -106,6 +140,11 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 6
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return sectionTitles[section]
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -247,7 +286,8 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
             let showAlert = ShowAlert()
             showAlert.alertDelegate = self
             let messageArr = ["OK"]
-            showAlert.presentAlert(curView: self, title: "Error", message: "End time is less than start time", buttons: messageArr)
+            let timeErrorMessage = RCConfigManager.getTranslation(name: "timeErrorMessage", defaultName: "End time is less than start time")
+            showAlert.presentAlert(curView: self, title: "Error", message: timeErrorMessage, buttons: messageArr)
         }
 
     }
