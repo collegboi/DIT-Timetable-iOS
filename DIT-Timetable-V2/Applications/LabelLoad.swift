@@ -59,7 +59,6 @@ extension LabelLoad where Self: UILabel {
             case "textAlignment":
                 self.textAlignment = NSTextAlignment(rawValue: (value as! Int))!
             case "backgroundColor":
-                print(value)
                 self.backgroundColor = RCConfigManager.getColor(name: (value as! String), defaultColor: .white)
                 break
             case "font":

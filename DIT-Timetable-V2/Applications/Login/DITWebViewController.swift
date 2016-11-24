@@ -61,6 +61,9 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.loginTimes = 0
+    }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
       

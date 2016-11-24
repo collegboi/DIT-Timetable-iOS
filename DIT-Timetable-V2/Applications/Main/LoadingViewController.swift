@@ -11,9 +11,6 @@ import UIKit
 
 class LoadingViewController: UIViewController {
     
-    let queue = DispatchQueue(label: "com.barnard.dispatchgroup", attributes: .concurrent, target: .main)
-    let group = DispatchGroup()
-    
     var jobLang : Bool = false
     var jobConfig : Bool = false
     
@@ -26,12 +23,14 @@ class LoadingViewController: UIViewController {
             self.getRemoteLangFiles()
             
         } else {
-            checkVersionFile()
-        }
-        
-        group.notify(queue: DispatchQueue.main) {
-            //self.checkBothJobs()
-            //print("done")
+            
+            if RCNetwork.isInternetAvailable() {
+                checkVersionFile()
+            } else {
+                DispatchQueue.main.async {
+                    self.checkViewControllerToLoad()
+                }
+            }
         }
         
     }
@@ -45,7 +44,6 @@ class LoadingViewController: UIViewController {
             //print(RCConfigManager.getTranslation(name: "greeting"))
             self.checkViewControllerToLoad()
         }
-        
     }
     
     func setupNavigationBar() {
@@ -58,7 +56,7 @@ class LoadingViewController: UIViewController {
         
         self.setupNavigationBar()
         
-        print("1")
+        PrintLn.strLine(functionName: "checkViewControllerToLoad", message: 1)
         let database = Database()
         
         let userDefaults = UserDefaults.standard
@@ -66,7 +64,7 @@ class LoadingViewController: UIViewController {
         
         // if we haven't shown the walkthroughs, let's show them
         if !TimetableHelp {
-            print("2")
+            PrintLn.strLine(functionName: "checkViewControllerToLoad", message: 2)
             self.performSegue(withIdentifier: "showHelpSegue", sender: self)
             
             /*self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -88,7 +86,7 @@ class LoadingViewController: UIViewController {
         } else {
             
             if database.getSavedClassesCount() == 0 {
-               print("3")
+               PrintLn.strLine(functionName: "checkViewControllerToLoad", message: 3)
                 self.performSegue(withIdentifier: "loginVCSegue", sender: self)
                 
                 /*self.window = UIWindow(frame: UIScreen.main.bounds)loginVCSegue
@@ -106,7 +104,7 @@ class LoadingViewController: UIViewController {
                 self.window?.rootViewController = initialViewController
                 self.window?.makeKeyAndVisible()*/
             } else {
-                print("4")
+                PrintLn.strLine(functionName: "checkViewControllerToLoad", message: 4)
                 self.performSegue(withIdentifier: "mainVCSegue", sender: self)
             }
         }
@@ -124,20 +122,18 @@ class LoadingViewController: UIViewController {
     
     func getRemoteConfigFiles() {
         // Correct url and username/password
+        PrintLn.strLine(functionName: "getRemoteConfigFiles", message: 0)
         
-        print("sendRawTimetable")
         let networkURL = "https://timothybarnard.org/Scrap/appDataRequest.php"
         let dic = [String: String]()
         HTTPConnection.httpRequest(params: dic, url: networkURL, httpMethod: "POST") { (succeeded: Bool, data: NSData) -> () in
             // Move to the UI thread
             
-            self.group.enter()
-            self.queue.async {
+            DispatchQueue.main.async {
                 if (succeeded) {
                     //print("Succeeded")
                     RCFileManager.writeJSONFile(jsonData: data, fileType: .config)
                     self.jobConfig = true
-                    self.group.leave()
                     self.checkBothJobs()
                 } else {
                     print("Error")
@@ -154,19 +150,17 @@ class LoadingViewController: UIViewController {
             langugage = "English"
         }
         
-        print("sendRawTimetable")
+        PrintLn.strLine(functionName: "getRemoteLangFiles", message: langugage!)
         let networkURL = "https://timothybarnard.org/Scrap/appDataRequest.php?type=translation&language="+langugage!
         let dic = [String: String]()
         HTTPConnection.httpRequest(params: dic, url: networkURL, httpMethod: "POST") { (succeeded: Bool, data: NSData) -> () in
             // Move to the UI thread
             
-            self.group.enter()
-            self.queue.async {
+            DispatchQueue.main.async {
                 if (succeeded) {
                     //print("Succeeded")
                     RCFileManager.writeJSONFile(jsonData: data, fileType: .language)
                     self.jobLang = true
-                    self.group.leave()
                     self.checkBothJobs()
                 } else {
                     print("Error")
@@ -179,8 +173,6 @@ class LoadingViewController: UIViewController {
         
         var returnVal = false
         
-        print("gettingverison")
-        
         let networkURL = "https://timothybarnard.org/Scrap/appDataCheck.php"
         let dic = [String: String]()
         HTTPConnection.httpRequest(params: dic, url: networkURL, httpMethod: "POST") { (succeeded: Bool, data: NSData) -> () in
@@ -191,16 +183,17 @@ class LoadingViewController: UIViewController {
                     //print("Succeeded")
                     let values = HTTPConnection.parseJSONDic(data: data)
                     if values?["update"] as? Int ?? 0 == 1  {
-                        print("true")
+                        
                         returnVal = true
                     }
                     
                     if returnVal {
-                        
+                        PrintLn.strLine(functionName: "checkVersionFile", message: 1)
                         self.getRemoteConfigFiles()
                         self.getRemoteLangFiles()
                         
                     } else {
+                        PrintLn.strLine(functionName: "checkVersionFile", message: 0)
                         self.checkViewControllerToLoad()
                     }
                     

@@ -104,10 +104,12 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         
         indexPath = IndexPath(row: 0, section: 2 )
         var cell = self.tableView.cellForRow(at: indexPath)
+        cell?.textLabel?.text = RCConfigManager.getTranslation(name: "start", defaultName: "Start")
         cell?.detailTextLabel?.text = self.allTimestables[self.dayNo].timetable[self.classRow].timeStart
         
         indexPath = IndexPath(row: 1, section: 2 )
         cell = self.tableView.cellForRow(at: indexPath)
+        cell?.textLabel?.text = RCConfigManager.getTranslation(name: "end", defaultName: "End")
         cell?.detailTextLabel?.text = self.allTimestables[self.dayNo].timetable[self.classRow].timeEnd
         
         indexPath = IndexPath(row: 0, section: 3)

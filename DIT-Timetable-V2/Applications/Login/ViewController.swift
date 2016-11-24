@@ -28,7 +28,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.langaugeList = RCConfigManager.getLangugeList()
         
         if self.langaugeList.count > 0 {
-
             self.lanaugeButton.addTarget(self, action: #selector(self.addAlertSheet), for: .touchUpInside)
         }
         
@@ -82,7 +81,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    func addAlertSheet() {
+    func addAlertSheet(_ sender: UIButton  ) {
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         
         for (index, language ) in self.langaugeList.enumerated() {
@@ -98,17 +97,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-    
         alertController.addAction(buttonCancel)
-        
+    
+        alertController.modalPresentationStyle = .popover
         alertController.popoverPresentationController?.sourceView = self.view
-        alertController.popoverPresentationController?.sourceRect = CGRect(x : self.view.bounds.size.width / 2.0, y: self.view.bounds.size.height / 2.0, width: 1.0, height: 1.0)
+        alertController.popoverPresentationController?.sourceRect = sender.frame //CGRect(x : self.view.bounds.size.width / 2.0, y: self.view.bounds.size.height / 2.0, width: 1.0, height: 1.0)
         
         present(alertController, animated: true, completion: nil)
     }
     
     func getDiffLanguage( index: Int ) {
-        self.getRemoteLangFiles(language: self.langaugeList[index])
+        
+        if RCNetwork.isInternetAvailable() {
+            self.getRemoteLangFiles(language: self.langaugeList[index])
+        } else {
+            let error = RCConfigManager.getTranslation(name: "error", defaultName: "Error")
+            let noInternet = RCConfigManager.getTranslation(name: "noInternet", defaultName: "No internet connection")
+            ShowPlainAlert.presentAlert(curView: self, title: error, message: noInternet )
+        }
         
     }
     
