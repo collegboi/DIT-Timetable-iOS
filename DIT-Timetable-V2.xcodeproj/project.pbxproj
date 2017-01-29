@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E99D0CC371E99DE071F6282 /* Pods_DIT_Timetable_V2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAF9D7A630B9547CB15F953 /* Pods_DIT_Timetable_V2.framework */; };
 		B20EEF501D99CD750034D0AF /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EEF4F1D99CD750034D0AF /* Plist.swift */; };
 		B20EEF521D99CE250034D0AF /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = B20EEF511D99CE250034D0AF /* Settings.plist */; };
 		B21956AA1D8B730900080E6E /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21956A91D8B730900080E6E /* DayTableViewController.swift */; };
@@ -103,6 +104,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0BAF9D7A630B9547CB15F953 /* Pods_DIT_Timetable_V2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DIT_Timetable_V2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42ACFAAC463779C2D756736C /* Pods-DIT-Timetable-V2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIT-Timetable-V2.release.xcconfig"; path = "Pods/Target Support Files/Pods-DIT-Timetable-V2/Pods-DIT-Timetable-V2.release.xcconfig"; sourceTree = "<group>"; };
 		B20EEF4F1D99CD750034D0AF /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		B20EEF511D99CE250034D0AF /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		B21956A91D8B730900080E6E /* DayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 		B2EF6E5E1DD24E4A00427D4B /* LabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		B2EF6E5F1DD24E4A00427D4B /* RCTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTableView.swift; sourceTree = "<group>"; };
 		B2EF6E601DD24E4A00427D4B /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		DEEC3E356D26CAEBBB18620C /* Pods-DIT-Timetable-V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DIT-Timetable-V2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DIT-Timetable-V2/Pods-DIT-Timetable-V2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 				B29F06CB1DCC25F500EC786D /* Realm.framework in Frameworks */,
 				B29F06CC1DCC25F500EC786D /* RealmSwift.framework in Frameworks */,
 				B219573B1D8D845000080E6E /* libc++.tbd in Frameworks */,
+				3E99D0CC371E99DE071F6282 /* Pods_DIT_Timetable_V2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +199,7 @@
 				B29F06C31DCBE35300EC786D /* Realm.framework */,
 				B29F06C41DCBE35300EC786D /* RealmSwift.framework */,
 				B219573A1D8D845000080E6E /* libc++.tbd */,
+				0BAF9D7A630B9547CB15F953 /* Pods_DIT_Timetable_V2.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				B2C0374F1D8B0EFC00040840 /* DIT-Timetable-V2UITests */,
 				B21957391D8D844F00080E6E /* Frameworks */,
 				B2C0372E1D8B0EFC00040840 /* Products */,
+				EF092C325FAF730AA0AC5813 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -393,6 +400,15 @@
 			name = "Protocol classes";
 			sourceTree = "<group>";
 		};
+		EF092C325FAF730AA0AC5813 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEEC3E356D26CAEBBB18620C /* Pods-DIT-Timetable-V2.debug.xcconfig */,
+				42ACFAAC463779C2D756736C /* Pods-DIT-Timetable-V2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,12 +416,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2C037551D8B0EFC00040840 /* Build configuration list for PBXNativeTarget "DIT-Timetable-V2" */;
 			buildPhases = (
+				4BA261410D29C7FD33665DDB /* [CP] Check Pods Manifest.lock */,
 				B2C037291D8B0EFC00040840 /* Sources */,
 				B2C0372A1D8B0EFC00040840 /* Frameworks */,
 				B2C0372B1D8B0EFC00040840 /* Resources */,
 				B246ECAB1D8EEA000039E7CE /* Embed Frameworks */,
 				B21957401D8D86FF00080E6E /* ShellScript */,
 				B246ECDD1D8F1B740039E7CE /* Embed App Extensions */,
+				E347CDA16D196AAC9DD5061D /* [CP] Embed Pods Frameworks */,
+				A9B408C25F5E4751A2EE55A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -529,6 +548,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4BA261410D29C7FD33665DDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A9B408C25F5E4751A2EE55A4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DIT-Timetable-V2/Pods-DIT-Timetable-V2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B21957401D8D86FF00080E6E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -541,6 +590,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+		E347CDA16D196AAC9DD5061D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DIT-Timetable-V2/Pods-DIT-Timetable-V2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -741,6 +805,7 @@
 		};
 		B2C037561D8B0EFC00040840 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEEC3E356D26CAEBBB18620C /* Pods-DIT-Timetable-V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
@@ -759,6 +824,7 @@
 		};
 		B2C037571D8B0EFC00040840 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42ACFAAC463779C2D756736C /* Pods-DIT-Timetable-V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;

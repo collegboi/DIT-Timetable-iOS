@@ -96,6 +96,7 @@ class NotificationManager: NSObject {
             dateFormatter.dateFormat = "HH:mm"
             let dateStart = dateFormatter.date(from: time)
             
+            
             let myCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
             let minusFiveDate = myCalendar.date(byAdding: .minute, value: ( minsBefore * -1 ), to: dateStart! )
             

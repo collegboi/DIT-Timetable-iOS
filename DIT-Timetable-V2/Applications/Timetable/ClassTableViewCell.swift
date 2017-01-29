@@ -27,6 +27,8 @@ class ClassTableViewCell: UITableViewCell {
         self.classLocation.setupLabelView(className: self, name: "classLocation")
         self.classGroups.setupLabelView(className: self, name: "classGroups")
         
+        
+        
         // Initialization code
     }
 

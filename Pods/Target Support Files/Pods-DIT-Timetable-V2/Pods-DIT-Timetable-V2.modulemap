@@ -1,0 +1,6 @@
+framework module Pods_DIT_Timetable_V2 {
+  umbrella header "Pods-DIT-Timetable-V2-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'DIT-Timetable-V2’ do
   pod 'Alamofire', '~> 4.0'
+  pod "MBaaSKit"
 end

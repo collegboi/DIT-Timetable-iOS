@@ -16,7 +16,7 @@ class LoadingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if !RCConfigManager.checkIfFilesExist() {
             
             self.getRemoteConfigFiles()
@@ -34,6 +34,7 @@ class LoadingViewController: UIViewController {
         }
         
     }
+    
     
     func checkBothJobs() {
         //print("here")
@@ -122,6 +123,7 @@ class LoadingViewController: UIViewController {
     
     func getRemoteConfigFiles() {
         // Correct url and username/password
+        
         PrintLn.strLine(functionName: "getRemoteConfigFiles", message: 0)
         
         let networkURL = "https://timothybarnard.org/Scrap/appDataRequest.php"

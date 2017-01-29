@@ -1,0 +1,6 @@
+framework module MBaaSKit {
+  umbrella header "MBaaSKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
