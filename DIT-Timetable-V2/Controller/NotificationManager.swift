@@ -97,6 +97,9 @@ class NotificationManager: NSObject {
             let dateStart = dateFormatter.date(from: time)
             
             
+            
+            //NSException(name: NSExceptionName(rawValue: "Raven test exception"), reason: "No reason", userInfo: nil).raise()
+            
             let myCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
             let minusFiveDate = myCalendar.date(byAdding: .minute, value: ( minsBefore * -1 ), to: dateStart! )
             

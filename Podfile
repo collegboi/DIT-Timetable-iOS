@@ -3,6 +3,5 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'DIT-Timetable-V2’ do
-  pod 'Alamofire', '~> 4.0'
-  pod "MBaaSKit"
+  pod 'MBaaSKit', '0.1.0'
 end

@@ -12,15 +12,29 @@ protocol ButtonLoad { }
 
 extension ButtonLoad where Self: UIButton {
     
-    func setupButton( className: UIViewController, name: String = "" ) {
+    /**
+     - parameters:
+        - className: put self
+        - name: the name of the object instance
+     
+     */
+    mutating func setupButton( className: UIViewController, _ name: String = "" ) {
+        
         self.setup(className: String(describing: type(of: className)), tagValue: name)
     }
     
-    func setupButton( className: UIView, name:String = "" ) {
+    /**
+     - parameters:
+     - className: put self
+     - name: the name of the object instance
+     
+     */
+    func setupButton( className: UIView, _ name:String = "" ) {
         self.setup(className: String(describing: type(of: className)), tagValue: name)
     }
     
-    private func setup( className: String, tagValue : String ) {
+    func setup( className: String, tagValue : String ) {
+    
         
         var viewName = ""
         if tagValue.isEmpty {

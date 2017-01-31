@@ -1,15 +1,12 @@
 PODS:
-  - Alamofire (4.3.0)
   - MBaaSKit (0.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - MBaaSKit
+  - MBaaSKit (= 0.1.0)
 
 SPEC CHECKSUMS:
-  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   MBaaSKit: e85b72fe41fe21a474f0690a0c5667146b0e24a0
 
-PODFILE CHECKSUM: 5e8cdddb22069a5e5d06b1c20473348e68f03b1a
+PODFILE CHECKSUM: 0e50a27ea08016955969b23ea7cdec0e336b23d5
 
 COCOAPODS: 1.2.0

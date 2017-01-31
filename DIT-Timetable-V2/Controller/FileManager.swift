@@ -64,7 +64,7 @@ class RCFileManager {
                 //print(controllerName)
                 //print(trimmedString)
                
-                if controllerName.contains(find: trimmedString) {
+                if controllerName.contains(trimmedString) {
                     
                     //print(dict)
                     for ( object ) in dict["objectsList"] as! NSArray {
@@ -76,7 +76,7 @@ class RCFileManager {
                             }
                             //print(objectName)
                             //print(keyVal)
-                            if objectName.contains(find: keyVal) {
+                            if objectName.contains(keyVal) {
                                 
                                 guard let propertiesList = newobject["objectProperties"] as? [String:AnyObject] else {
                                     break

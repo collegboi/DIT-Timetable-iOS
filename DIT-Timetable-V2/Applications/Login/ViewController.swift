@@ -18,12 +18,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var studentPassword: UITextField!
     
-    @IBOutlet weak var timetableLogin: UIButton!
+    @IBOutlet weak var timetableLogin: Button!
     
     var langaugeList = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.timetableLogin.setupButton(className: self, "timetableLogin")
         
         self.langaugeList = RCConfigManager.getLangugeList()
         
