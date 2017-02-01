@@ -13,19 +13,6 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-//    let uncaughtExceptionHandler : Void = NSSetUncaughtExceptionHandler { exception in
-//        NSLog("Name:" + exception.name.rawValue)
-//        if exception.reason == nil
-//        {
-//            NSLog("Reason: nil")setupExceptionHandler()
-//        }
-//        else
-//        {
-//            NSLog("Reason:" + exception.reason!)
-//        }
-//        
-//    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -33,11 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //NSSetUncaughtExceptionHandler(exceptionHandlerPtr)
         
         MyException.client()
-        
         MyException.sharedClient?.setupExceptionHandler()
         
-        
         //self.sendRawTimetable()
+
         
         //238, 50, 51
         //let navColor = self.readFromJSON()//UIColor(red: CGFloat(colRed)/255, green: CGFloat(colGreen)/255.0, blue: CGFloat(colBlue)/255.0, alpha: 0.5)
@@ -51,21 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         UIApplication.shared.applicationIconBadgeNumber = 0
         
-        //RavenClient.clientWithDSN(DSN: "https://663998f40e734ea59087883feda37647:306481b9f6bb4a6287b334178d9f8c71@app.getsentry.com/4394")
-        
-        //RavenClient.sharedClient?.setupExceptionHandler()
-        
         // force NSException
         //let array = NSArray()
-        //_ = array.object(at: 99)
-        
-//        NSSetUncaughtExceptionHandler { exception in
-//            print("-----------Exeception Handler-----------------")
-//            print(exception)
-//            print(exception.callStackSymbols)
-//            print("----------------------------------")
-//            self.uncaughtExceptionHandler(exception: exception)
-//        }
+        //_ = array.object(at: 10)
         
         return true
     }

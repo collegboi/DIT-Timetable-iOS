@@ -111,7 +111,7 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
             cell.backgroundColor = UIColor.white
             cell.classLecture.text = " "+cellTimetable[indexPath.row].lecture
             cell.classLocation.text = cellTimetable[indexPath.row].room
-            cell.classTime.text = " "+cellTimetable[indexPath.row].timeStart + "-"+cellTimetable[indexPath.row].timeEnd
+            cell.classTime.text = " "+cellTimetable[indexPath.row].timeStart.convert24HrTo12Hr() + "-"+cellTimetable[indexPath.row].timeEnd.convert24HrTo12Hr()
             cell.classGroups.text = cellTimetable[indexPath.row].groups
         
             if checkIfClassNow(timeStart: cellTimetable[indexPath.row].timeStart, timeEnd: cellTimetable[indexPath.row].timeEnd) {

@@ -30,10 +30,9 @@
 		B29F06CA1DCBE44F00EC786D /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B29F06C41DCBE35300EC786D /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B29F06CB1DCC25F500EC786D /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29F06C31DCBE35300EC786D /* Realm.framework */; };
 		B29F06CC1DCC25F500EC786D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29F06C41DCBE35300EC786D /* RealmSwift.framework */; };
-		B2B0493D1E3FEC8500CD4FF8 /* RavenClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0493C1E3FEC8500CD4FF8 /* RavenClient.swift */; };
-		B2B0493F1E3FECF800CD4FF8 /* RavenConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0493E1E3FECF800CD4FF8 /* RavenConfig.swift */; };
 		B2B049421E3FF3A700CD4FF8 /* CaughtException.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B049411E3FF3A700CD4FF8 /* CaughtException.m */; };
 		B2B049461E3FF93800CD4FF8 /* MyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049451E3FF93800CD4FF8 /* MyHandler.swift */; };
+		B2B049481E40146600CD4FF8 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
 		B2C037311D8B0EFC00040840 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C037301D8B0EFC00040840 /* AppDelegate.swift */; };
 		B2C037331D8B0EFC00040840 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C037321D8B0EFC00040840 /* ViewController.swift */; };
 		B2C037381D8B0EFC00040840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C037371D8B0EFC00040840 /* Assets.xcassets */; };
@@ -130,12 +129,11 @@
 		B29F06B51DCBDBFF00EC786D /* RCConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCConfigManager.swift; sourceTree = "<group>"; };
 		B29F06C31DCBE35300EC786D /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
 		B29F06C41DCBE35300EC786D /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
-		B2B0493C1E3FEC8500CD4FF8 /* RavenClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RavenClient.swift; sourceTree = "<group>"; };
-		B2B0493E1E3FECF800CD4FF8 /* RavenConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RavenConfig.swift; sourceTree = "<group>"; };
 		B2B049401E3FF3A700CD4FF8 /* DIT-Timetable-V2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DIT-Timetable-V2-Bridging-Header.h"; sourceTree = "<group>"; };
 		B2B049411E3FF3A700CD4FF8 /* CaughtException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaughtException.m; sourceTree = "<group>"; };
 		B2B049431E3FF3D700CD4FF8 /* CaughtException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaughtException.h; sourceTree = "<group>"; };
 		B2B049451E3FF93800CD4FF8 /* MyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyHandler.swift; sourceTree = "<group>"; };
+		B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateStr+Ext.swift"; sourceTree = "<group>"; };
 		B2C0372D1D8B0EFC00040840 /* DIT Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIT Timetable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C037301D8B0EFC00040840 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2C037321D8B0EFC00040840 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -274,8 +272,6 @@
 				B246ECDE1D8F25E30039E7CE /* Info.plist */,
 				B20EEF511D99CE250034D0AF /* Settings.plist */,
 				B29F06B31DCBDA7D00EC786D /* LoadingViewController.swift */,
-				B2B0493C1E3FEC8500CD4FF8 /* RavenClient.swift */,
-				B2B0493E1E3FECF800CD4FF8 /* RavenConfig.swift */,
 				B2B049411E3FF3A700CD4FF8 /* CaughtException.m */,
 				B2B049401E3FF3A700CD4FF8 /* DIT-Timetable-V2-Bridging-Header.h */,
 				B2B049431E3FF3D700CD4FF8 /* CaughtException.h */,
@@ -381,6 +377,7 @@
 				B20EEF4F1D99CD750034D0AF /* Plist.swift */,
 				B278C3B61DD2931E005DA231 /* Strings+ext.swift */,
 				B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */,
+				B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -595,7 +592,7 @@
 				B2CC55571D9441350053CCAA /* FileManager.swift in Sources */,
 				B2D4F2991E3E924B00106A97 /* Analytics.swift in Sources */,
 				B2C037661D8B69AE00040840 /* Timetable.swift in Sources */,
-				B2B0493D1E3FEC8500CD4FF8 /* RavenClient.swift in Sources */,
+				B2B049481E40146600CD4FF8 /* DateStr+Ext.swift in Sources */,
 				B2EF6E5B1DD24E0200427D4B /* TextLoad.swift in Sources */,
 				B2B049461E3FF93800CD4FF8 /* MyHandler.swift in Sources */,
 				B29F06B41DCBDA7D00EC786D /* LoadingViewController.swift in Sources */,
@@ -617,7 +614,6 @@
 				B2CC555D1D9958E20053CCAA /* GIFImage.swift in Sources */,
 				B2CC555B1D96BEEE0053CCAA /* EditClassTableViewController.swift in Sources */,
 				B2EF6E591DD24E0200427D4B /* LabelLoad.swift in Sources */,
-				B2B0493F1E3FECF800CD4FF8 /* RavenConfig.swift in Sources */,
 				B2C037641D8B59A200040840 /* GenericAsyncTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

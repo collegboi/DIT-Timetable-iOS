@@ -93,15 +93,37 @@ class NotificationManager: NSObject {
             
             //let timeSplit = time.components(separatedBy: ":")
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "HH:mm"
-            let dateStart = dateFormatter.date(from: time)
             
+            let locale = NSLocale.current
+            var dateStart = Date()
+            
+            let dateFormat = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: locale)!
+            
+            if dateFormat.localizedStandardContains("a") {
+                print("12 hour")
+                dateFormatter.dateFormat = "H:mm"
+                if let date12 = dateFormatter.date(from: time) {
+                    dateFormatter.dateFormat = "h:mm a"
+                    let date22 = dateFormatter.string(from: date12)
+                    print(date22)
+                    print("output \(time)")
+                } else {
+                    
+                }
+//                dateFormatter.dateFormat = "h:mm a"
+//                dateStart = dateFormatter.date(from: time)!
+            }
+            else {
+                print("24 hour")
+                dateFormatter.dateFormat = "HH:mm"
+                dateStart = dateFormatter.date(from: time)!
+            }
             
             
             //NSException(name: NSExceptionName(rawValue: "Raven test exception"), reason: "No reason", userInfo: nil).raise()
             
             let myCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
-            let minusFiveDate = myCalendar.date(byAdding: .minute, value: ( minsBefore * -1 ), to: dateStart! )
+            let minusFiveDate = myCalendar.date(byAdding: .minute, value: ( minsBefore * -1 ), to: dateStart )
             
             let center = UNUserNotificationCenter.current()
             
