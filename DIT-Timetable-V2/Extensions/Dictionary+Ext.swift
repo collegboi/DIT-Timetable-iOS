@@ -9,9 +9,9 @@
 import UIKit
 
 
-extension Dictionary where Key: ExpressibleByStringLiteral, Value: AnyObject {
+extension Dictionary {
     
-    func tryConvertStr(forKey key:Key, defaultVal :String = "" ) -> String {
+    func tryConvert(forKey key:Key, defaultVal :String = "" ) -> String {
         
         guard let test = self[key] as? String else {
             return defaultVal
@@ -19,7 +19,7 @@ extension Dictionary where Key: ExpressibleByStringLiteral, Value: AnyObject {
         return test
     }
     
-    func tryConvertInt(forKey key:Key, defaultVal :Int = 0 ) -> Int {
+    func tryConvert(forKey key:Key, defaultVal :Int = 0 ) -> Int {
         
         guard let test = self[key] as? Int else {
             return defaultVal
@@ -27,7 +27,7 @@ extension Dictionary where Key: ExpressibleByStringLiteral, Value: AnyObject {
         return test
     }
     
-    func tryConvertFloat(forKey key:Key, defaultVal :Float = 0 ) -> Float {
+    func tryConvert(forKey key:Key, defaultVal :Float = 0 ) -> Float {
         
         guard let test = self[key] as? Float else {
             return defaultVal
@@ -35,7 +35,7 @@ extension Dictionary where Key: ExpressibleByStringLiteral, Value: AnyObject {
         return test
     }
     
-    func tryConvertCGFloat(forKey key:Key, defaultVal :CGFloat = 0 ) -> CGFloat {
+    func tryConvert(forKey key:Key, defaultVal :CGFloat = 0 ) -> CGFloat {
         
         guard let test = self[key] as? CGFloat else {
             return defaultVal
@@ -44,7 +44,7 @@ extension Dictionary where Key: ExpressibleByStringLiteral, Value: AnyObject {
     }
     
     
-    func tryConvertBool(forKey key:Key, defaultVal :Bool = false ) -> Bool {
+    func tryConvert(forKey key:Key, defaultVal :Bool = false ) -> Bool {
         
         guard let test = self[key] as? Int else {
             return defaultVal
@@ -52,7 +52,7 @@ extension Dictionary where Key: ExpressibleByStringLiteral, Value: AnyObject {
         return (test  == 1) ? true : false
     }
     
-    func tryConvertDouble(forKey key:Key, defaultVal :Double = 0 ) -> Double {
+    func tryConvert(forKey key:Key, defaultVal :Double = 0 ) -> Double {
         
         guard let test = self[key] as? Double else {
             return defaultVal

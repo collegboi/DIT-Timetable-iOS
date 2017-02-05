@@ -49,33 +49,33 @@ extension ButtonLoad where Self: UIButton {
             
             switch key {
             case "title":
-                self.setTitle( dict.tryConvertStr(forKey: key) , for: .normal)
+                self.setTitle( dict.tryConvert(forKey: key) , for: .normal)
                 break
             case "backgroundColor":
-                self.backgroundColor = RCFileManager.readJSONColor(keyVal:  dict.tryConvertStr(forKey: key) )
+                self.backgroundColor = RCFileManager.readJSONColor(keyVal:  dict.tryConvert(forKey: key) )
                 break
             case "fontName":
-                fontName = dict.tryConvertStr(forKey: key)
+                fontName = dict.tryConvert(forKey: key)
                 break
             case "fontSize":
-                size = dict.tryConvertCGFloat(forKey: key)
+                size = dict.tryConvert(forKey: key)
                 break
             case "titleColor":
-                self.setTitleColor(RCFileManager.readJSONColor(keyVal: dict.tryConvertStr(forKey: key)), for: .normal)
+                self.setTitleColor(RCFileManager.readJSONColor(keyVal: dict.tryConvert(forKey: key)), for: .normal)
                 break
             case "cornerRadius":
                 self.layer.cornerRadius = 10
                 break
             case "clipsToBounds":
-                self.clipsToBounds = dict.tryConvertBool(forKey: key)
+                self.clipsToBounds = dict.tryConvert(forKey: key)
             case "isEnabled":
-                self.isEnabled = dict.tryConvertBool(forKey: key)
+                self.isEnabled = dict.tryConvert(forKey: key)
                 break
             case "isHidden":
-                self.isHidden = dict.tryConvertBool(forKey: key)
+                self.isHidden = dict.tryConvert(forKey: key)
                 break
             case "isUserInteractionEnabled":
-                self.isUserInteractionEnabled = dict.tryConvertBool(forKey: key)
+                self.isUserInteractionEnabled = dict.tryConvert(forKey: key)
                 break
             default: break
             }

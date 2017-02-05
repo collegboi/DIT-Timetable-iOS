@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //NSSetUncaughtExceptionHandler(exceptionHandlerPtr)
+        registerForPushNotifications(application)
         
         MyException.client()
         MyException.sharedClient?.setupExceptionHandler()
@@ -40,8 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // force NSException
         //let array = NSArray()
         //_ = array.object(at: 10)
-        
         return true
+    }
+    
+    func registerForPushNotifications(_ application: UIApplication) {
+        let notificationSettings = UIUserNotificationSettings(types: [.alert, .sound], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
     }
     
     
@@ -50,7 +55,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(exception.callStackSymbols.joined(separator: "\n"))
     }
     
-
+    
+    //MARK: Notifcation
+    
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        if notificationSettings.types != .none {
+            application.registerForRemoteNotifications()
+        }
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+         print(userInfo)
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        print(token)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register:", error)
+    }
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

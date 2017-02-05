@@ -113,6 +113,7 @@
 		B21957291D8D65C500080E6E /* ClassTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
 		B219572F1D8D747D00080E6E /* EditClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClassViewController.swift; sourceTree = "<group>"; };
 		B219573A1D8D845000080E6E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		B22539761E47A44100DC0380 /* DIT Timetable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIT Timetable.entitlements"; sourceTree = "<group>"; };
 		B246ECA11D8ECBEA0039E7CE /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
 		B246ECA31D8ECC7A0039E7CE /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		B246ECDE1D8F25E30039E7CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -341,6 +342,7 @@
 		B2C0372F1D8B0EFC00040840 /* DIT-Timetable-V2 */ = {
 			isa = PBXGroup;
 			children = (
+				B22539761E47A44100DC0380 /* DIT Timetable.entitlements */,
 				B2739CB01D999D6C00110A77 /* Applications */,
 				B246ECE51D8F29930039E7CE /* Controller */,
 				B2CC55521D943EF20053CCAA /* Extensions */,
@@ -489,6 +491,11 @@
 						DevelopmentTeam = 4EU4PGMLU9;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					B2C037401D8B0EFC00040840 = {
 						CreatedOnToolsVersion = 8.0;
@@ -771,6 +778,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "DIT-Timetable-V2/DIT Timetable.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
@@ -792,6 +802,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "DIT-Timetable-V2/DIT Timetable.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
