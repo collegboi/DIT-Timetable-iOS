@@ -38,6 +38,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         UIApplication.shared.applicationIconBadgeNumber = 0
         
+//        let notification = TBNotification()
+//        notification.setMessage("Testing123")
+//        notification.setDeviceID("e4d8fbbe085dfa93e5212a3759a774bed6264b17a437ad94b51359c92105ab3a")
+//        notification.sendNotification { (sent, returnMessage) in
+//            
+//            DispatchQueue.main.async {
+//                if (sent) {
+//                    print("success")
+//                } else {
+//                    print("error")
+//                }
+//            }
+//        }
+        
         // force NSException
         //let array = NSArray()
         //_ = array.object(at: 10)
@@ -47,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func registerForPushNotifications(_ application: UIApplication) {
         let notificationSettings = UIUserNotificationSettings(types: [.alert, .sound], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
+        
     }
     
     
@@ -66,11 +81,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
          print(userInfo)
+        
+        if let aps = userInfo["aps"] as? NSDictionary {
+            let message = aps["alert"]
+            print("my messages : \(message)")
+            
+        }
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        print(token)
+        let installation = Installation(deviceToken: deviceToken)
+        installation.sendInBackground("") { ( completed, data) in
+            DispatchQueue.main.async {
+                if (completed) {
+                    print("success")
+                } else {
+                    print("error")
+                }
+            }
+
+        }
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

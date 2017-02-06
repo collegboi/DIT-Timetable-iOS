@@ -50,5 +50,7 @@
 	</array>
 	<key>debugMode</key>
 	<false/>
+	<key>URL</key>
+	<string>http://Timothys-MacBook-Pro.local:8181</string>
 </dict>
 </plist>
