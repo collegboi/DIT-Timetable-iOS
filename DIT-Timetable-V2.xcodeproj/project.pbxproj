@@ -19,6 +19,7 @@
 		B253B22A1E492EC300E86B9B /* TBNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B253B2291E492EC300E86B9B /* TBNotification.swift */; };
 		B253B22E1E49344300E86B9B /* JSONSerialisable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B253B22D1E49344300E86B9B /* JSONSerialisable.swift */; };
 		B253B2301E4935B500E86B9B /* InstallationObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = B253B22F1E4935B500E86B9B /* InstallationObj.swift */; };
+		B253B2421E4A98DB00E86B9B /* TBAnalyitcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B253B2411E4A98DB00E86B9B /* TBAnalyitcs.swift */; };
 		B2739CB71D99A49000110A77 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2739CB61D99A49000110A77 /* Enums.swift */; };
 		B2753DBA1D8E9B6200ECE240 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DB91D8E9B6200ECE240 /* NotificationManager.swift */; };
 		B2753DBC1D8EB7CD00ECE240 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DBB1D8EB7CD00ECE240 /* Database.swift */; };
@@ -124,6 +125,7 @@
 		B253B2291E492EC300E86B9B /* TBNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBNotification.swift; sourceTree = "<group>"; };
 		B253B22D1E49344300E86B9B /* JSONSerialisable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerialisable.swift; sourceTree = "<group>"; };
 		B253B22F1E4935B500E86B9B /* InstallationObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallationObj.swift; sourceTree = "<group>"; };
+		B253B2411E4A98DB00E86B9B /* TBAnalyitcs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBAnalyitcs.swift; sourceTree = "<group>"; };
 		B2739CB61D99A49000110A77 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		B2753DB91D8E9B6200ECE240 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B2753DBB1D8EB7CD00ECE240 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -265,6 +267,14 @@
 			name = Notifications;
 			sourceTree = "<group>";
 		};
+		B253B2401E4A98C700E86B9B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				B253B2411E4A98DB00E86B9B /* TBAnalyitcs.swift */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
 		B2739CB01D999D6C00110A77 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +293,7 @@
 		B2739CB11D999D7400110A77 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B253B2401E4A98C700E86B9B /* Analytics */,
 				B253B2281E492EAE00E86B9B /* Notifications */,
 				B2B049441E3FF92200CD4FF8 /* ExeceptionHandling */,
 				B2C037301D8B0EFC00040840 /* AppDelegate.swift */,
@@ -618,6 +629,7 @@
 				B2D4F2991E3E924B00106A97 /* Analytics.swift in Sources */,
 				B2C037661D8B69AE00040840 /* Timetable.swift in Sources */,
 				B2B049481E40146600CD4FF8 /* DateStr+Ext.swift in Sources */,
+				B253B2421E4A98DB00E86B9B /* TBAnalyitcs.swift in Sources */,
 				B2EF6E5B1DD24E0200427D4B /* TextLoad.swift in Sources */,
 				B2B049461E3FF93800CD4FF8 /* MyHandler.swift in Sources */,
 				B29F06B41DCBDA7D00EC786D /* LoadingViewController.swift in Sources */,
