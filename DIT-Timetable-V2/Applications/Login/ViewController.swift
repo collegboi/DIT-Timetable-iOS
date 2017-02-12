@@ -54,7 +54,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func timetableLogin(_ sender: AnyObject) {
-        TBAnalyitcs.send(self)
+        TBAnalyitcs.sendButtonClick(self)
         self.performSegue(withIdentifier: "ditWebSegue", sender: self)
     }
     

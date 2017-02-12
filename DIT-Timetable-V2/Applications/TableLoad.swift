@@ -42,7 +42,7 @@ extension TableLoad where Self: UITableView {
                 self.allowsSelection = ((value as! Int)  == 1) ? true : false
                 break
             case "backgroundColor":
-                //self.isUserInteractionEnabled = ((value as! Int)  == 1) ? true : false
+                self.backgroundColor = RCConfigManager.getColor(name: dict.tryConvert(forKey: "backgroundColor"))
                 break
             default: break
             }

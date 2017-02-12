@@ -245,7 +245,7 @@ public class MyException: NSObject {
         
         let className = "Exceptions"
         
-        let apiEndpoint = "http://Timothys-MacBook-Pro.local:8181/storage/"
+        let apiEndpoint = "http://perfectserver.site/storage/" //"http://Timothys-MacBook-Pro.local:8181/storage/"
         let networkURL = apiEndpoint + className
         
         let request = NSMutableURLRequest(url: NSURL(string: networkURL)! as URL)

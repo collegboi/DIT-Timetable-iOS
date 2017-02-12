@@ -11,6 +11,12 @@ import UIKit
 
 class RCConfigManager {
     
+    class func checkAndGetVersion() {
+        
+        var verion = UserDefaults.standard.value(forKey: "verion") as? String
+        
+    }
+    
     class func getColor( name: String, defaultColor: UIColor = .black ) -> UIColor {
         
         guard let returnColor = RCFileManager.readJSONColor(keyVal: name) else {

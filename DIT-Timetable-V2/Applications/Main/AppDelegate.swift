@@ -65,8 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     public func exceptionHandler(exception : NSException) {
-        print(exception)
-        print(exception.callStackSymbols.joined(separator: "\n"))
+        //print(exception)
+        //print(exception.callStackSymbols.joined(separator: "\n"))
     }
     
     
@@ -84,11 +84,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let aps = userInfo["aps"] as? NSDictionary {
             let message = aps["alert"]
             print("my messages : \(message)")
-            
         }
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print(deviceToken.map { String(format: "%02.2hhx", $0) }.joined())
+        print(deviceToken)
         let installation = Installation(deviceToken: deviceToken)
         installation.sendInBackground("") { ( completed, data) in
             DispatchQueue.main.async {
@@ -112,11 +113,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        TBAnalyitcs.send(self)
+        TBAnalyitcs.sendOpenApp(self)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        TBAnalyitcs.send(self)
+        TBAnalyitcs.sendCloseApp(self)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

@@ -13,6 +13,8 @@
 		B21956AC1D8B733300080E6E /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21956AB1D8B733300080E6E /* TimetableViewController.swift */; };
 		B219572A1D8D65C500080E6E /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21957291D8D65C500080E6E /* ClassTableViewCell.swift */; };
 		B21957301D8D747D00080E6E /* EditClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B219572F1D8D747D00080E6E /* EditClassViewController.swift */; };
+		B23BF8331E4FAABC005E7083 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23BF8321E4FAABC005E7083 /* Cell.swift */; };
+		B23BF8351E4FAAE7005E7083 /* CellViewLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23BF8341E4FAAE7005E7083 /* CellViewLoad.swift */; };
 		B246ECA21D8ECBEA0039E7CE /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246ECA11D8ECBEA0039E7CE /* HelpPageViewController.swift */; };
 		B246ECA41D8ECC7A0039E7CE /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246ECA31D8ECC7A0039E7CE /* HelpViewController.swift */; };
 		B246ED001D91794D0039E7CE /* PrintLn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246ECFF1D91794D0039E7CE /* PrintLn.swift */; };
@@ -118,6 +120,8 @@
 		B219572F1D8D747D00080E6E /* EditClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClassViewController.swift; sourceTree = "<group>"; };
 		B219573A1D8D845000080E6E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		B22539761E47A44100DC0380 /* DIT Timetable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIT Timetable.entitlements"; sourceTree = "<group>"; };
+		B23BF8321E4FAABC005E7083 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		B23BF8341E4FAAE7005E7083 /* CellViewLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewLoad.swift; sourceTree = "<group>"; };
 		B246ECA11D8ECBEA0039E7CE /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
 		B246ECA31D8ECC7A0039E7CE /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		B246ECDE1D8F25E30039E7CE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -429,6 +433,7 @@
 				B2EF6E541DD24E0200427D4B /* LabelLoad.swift */,
 				B2EF6E551DD24E0200427D4B /* TableLoad.swift */,
 				B2EF6E561DD24E0200427D4B /* TextLoad.swift */,
+				B23BF8341E4FAAE7005E7083 /* CellViewLoad.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				B2EF6E5E1DD24E4A00427D4B /* LabelView.swift */,
 				B2EF6E5F1DD24E4A00427D4B /* RCTableView.swift */,
 				B2EF6E601DD24E4A00427D4B /* TextField.swift */,
+				B23BF8321E4FAABC005E7083 /* Cell.swift */,
 			);
 			name = "Protocol classes";
 			sourceTree = "<group>";
@@ -612,6 +618,7 @@
 				B2EF6E5A1DD24E0200427D4B /* TableLoad.swift in Sources */,
 				B278C3B91DD48ECC005DA231 /* Dictionary+Ext.swift in Sources */,
 				B29F06B61DCBDBFF00EC786D /* RCConfigManager.swift in Sources */,
+				B23BF8331E4FAABC005E7083 /* Cell.swift in Sources */,
 				B2EF6E571DD24E0200427D4B /* ButtonLoad.swift in Sources */,
 				B21956AC1D8B733300080E6E /* TimetableViewController.swift in Sources */,
 				B2753DBC1D8EB7CD00ECE240 /* Database.swift in Sources */,
@@ -626,6 +633,7 @@
 				B2CC555F1D9963160053CCAA /* Integer.swift in Sources */,
 				B2753DBA1D8E9B6200ECE240 /* NotificationManager.swift in Sources */,
 				B2CC55571D9441350053CCAA /* FileManager.swift in Sources */,
+				B23BF8351E4FAAE7005E7083 /* CellViewLoad.swift in Sources */,
 				B2D4F2991E3E924B00106A97 /* Analytics.swift in Sources */,
 				B2C037661D8B69AE00040840 /* Timetable.swift in Sources */,
 				B2B049481E40146600CD4FF8 /* DateStr+Ext.swift in Sources */,
