@@ -127,19 +127,12 @@ class LoadingViewController: UIViewController {
         
         PrintLn.strLine(functionName: "getRemoteConfigFiles", message: 0)
         
-        let networkURL = "https://timothybarnard.org/Scrap/appDataRequest.php"
-        let dic = [String: String]()
-        HTTPConnection.httpRequest(params: dic, url: networkURL, httpMethod: "POST") { (succeeded: Bool, data: NSData) -> () in
-            // Move to the UI thread
+        RCConfigManager.getConfigVersion { (result, message) in
             
             DispatchQueue.main.async {
-                if (succeeded) {
-                    //print("Succeeded")
-                    RCFileManager.writeJSONFile(jsonData: data, fileType: .config)
+                if result {
                     self.jobConfig = true
                     self.checkBothJobs()
-                } else {
-                    print("Error")
                 }
             }
         }

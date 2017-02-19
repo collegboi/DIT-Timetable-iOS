@@ -26,12 +26,22 @@ class TBNotification {
         self.userID = userID
     }
     
-    func sendNotification( notificationCompleted : @escaping (_ succeeded: Bool, _ data: String) -> ()) {
+    func sendNotification(_ appKey: String = "", notificationCompleted : @escaping (_ succeeded: Bool, _ data: String) -> ()) {
         
         var url: String = ""
         url = url.readPlistString(value: "URL", "http://0.0.0.0:8181")
         
-        let networkURL =  url + "/notification/" //"http://Timothys-MacBook-Pro.local:8181/notification/"
+        var key: String = ""
+        
+        if appKey != "" {
+            key = appKey
+        } else {
+            key = key.readPlistString(value: "APPKEY", "")
+        }
+        
+        let apiEndpoint = "/api/" + key
+        
+        let networkURL =  url + apiEndpoint + "/notification/" //"http://Timothys-MacBook-Pro.local:8181/notification/"
         
         if (self.deviceID == "" && self.message == "") || (self.userID == "" && self.message == "") {
             notificationCompleted(false, "values not set")

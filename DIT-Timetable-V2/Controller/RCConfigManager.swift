@@ -67,7 +67,6 @@ class RCConfigManager {
         } else {
             return false
         }
-        
     }
     
     
@@ -87,6 +86,58 @@ class RCConfigManager {
         }
         
         self.checkAndGetVersion("version", version: version)
+    }
+    
+    /**
+     getConfigVersion
+     - parameters
+     - getCompleted: return value of success state
+     - data: return array of objects
+     */
+    class func getConfigVersion(getCompleted : @escaping (_ succeeded: Bool, _ message: String ) -> ()) {
+        
+        var version: String = ""
+        
+        if let buildVersion: AnyObject = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject? {
+            version = buildVersion as! String
+        }
+        
+        var url: String = ""
+        url = url.readPlistString(value: "URL", "http://0.0.0.0:8181")
+        
+        var key: String = ""
+        key = key.readPlistString(value: "APPKEY", "")
+        
+        let apiEndpoint = "/api/"+key+"/remote/" + version
+        
+        let networkURL = url + apiEndpoint
+        
+        guard let endpoint = URL(string: networkURL) else {
+            print("Error creating endpoint")
+            return
+        }
+        var request = URLRequest(url: endpoint)
+        request.httpMethod = "GET"
+        //if let token = _currentUser?.currentToken {
+        //    request.setValue("Bearer \(token)", forHTTPHeaderField: "authorization")
+        // }
+    
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if ((error) != nil) {
+                getCompleted(false, "error")
+            }
+            
+            guard let data = data else {
+                return
+            }
+            
+            RCFileManager.writeJSONFile(jsonData: data as NSData, fileType: .config)
+            
+            getCompleted(true, "success")
+            
+        }.resume()
     }
     
 }

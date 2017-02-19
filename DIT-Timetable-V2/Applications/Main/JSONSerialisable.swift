@@ -20,6 +20,13 @@ protocol JSONSerializable: JSONRepresentable {
     init(dict: String)
 }
 
+extension JSONSerializable {
+    var databaseName: String {
+        get { return self.databaseName }
+        set(newVal) { self.databaseName = newVal }
+    }
+}
+
 //: ### Implementing the functionality through protocol extensions
 extension JSONSerializable {
     var JSONRepresentation: AnyObject {
@@ -344,7 +351,6 @@ extension JSONSerializable {
             deleteCompleted(true, "Removed")
             
             }.resume()
-        
     }
     
     
