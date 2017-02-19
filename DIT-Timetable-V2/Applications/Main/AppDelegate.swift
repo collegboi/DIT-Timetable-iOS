@@ -52,8 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
         
         // force NSException
-        //let array = NSArray()
-        //_ = array.object(at: 10)
+//        let array = NSArray()
+//        _ = array.object(at: 10)
         return true
     }
     

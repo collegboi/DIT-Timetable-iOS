@@ -11,10 +11,9 @@ import UIKit
 
 class RCConfigManager {
     
-    class func checkAndGetVersion() {
+    class func checkAndGetVersion(_ key: String, version: String) {
         
-        var verion = UserDefaults.standard.value(forKey: "verion") as? String
-        
+        UserDefaults.standard.set(key, forKey: version)
     }
     
     class func getColor( name: String, defaultColor: UIColor = .black ) -> UIColor {
@@ -74,8 +73,20 @@ class RCConfigManager {
     
     class func updateConfigFiles() {
         print("updateConfigFiles")
-        RCFileManager.changeJSONFileName(oldName: RCFile.saveConfigJSON.rawValue, newName: RCFile.readConfigJSON.rawValue)
-        RCFileManager.changeJSONFileName(oldName: RCFile.saveLangJSON.rawValue, newName: RCFile.readLangJSON.rawValue)
+        //RCFileManager.changeJSONFileName(oldName: RCFile.saveConfigJSON.rawValue, newName: RCFile.readConfigJSON.rawValue)
+        //RCFileManager.changeJSONFileName(oldName: RCFile.saveLangJSON.rawValue, newName: RCFile.readLangJSON.rawValue)
+        
+        guard let doAnalytics = RCFileManager.readConfigVersion("doAnalytics") else {
+            return
+        }
+        
+        self.checkAndGetVersion("doAnalytics", version: doAnalytics)
+        
+        guard let version = RCFileManager.readConfigVersion("version") else {
+            return
+        }
+        
+        self.checkAndGetVersion("version", version: version)
     }
     
 }

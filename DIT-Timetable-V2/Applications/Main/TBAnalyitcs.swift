@@ -31,6 +31,35 @@ class TBAnalyitcs {
         return self.dateFormatter.string(from: NSDate() as Date)
     }
     
+    //MARK: - Internal methods
+    class private func getTags() -> [String:AnyObject] {
+        
+        var tags = [String:AnyObject]()
+        
+        if tags["Build version"] == nil {
+            
+            if let buildVersion: AnyObject = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as AnyObject?
+            {
+                tags["Build version"] = buildVersion as AnyObject?
+                tags["Build name"] = RCFileManager.readPlistString(value: "CFBundleDisplayName") as AnyObject?
+            }
+        }
+        
+        #if os(iOS) || os(tvOS)
+            if (tags["OS version"] == nil) {
+                tags["OS version"] = UIDevice.current.systemVersion as AnyObject?
+            }
+            
+            if (tags["Device model"] == nil) {
+                tags["Device model"] = UIDevice.current.model as AnyObject?
+            }
+        #endif
+        
+        return tags
+        
+    }
+
+    
     struct TBAnalyitcs: JSONSerializable {
         
         var timeStamp: String = ""
@@ -39,6 +68,7 @@ class TBAnalyitcs {
         var fileName: String = ""
         var configVersion: String = ""
         var type: String = ""
+        var tags = [String:AnyObject]()
         
         init(dict: String) {}
         init() {}
@@ -115,16 +145,23 @@ class TBAnalyitcs {
     }
     
     private class func sendData(_ className: String, file:String, method:String, type: SendType = .Generic ) {
-        let version = UserDefaults.standard.value(forKey: "version") as? String
         
-        var newAnalytics = TBAnalyitcs()
-        newAnalytics.className = className
-        newAnalytics.fileName = file
-        newAnalytics.method = method
-        newAnalytics.timeStamp = self.nowDate
-        newAnalytics.configVersion = version ?? "1.2"
-        newAnalytics.type = type.rawValue
-        self.sendUserAnalytics(newAnalytics)
+        let doAnalytics = UserDefaults.standard.value(forKey: "doAnalytics") as? String ?? "0"
+        
+        if doAnalytics == "1" {
+         
+            let version = UserDefaults.standard.value(forKey: "version") as? String
+            
+            var newAnalytics = TBAnalyitcs()
+            newAnalytics.className = className
+            newAnalytics.fileName = file
+            newAnalytics.method = method
+            newAnalytics.timeStamp = self.nowDate
+            newAnalytics.configVersion = version ?? "0.0"
+            newAnalytics.tags = self.getTags()
+            newAnalytics.type = type.rawValue
+            self.sendUserAnalytics(newAnalytics)
+        }
     }
     
     

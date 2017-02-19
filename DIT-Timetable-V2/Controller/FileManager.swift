@@ -155,6 +155,37 @@ class RCFileManager {
         return returnColor
     }
     
+    
+    class func readConfigVersion(_ key: String) -> String? {
+        
+        var returnStr: String?
+        
+        guard let jsonData = RCFileManager.readJSONFile(fileName: .readConfigJSON) else {
+            return returnStr
+        }
+        
+        do {
+            let parsedData = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [String:Any]
+            
+            guard let configObject = parsedData["config"] as? [String:String]  else {
+                return returnStr
+            }
+            
+            guard let valueName = configObject[key] else {
+                return returnStr
+            }
+            
+            returnStr = valueName
+            
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        
+        return returnStr
+    }
+
+    
     class func readJSONMainSettings( keyName: String ) -> String? {
         
         var returnStr: String?

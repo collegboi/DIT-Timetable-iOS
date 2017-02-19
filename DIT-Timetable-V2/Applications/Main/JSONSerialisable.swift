@@ -285,15 +285,15 @@ extension JSONSerializable {
                 return
             }
             
-            do {
-                
-                //let dataObjects = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as! [String:Any]
-                
-                
-                
-            } catch let error as NSError {
-                print(error)
-            }
+//            do {
+//                
+//                //let dataObjects = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as! [String:Any]
+//                
+//                
+//                
+//            } catch let error as NSError {
+//                print(error)
+//            }
             
             deleteCompleted(true, "Removed")
             
@@ -333,13 +333,13 @@ extension JSONSerializable {
                 return
             }
             
-            do {
-                
-                //let dataObjects = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as! [String:Any]
-                
-            } catch let error as NSError {
-                print(error)
-            }
+//            do {
+//                
+//                //let dataObjects = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as! [String:Any]
+//                
+//            } catch let error as NSError {
+//                print(error)
+//            }
             
             deleteCompleted(true, "Removed")
             

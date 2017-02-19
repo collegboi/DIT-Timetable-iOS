@@ -28,7 +28,10 @@ class TBNotification {
     
     func sendNotification( notificationCompleted : @escaping (_ succeeded: Bool, _ data: String) -> ()) {
         
-        let networkURL = "http://Timothys-MacBook-Pro.local:8181/notification/"
+        var url: String = ""
+        url = url.readPlistString(value: "URL", "http://0.0.0.0:8181")
+        
+        let networkURL =  url + "/notification/" //"http://Timothys-MacBook-Pro.local:8181/notification/"
         
         if (self.deviceID == "" && self.message == "") || (self.userID == "" && self.message == "") {
             notificationCompleted(false, "values not set")

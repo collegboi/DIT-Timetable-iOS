@@ -41,6 +41,7 @@ class LoadingViewController: UIViewController {
         //print(self.jobConfig, self.jobLang)
         if jobLang && jobConfig {
             
+            RCConfigManager.updateConfigFiles()
             //print(RCConfigManager.getMainSetting(name: "url"))
             //print(RCConfigManager.getTranslation(name: "greeting"))
             self.checkViewControllerToLoad()
