@@ -29,11 +29,16 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.loginTimes = 0
+        
         let values = RCConfigManager.getObjectProperties(className: "DITWebViewController", objectName: "giphyURL")
         
-        for index in 1...4 {
-            let key = "giphy"+String(index)
-            gifURLs.append(values[key]! as! String)
+        if values.count >= 4 {
+        
+            for index in 1...4 {
+                let key = "giphy"+String(index)
+                gifURLs.append(values[key]! as! String)
+            }
         }
         
         self.showActivityIndicatory(uiView: self.view)
@@ -96,7 +101,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
                 }
             }
     
-            if ( loginTimes == 0 && currentURL as String == self.ditURL) ||  ( loginTimes == 1 && currentURL as String == self.ditAuthn ) {
+            if ( loginTimes == 1 && currentURL as String == self.ditAuthn ) {
             
                 self.ditWebView.stopLoading()
                 self.actInd!.stopAnimating()
@@ -104,7 +109,6 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
                 self.showIncorrectCred(message: message)
             }
         }
-        
     }
     
     func changeGIF() {

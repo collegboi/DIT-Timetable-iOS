@@ -108,7 +108,12 @@ class RCConfigManager {
         var key: String = ""
         key = key.readPlistString(value: "APPKEY", "")
         
-        let apiEndpoint = "/api/"+key+"/remote/" + version
+        var apiEndpoint = "/remote"
+        
+        if key != "" {
+            apiEndpoint = "/api/"+key+"/remote/" + version
+        }
+        
         
         let networkURL = url + apiEndpoint
         
