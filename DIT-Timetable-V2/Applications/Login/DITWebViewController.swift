@@ -101,7 +101,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
                 }
             }
     
-            if ( loginTimes == 1 && currentURL as String == self.ditAuthn ) {
+            if ( loginTimes != 0 && currentURL as String == self.ditAuthn ) {
             
                 self.ditWebView.stopLoading()
                 self.actInd!.stopAnimating()

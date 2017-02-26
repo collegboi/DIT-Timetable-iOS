@@ -13,7 +13,7 @@ class RCConfigManager {
     
     class func checkAndGetVersion(_ key: String, version: String) {
         
-        UserDefaults.standard.set(key, forKey: version)
+        UserDefaults.standard.set(version , forKey: key)
     }
     
     class func getColor( name: String, defaultColor: UIColor = .black ) -> UIColor {
@@ -78,14 +78,14 @@ class RCConfigManager {
         guard let doAnalytics = RCFileManager.readConfigVersion("doAnalytics") else {
             return
         }
-        
-        self.checkAndGetVersion("doAnalytics", version: doAnalytics)
+        UserDefaults.standard.set(doAnalytics, forKey: "doAnalytics")
+        //self.checkAndGetVersion("doAnalytics", version: doAnalytics)
         
         guard let version = RCFileManager.readConfigVersion("version") else {
             return
         }
-        
-        self.checkAndGetVersion("version", version: version)
+        UserDefaults.standard.set(version, forKey: "version")
+        //self.checkAndGetVersion("version", version: version)
     }
     
     /**
@@ -103,7 +103,7 @@ class RCConfigManager {
         }
         
         var url: String = ""
-        url = url.readPlistString(value: "URL", "http://0.0.0.0:8181")
+        url = url.readPlistString(value: "URL", "http://perfectserver.site")
         
         var key: String = ""
         key = key.readPlistString(value: "APPKEY", "")
@@ -139,6 +139,7 @@ class RCConfigManager {
             }
             
             RCFileManager.writeJSONFile(jsonData: data as NSData, fileType: .config)
+            self.updateConfigFiles()
             
             getCompleted(true, "success")
             

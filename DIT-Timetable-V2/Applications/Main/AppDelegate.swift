@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+        TBAnalyitcs.sendOpenApp(self)
         registerForPushNotifications(application)
         
         MyException.client()
@@ -88,8 +89,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print(deviceToken.map { String(format: "%02.2hhx", $0) }.joined())
-        print(deviceToken)
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print(deviceTokenString)
+
         let installation = Installation(deviceToken: deviceToken)
         installation.sendInBackground("") { ( completed, data) in
             DispatchQueue.main.async {

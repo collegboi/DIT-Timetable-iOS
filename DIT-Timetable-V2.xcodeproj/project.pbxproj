@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15FAA3CB1E61A35A00AAB1C6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */; };
 		B20EEF501D99CD750034D0AF /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EEF4F1D99CD750034D0AF /* Plist.swift */; };
 		B20EEF521D99CE250034D0AF /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = B20EEF511D99CE250034D0AF /* Settings.plist */; };
 		B21956AA1D8B730900080E6E /* DayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21956A91D8B730900080E6E /* DayTableViewController.swift */; };
@@ -112,6 +113,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B20EEF4F1D99CD750034D0AF /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		B20EEF511D99CE250034D0AF /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		B21956A91D8B730900080E6E /* DayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTableViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15FAA3CB1E61A35A00AAB1C6 /* UserNotifications.framework in Frameworks */,
 				B29F06CB1DCC25F500EC786D /* Realm.framework in Frameworks */,
 				B29F06CC1DCC25F500EC786D /* RealmSwift.framework in Frameworks */,
 			);
@@ -212,6 +215,7 @@
 		B21957391D8D844F00080E6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */,
 				B29F06C31DCBE35300EC786D /* Realm.framework */,
 				B29F06C41DCBE35300EC786D /* RealmSwift.framework */,
 				B219573A1D8D845000080E6E /* libc++.tbd */,

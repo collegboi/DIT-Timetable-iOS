@@ -18,10 +18,10 @@ struct Installation: JSONSerializable {
     private var deviceModel:String!
     
     init(deviceToken:Data) {
-        let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        let token = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         self.token = token
         self.getBuildValues()
-        self.date = "12/12/2017 09:00:00"
+        self.date = TBTime.nowDateTime()
     }
     
     init() {}
@@ -42,5 +42,16 @@ struct Installation: JSONSerializable {
         self.OSVersion = UIDevice.current.systemVersion as String
         self.deviceModel = UIDevice.current.model as String
         #endif
+    }
+}
+
+class TBTime {
+    
+    static func nowDateTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        
+        return dateFormatter.string(from: Date())
     }
 }
