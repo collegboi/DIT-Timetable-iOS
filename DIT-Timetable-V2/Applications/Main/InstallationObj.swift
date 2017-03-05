@@ -16,6 +16,7 @@ struct Installation: JSONSerializable {
     private var buildName:String!
     private var OSVersion:String!
     private var deviceModel:String!
+    private var deviceModelName:String!
     
     init(deviceToken:Data) {
         let token = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
@@ -41,6 +42,7 @@ struct Installation: JSONSerializable {
         #if os(iOS) || os(tvOS)
         self.OSVersion = UIDevice.current.systemVersion as String
         self.deviceModel = UIDevice.current.model as String
+        self.deviceModelName = UIDevice.current.modelName
         #endif
     }
 }

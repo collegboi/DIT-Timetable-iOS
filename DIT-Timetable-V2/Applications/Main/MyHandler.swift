@@ -87,6 +87,7 @@ public class MyException: NSObject {
             if (tags["Device model"] == nil) {
                 tags["Device model"] = UIDevice.current.model as AnyObject?
             }
+            tags["Device model name"] = UIDevice.current.modelName as AnyObject?
         #endif
         
     }

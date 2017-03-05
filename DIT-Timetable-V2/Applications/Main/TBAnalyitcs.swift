@@ -18,7 +18,7 @@ enum SendType: String {
     case Generic = "Generic"
 }
 
-class TBAnalyitcs {
+class TBAnalytics {
     
     class private var dateFormatter : DateFormatter {
         let dateFormatter = DateFormatter()
@@ -50,9 +50,10 @@ class TBAnalyitcs {
                 tags["OS version"] = UIDevice.current.systemVersion as AnyObject?
             }
             
-            if (tags["Device model"] == nil) {
-                tags["Device model"] = UIDevice.current.model as AnyObject?
+            if (tags["Device make"] == nil) {
+                tags["Device make"] = UIDevice.current.model as AnyObject?
             }
+            tags["Device model name"] = UIDevice.current.modelName as AnyObject?
         #endif
         
         return tags
@@ -60,7 +61,7 @@ class TBAnalyitcs {
     }
 
     
-    struct TBAnalyitcs: JSONSerializable {
+    struct TBAnalytics: JSONSerializable {
         
         var timeStamp: String = ""
         var method: String = ""
@@ -152,7 +153,7 @@ class TBAnalyitcs {
          
             let version = UserDefaults.standard.value(forKey: "version") as? String
             
-            var newAnalytics = TBAnalyitcs()
+            var newAnalytics = TBAnalytics()
             newAnalytics.className = className
             newAnalytics.fileName = file
             newAnalytics.method = method
@@ -165,9 +166,9 @@ class TBAnalyitcs {
     }
     
     
-    class private func sendUserAnalytics(_ tbAnalyitcs: TBAnalyitcs) {
+    class private func sendUserAnalytics(_ tbAnalytics: TBAnalytics) {
         
-        tbAnalyitcs.sendInBackground("") { (completed, data) in
+        tbAnalytics.sendInBackground("") { (completed, data) in
             
             DispatchQueue.main.async {
                 if (completed) {

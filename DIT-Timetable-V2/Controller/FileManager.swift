@@ -167,7 +167,7 @@ class RCFileManager {
         do {
             let parsedData = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [String:Any]
             
-            guard let configObject = parsedData["config"] as? [String:String]  else {
+            guard let configObject = parsedData["mainSettings"] as? [String:String]  else {
                 return returnStr
             }
             

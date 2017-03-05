@@ -133,7 +133,7 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        TBAnalyitcs.send(self)
+        TBAnalytics.send(self)
         if self.dayTimetable[self.index].timetable[indexPath.row].id != -1 {
         
             self.pickedRow = indexPath.row

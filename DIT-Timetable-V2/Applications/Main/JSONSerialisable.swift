@@ -371,7 +371,13 @@ extension JSONSerializable {
             var url: String = ""
             url = url.readPlistString(value: "URL", "http://0.0.0.0:8181")
             
-            let apiEndpoint = "/storage/"
+            
+            var key: String = ""
+            key = key.readPlistString(value: "APPKEY", "")
+            
+            let apiEndpoint = "/api/"+key+"/storage/"
+            
+            
             let networkURL = url + apiEndpoint + className
             
             let dic = newData
@@ -403,6 +409,7 @@ extension JSONSerializable {
             
             task.resume()
         }
+
     }
 }
 

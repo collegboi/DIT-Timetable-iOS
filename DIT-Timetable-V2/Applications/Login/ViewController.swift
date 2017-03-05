@@ -54,7 +54,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func timetableLogin(_ sender: AnyObject) {
-        TBAnalyitcs.sendButtonClick(self)
+        TBAnalytics.sendButtonClick(self)
         self.performSegue(withIdentifier: "ditWebSegue", sender: self)
     }
     
@@ -85,7 +85,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func addAlertSheet(_ sender: UIButton  ) {
-        TBAnalyitcs.send(self)
+        TBAnalytics.send(self)
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         
         for (index, language ) in self.langaugeList.enumerated() {

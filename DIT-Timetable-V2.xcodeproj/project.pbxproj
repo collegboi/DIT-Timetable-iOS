@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150A42C51E6CA21900D8C476 /* Device+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42C41E6CA21900D8C476 /* Device+Ext.swift */; };
 		15FAA3CB1E61A35A00AAB1C6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */; };
 		B20EEF501D99CD750034D0AF /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EEF4F1D99CD750034D0AF /* Plist.swift */; };
 		B20EEF521D99CE250034D0AF /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = B20EEF511D99CE250034D0AF /* Settings.plist */; };
@@ -113,6 +114,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		150A42C41E6CA21900D8C476 /* Device+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+Ext.swift"; sourceTree = "<group>"; };
 		15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B20EEF4F1D99CD750034D0AF /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		B20EEF511D99CE250034D0AF /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				B2753DB91D8E9B6200ECE240 /* NotificationManager.swift */,
 				B246ECFF1D91794D0039E7CE /* PrintLn.swift */,
 				B29F06B51DCBDBFF00EC786D /* RCConfigManager.swift */,
+				150A42C41E6CA21900D8C476 /* Device+Ext.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				B20EEF501D99CD750034D0AF /* Plist.swift in Sources */,
 				B219572A1D8D65C500080E6E /* ClassTableViewCell.swift in Sources */,
 				B2EF6E581DD24E0200427D4B /* ImageLoad.swift in Sources */,
+				150A42C51E6CA21900D8C476 /* Device+Ext.swift in Sources */,
 				B2EF6E651DD24E4A00427D4B /* TextField.swift in Sources */,
 				B253B2301E4935B500E86B9B /* InstallationObj.swift in Sources */,
 				B21956AA1D8B730900080E6E /* DayTableViewController.swift in Sources */,

@@ -47,7 +47,7 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        TBAnalyitcs.sendViewOpen(self)
+        TBAnalytics.sendViewOpen(self)
         
         self.moduleName.setupLabelView(className: self, name: "moduleName")
         self.classRoom.setupLabelView(className: self, name: "classRoom")

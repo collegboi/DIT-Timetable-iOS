@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        TBAnalyitcs.sendOpenApp(self)
+        TBAnalytics.sendOpenApp(self)
         registerForPushNotifications(application)
         
         MyException.client()
@@ -115,11 +115,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        TBAnalyitcs.sendOpenApp(self)
+        TBAnalytics.sendOpenApp(self)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        TBAnalyitcs.sendCloseApp(self)
+        TBAnalytics.sendCloseApp(self)
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
