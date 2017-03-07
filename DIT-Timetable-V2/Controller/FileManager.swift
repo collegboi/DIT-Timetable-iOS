@@ -110,6 +110,52 @@ class RCFileManager {
         return returnStr
     }
     
+    class func getJSONClassProperties( parseKey : String ) -> [String:AnyObject] {
+        
+        var returnStr = [String:AnyObject]()
+        
+        guard let jsonData = RCFileManager.readJSONFile(fileName: .readConfigJSON) else {
+            return returnStr
+        }
+        
+        do {
+            
+            let parsedData = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [String:AnyObject]
+            
+            for( value ) in parsedData["controllers"] as! NSArray {
+                
+                guard let dict = value as? [String:Any] else {
+                    break
+                }
+                
+                guard let controllerName = dict["name"] as? String else {
+                    break
+                }
+                
+                //print(value)
+                let trimmedString = parseKey.trimmingCharacters(in: .whitespaces)
+                //print(controllerName)
+                //print(trimmedString)
+                
+                if controllerName.contains(trimmedString) {
+                
+                    
+                    guard let propertiesList = dict["classProperties"] as? [String:AnyObject] else {
+                        break
+                    }
+                        //print(dict)
+                    returnStr = propertiesList
+                    break
+                }
+            }
+            
+        } catch let error as NSError {
+            print(error)
+        }
+        return returnStr
+    }
+
+    
     class func readJSONColor( keyVal : String ) -> UIColor? {
         
         var returnColor : UIColor?

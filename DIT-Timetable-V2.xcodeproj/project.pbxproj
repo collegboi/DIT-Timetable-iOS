@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		150A42C51E6CA21900D8C476 /* Device+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42C41E6CA21900D8C476 /* Device+Ext.swift */; };
+		150A42CB1E6E23CC00D8C476 /* TBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42CA1E6E23CC00D8C476 /* TBViewController.swift */; };
+		150A42CD1E6E23F500D8C476 /* ViewControllerLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42CC1E6E23F500D8C476 /* ViewControllerLoad.swift */; };
+		150A42CF1E6E255700D8C476 /* RCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42CE1E6E255700D8C476 /* RCTableViewController.swift */; };
+		150A42D11E6E257C00D8C476 /* TableViewControllerLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42D01E6E257C00D8C476 /* TableViewControllerLoad.swift */; };
+		150A42D41E6E37B000D8C476 /* RCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42D31E6E37B000D8C476 /* RCView.swift */; };
+		150A42D61E6E37D200D8C476 /* ViewLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42D51E6E37D200D8C476 /* ViewLoad.swift */; };
 		15FAA3CB1E61A35A00AAB1C6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */; };
 		B20EEF501D99CD750034D0AF /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EEF4F1D99CD750034D0AF /* Plist.swift */; };
 		B20EEF521D99CE250034D0AF /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = B20EEF511D99CE250034D0AF /* Settings.plist */; };
@@ -115,6 +121,12 @@
 
 /* Begin PBXFileReference section */
 		150A42C41E6CA21900D8C476 /* Device+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+Ext.swift"; sourceTree = "<group>"; };
+		150A42CA1E6E23CC00D8C476 /* TBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBViewController.swift; sourceTree = "<group>"; };
+		150A42CC1E6E23F500D8C476 /* ViewControllerLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerLoad.swift; sourceTree = "<group>"; };
+		150A42CE1E6E255700D8C476 /* RCTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTableViewController.swift; sourceTree = "<group>"; };
+		150A42D01E6E257C00D8C476 /* TableViewControllerLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerLoad.swift; sourceTree = "<group>"; };
+		150A42D31E6E37B000D8C476 /* RCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCView.swift; sourceTree = "<group>"; };
+		150A42D51E6E37D200D8C476 /* ViewLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoad.swift; sourceTree = "<group>"; };
 		15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B20EEF4F1D99CD750034D0AF /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		B20EEF511D99CE250034D0AF /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
@@ -441,6 +453,9 @@
 				B2EF6E551DD24E0200427D4B /* TableLoad.swift */,
 				B2EF6E561DD24E0200427D4B /* TextLoad.swift */,
 				B23BF8341E4FAAE7005E7083 /* CellViewLoad.swift */,
+				150A42CC1E6E23F500D8C476 /* ViewControllerLoad.swift */,
+				150A42D01E6E257C00D8C476 /* TableViewControllerLoad.swift */,
+				150A42D51E6E37D200D8C476 /* ViewLoad.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -454,6 +469,9 @@
 				B2EF6E5F1DD24E4A00427D4B /* RCTableView.swift */,
 				B2EF6E601DD24E4A00427D4B /* TextField.swift */,
 				B23BF8321E4FAABC005E7083 /* Cell.swift */,
+				150A42CA1E6E23CC00D8C476 /* TBViewController.swift */,
+				150A42CE1E6E255700D8C476 /* RCTableViewController.swift */,
+				150A42D31E6E37B000D8C476 /* RCView.swift */,
 			);
 			name = "Protocol classes";
 			sourceTree = "<group>";
@@ -631,14 +649,19 @@
 				B2753DBC1D8EB7CD00ECE240 /* Database.swift in Sources */,
 				B246ECA41D8ECC7A0039E7CE /* HelpViewController.swift in Sources */,
 				B2C0375F1D8B2F0B00040840 /* DITWebViewController.swift in Sources */,
+				150A42D41E6E37B000D8C476 /* RCView.swift in Sources */,
 				B2EF6E631DD24E4A00427D4B /* LabelView.swift in Sources */,
 				B278C3B71DD2931E005DA231 /* Strings+ext.swift in Sources */,
 				B253B22A1E492EC300E86B9B /* TBNotification.swift in Sources */,
+				150A42CD1E6E23F500D8C476 /* ViewControllerLoad.swift in Sources */,
 				B280CB201DA0725D007202CD /* iPadDaysTableViewController.swift in Sources */,
+				150A42CB1E6E23CC00D8C476 /* TBViewController.swift in Sources */,
 				B2EF6E611DD24E4A00427D4B /* Button.swift in Sources */,
 				B2EF6E641DD24E4A00427D4B /* RCTableView.swift in Sources */,
+				150A42D61E6E37D200D8C476 /* ViewLoad.swift in Sources */,
 				B2CC555F1D9963160053CCAA /* Integer.swift in Sources */,
 				B2753DBA1D8E9B6200ECE240 /* NotificationManager.swift in Sources */,
+				150A42CF1E6E255700D8C476 /* RCTableViewController.swift in Sources */,
 				B2CC55571D9441350053CCAA /* FileManager.swift in Sources */,
 				B23BF8351E4FAAE7005E7083 /* CellViewLoad.swift in Sources */,
 				B2D4F2991E3E924B00106A97 /* Analytics.swift in Sources */,
@@ -654,6 +677,7 @@
 				B2EF6E621DD24E4A00427D4B /* ImageView.swift in Sources */,
 				B20EEF501D99CD750034D0AF /* Plist.swift in Sources */,
 				B219572A1D8D65C500080E6E /* ClassTableViewCell.swift in Sources */,
+				150A42D11E6E257C00D8C476 /* TableViewControllerLoad.swift in Sources */,
 				B2EF6E581DD24E0200427D4B /* ImageLoad.swift in Sources */,
 				150A42C51E6CA21900D8C476 /* Device+Ext.swift in Sources */,
 				B2EF6E651DD24E4A00427D4B /* TextField.swift in Sources */,

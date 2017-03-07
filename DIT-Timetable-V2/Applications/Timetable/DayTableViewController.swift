@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 
-class DayTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
+class DayTableViewController: RCViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
 
     @IBOutlet weak var tableView: RCTableView!
     
@@ -23,6 +23,8 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupViewController(className: self, "DayTableViewController")
         
         days.append( RCConfigManager.getTranslation(name: "monday", defaultName: "Monday") )
         days.append( RCConfigManager.getTranslation(name: "tuesday", defaultName: "Tuesday") )
@@ -102,13 +104,15 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classIdentifier", for: indexPath) as! ClassTableViewCell
 
+        cell.setupCellView(className: self, name: "ClassTableViewCell")
+        
         let cellTimetable = self.dayTimetable[self.index].timetable
         
         cell.className.text = cellTimetable[indexPath.row].name
         
         if cellTimetable[indexPath.row].id != -1 {
         
-            cell.backgroundColor = UIColor.white
+            //cell.backgroundColor = UIColor.white
             cell.classLecture.text = " "+cellTimetable[indexPath.row].lecture
             cell.classLocation.text = cellTimetable[indexPath.row].room
             cell.classTime.text = " "+cellTimetable[indexPath.row].timeStart.convert24HrTo12Hr() + "-"+cellTimetable[indexPath.row].timeEnd.convert24HrTo12Hr()
@@ -117,7 +121,7 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
             if checkIfClassNow(timeStart: cellTimetable[indexPath.row].timeStart, timeEnd: cellTimetable[indexPath.row].timeEnd) {
                 cell.currentClass.backgroundColor = UIColor.green
             } else {
-                cell.currentClass.backgroundColor = UIColor.white
+                //cell.currentClass.backgroundColor = UIColor.white
             }
         } else {
             

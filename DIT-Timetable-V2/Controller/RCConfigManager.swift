@@ -54,6 +54,11 @@ class RCConfigManager {
         return returnSetting
     }
     
+    class func getClassProperties(className: String  ) -> [String:AnyObject] {
+
+         return RCFileManager.getJSONClassProperties(parseKey: className)
+    }
+
     class func getObjectProperties( className: String, objectName: String  ) -> [String:AnyObject] {
         
         return RCFileManager.getJSONDict(parseKey: className, keyVal: objectName)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditClassTableViewController: UITableViewController, UITextFieldDelegate, AlertMessageDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class EditClassTableViewController: RCTableViewController, UITextFieldDelegate, AlertMessageDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var dayPicker: UIPickerView!
     @IBOutlet weak var notificationSwitch: UISwitch!
@@ -48,6 +48,8 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         TBAnalytics.sendViewOpen(self)
+        
+        self.setupTableViewController(className: self, "EditClassTableViewController")
         
         self.moduleName.setupLabelView(className: self, name: "moduleName")
         self.classRoom.setupLabelView(className: self, name: "classRoom")

@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().tintColor = UIColor.white
         //UINavigationBar.appearance().barTintColor = navColor
-        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().isTranslucent = false
         
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName: UIFont(name: "Avenir Next", size: 22)!]
        

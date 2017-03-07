@@ -33,6 +33,9 @@ extension TableLoad where Self: UITableView {
         
         for (key, value) in dict {
             switch key {
+            case "backgroundColor":
+                self.backgroundColor = RCFileManager.readJSONColor(keyVal:  dict.tryConvert(forKey: key) )
+                break
             case "isScrollEnabled":
                 self.isScrollEnabled = ((value as! Int)  == 1) ? true : false
                 break

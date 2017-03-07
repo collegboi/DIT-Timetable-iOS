@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ClassTableViewCell: UITableViewCell {
+class ClassTableViewCell: RCTableViewCell {
 
-    @IBOutlet weak var currentClass: UIView!
+    @IBOutlet weak var currentClass: RCView!
     @IBOutlet weak var className: LabelView!
     @IBOutlet weak var classTime: LabelView!
     @IBOutlet weak var classLecture: LabelView!
@@ -20,16 +20,13 @@ class ClassTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //self.currentClass.setupLabelView(className: self, name: "currentClass")
+        self.currentClass.setupView(className: self, "currentClass")
         self.className.setupLabelView(className: self, name: "className")
         self.classTime.setupLabelView(className: self, name: "classTime")
         self.classLecture.setupLabelView(className: self, name: "classLecture")
         self.classLocation.setupLabelView(className: self, name: "classLocation")
         self.classGroups.setupLabelView(className: self, name: "classGroups")
         
-        
-        
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
