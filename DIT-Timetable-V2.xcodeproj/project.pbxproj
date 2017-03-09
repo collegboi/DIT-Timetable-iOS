@@ -14,6 +14,8 @@
 		150A42D11E6E257C00D8C476 /* TableViewControllerLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42D01E6E257C00D8C476 /* TableViewControllerLoad.swift */; };
 		150A42D41E6E37B000D8C476 /* RCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42D31E6E37B000D8C476 /* RCView.swift */; };
 		150A42D61E6E37D200D8C476 /* ViewLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42D51E6E37D200D8C476 /* ViewLoad.swift */; };
+		150A42D81E70345C00D8C476 /* RCTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42D71E70345C00D8C476 /* RCTabController.swift */; };
+		150A42DA1E70354900D8C476 /* TabBarLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42D91E70354900D8C476 /* TabBarLoad.swift */; };
 		15FAA3CB1E61A35A00AAB1C6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */; };
 		B20EEF501D99CD750034D0AF /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EEF4F1D99CD750034D0AF /* Plist.swift */; };
 		B20EEF521D99CE250034D0AF /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = B20EEF511D99CE250034D0AF /* Settings.plist */; };
@@ -127,6 +129,8 @@
 		150A42D01E6E257C00D8C476 /* TableViewControllerLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerLoad.swift; sourceTree = "<group>"; };
 		150A42D31E6E37B000D8C476 /* RCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCView.swift; sourceTree = "<group>"; };
 		150A42D51E6E37D200D8C476 /* ViewLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoad.swift; sourceTree = "<group>"; };
+		150A42D71E70345C00D8C476 /* RCTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTabController.swift; sourceTree = "<group>"; };
+		150A42D91E70354900D8C476 /* TabBarLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarLoad.swift; sourceTree = "<group>"; };
 		15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B20EEF4F1D99CD750034D0AF /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		B20EEF511D99CE250034D0AF /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
@@ -456,6 +460,7 @@
 				150A42CC1E6E23F500D8C476 /* ViewControllerLoad.swift */,
 				150A42D01E6E257C00D8C476 /* TableViewControllerLoad.swift */,
 				150A42D51E6E37D200D8C476 /* ViewLoad.swift */,
+				150A42D91E70354900D8C476 /* TabBarLoad.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				150A42CA1E6E23CC00D8C476 /* TBViewController.swift */,
 				150A42CE1E6E255700D8C476 /* RCTableViewController.swift */,
 				150A42D31E6E37B000D8C476 /* RCView.swift */,
+				150A42D71E70345C00D8C476 /* RCTabController.swift */,
 			);
 			name = "Protocol classes";
 			sourceTree = "<group>";
@@ -691,8 +697,10 @@
 				B2B049421E3FF3A700CD4FF8 /* CaughtException.m in Sources */,
 				B2CC555D1D9958E20053CCAA /* GIFImage.swift in Sources */,
 				B253B22E1E49344300E86B9B /* JSONSerialisable.swift in Sources */,
+				150A42DA1E70354900D8C476 /* TabBarLoad.swift in Sources */,
 				B2CC555B1D96BEEE0053CCAA /* EditClassTableViewController.swift in Sources */,
 				B2EF6E591DD24E0200427D4B /* LabelLoad.swift in Sources */,
+				150A42D81E70345C00D8C476 /* RCTabController.swift in Sources */,
 				B2C037641D8B59A200040840 /* GenericAsyncTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

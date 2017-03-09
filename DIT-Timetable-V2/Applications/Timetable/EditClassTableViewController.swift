@@ -170,7 +170,19 @@ class EditClassTableViewController: RCTableViewController, UITextFieldDelegate, 
         default :
             return 0
         }
-
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.backgroundColor = UIColor.black
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.backgroundColor = UIColor.black
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.backgroundColor = UIColor.black
+        cell.textLabel?.textColor = UIColor.white
     }
   
     
@@ -347,18 +359,14 @@ class EditClassTableViewController: RCTableViewController, UITextFieldDelegate, 
     }
 
     
-    /*override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "editClass", for: indexPath)
-
-        if indexPath.section == 1{
-            cell.detailTextLabel?.text = "08:00"
-        }
-        
-
-        return cell
-    }*/
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//        
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "editCell", for: indexPath)
+//        
+//        cell.contentView.backgroundColor = UIColor.black
+//        return cell
+//    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -422,7 +430,7 @@ extension EditClassTableViewController {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         let cell = self.tableView.cellForRow(at: indexPathSel!)
-    
+        
         cell?.textLabel?.text = self.dayPickerDataSource[row]
         self.dayPicked = false
         self.tableView.reloadData()
