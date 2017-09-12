@@ -29,13 +29,13 @@ class iPadDaysTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        days.append( RCConfigManager.getTranslation(name: "monday", defaultName: "Monday") )
-        days.append( RCConfigManager.getTranslation(name: "tuesday", defaultName: "Tuesday") )
-        days.append( RCConfigManager.getTranslation(name: "wednesday", defaultName: "Wednesday") )
-        days.append( RCConfigManager.getTranslation(name: "thursday", defaultName: "Thursday") )
-        days.append( RCConfigManager.getTranslation(name: "friday", defaultName: "Friday") )
-        days.append( RCConfigManager.getTranslation(name: "saturday", defaultName: "Saturday") )
-        days.append( RCConfigManager.getTranslation(name: "sunday", defaultName: "Sunday") )
+        days.append("Monday")
+        days.append("Tuesday")
+        days.append("Wednesday")
+        days.append("Thursday")
+        days.append("Friday")
+        days.append("Saturday")
+        days.append("Sunday")
         
         self.tableView.tableFooterView = UIView()
         

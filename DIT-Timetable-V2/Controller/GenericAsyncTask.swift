@@ -28,7 +28,7 @@ public class HTTPConnection {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error -> Void in
-            PrintLn.strLine(functionName: "httpRequest", message: "Response: \(response)")
+            PrintLn.strLine(functionName: "httpRequest", message: "Response: \(String(describing: response))")
             //print(error)
             //let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
             if ((error) != nil) {

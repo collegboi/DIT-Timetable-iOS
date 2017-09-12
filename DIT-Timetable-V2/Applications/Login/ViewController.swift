@@ -18,22 +18,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var studentPassword: UITextField!
     
-    @IBOutlet weak var timetableLogin: Button!
+    @IBOutlet weak var timetableLogin: UIButton!
     
     var langaugeList = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.timetableLogin.setupButton(className: self, "timetableLogin")
-        
-        self.langaugeList = RCConfigManager.getLangugeList()
-        
-        if self.langaugeList.count > 0 {
-            self.lanaugeButton.addTarget(self, action: #selector(self.addAlertSheet), for: .touchUpInside)
-        }
-        
-        self.view.backgroundColor = UIColor(red: 38.0/255, green: 154.0/255, blue: 208.0/255, alpha: 0.5)
+
+        self.view.backgroundColor = UIColor(red: 44.0/255, green: 153.0/255, blue: 206.0/255, alpha: 1)
         
         /*if PrintLn.readPlistDebugMode() {
             self.studentID.text = "C13720705"
@@ -54,7 +46,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func timetableLogin(_ sender: AnyObject) {
-        TBAnalytics.sendButtonClick(self)
         self.performSegue(withIdentifier: "ditWebSegue", sender: self)
     }
     
@@ -85,7 +76,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func addAlertSheet(_ sender: UIButton  ) {
-        TBAnalytics.send(self)
+
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         
         for (index, language ) in self.langaugeList.enumerated() {
@@ -115,8 +106,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if RCNetwork.isInternetAvailable() {
             self.getRemoteLangFiles(language: self.langaugeList[index])
         } else {
-            let error = RCConfigManager.getTranslation(name: "error", defaultName: "Error")
-            let noInternet = RCConfigManager.getTranslation(name: "noInternet", defaultName: "No internet connection")
+            let error = "Error"
+            let noInternet = "No internet connection"
             ShowPlainAlert.presentAlert(curView: self, title: error, message: noInternet )
         }
         

@@ -8,21 +8,21 @@
 
 import UIKit
 
-class EditClassTableViewController: RCTableViewController, UITextFieldDelegate, AlertMessageDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class EditClassTableViewController: UITableViewController, UITextFieldDelegate, AlertMessageDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var dayPicker: UIPickerView!
     @IBOutlet weak var notificationSwitch: UISwitch!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var notifcationPicker: UIDatePicker!
     
-    @IBOutlet weak var moduleName: TextField!
-    @IBOutlet weak var classRoom: TextField!
-    @IBOutlet weak var classLecture: TextField!
-    @IBOutlet weak var classGroups: TextField!
+    @IBOutlet weak var moduleName: UITextField!
+    @IBOutlet weak var classRoom: UITextField!
+    @IBOutlet weak var classLecture: UITextField!
+    @IBOutlet weak var classGroups: UITextField!
     
-    @IBOutlet weak var notificationLabel: LabelView!
-    @IBOutlet weak var deleteLabel: LabelView!
-    @IBOutlet weak var saveLabel: LabelView!
+    @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet weak var deleteLabel: UILabel!
+    @IBOutlet weak var saveLabel: UILabel!
     
     var sectionTitles = [String]()
     
@@ -47,33 +47,19 @@ class EditClassTableViewController: RCTableViewController, UITextFieldDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        TBAnalytics.sendViewOpen(self)
-        
-        self.setupTableViewController(className: self, "EditClassTableViewController")
-        
-        self.moduleName.setupLabelView(className: self, name: "moduleName")
-        self.classRoom.setupLabelView(className: self, name: "classRoom")
-        self.classLecture.setupLabelView(className: self, name: "classLecture")
-        self.classGroups.setupLabelView(className: self, name: "classGroups")
-        
-        self.deleteLabel.setupLabelView(className: self, name: "deleteLabel")
-        self.saveLabel.setupLabelView(className: self, name: "saveLabel")
-        
-        self.notificationLabel.setupLabelView(className: self, name: "notificationLabel")
-        
-        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "monday", defaultName: "Monday") )
-        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "tuesday", defaultName: "Tuesday") )
-        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "wednesday", defaultName: "Wednesday") )
-        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "thursday", defaultName: "Thursday") )
-        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "friday", defaultName: "Friday") )
-        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "saturday", defaultName: "Saturday") )
-        dayPickerDataSource.append( RCConfigManager.getTranslation(name: "sunday", defaultName: "Sunday") )
+        dayPickerDataSource.append("Monday")
+        dayPickerDataSource.append("Tuesday")
+        dayPickerDataSource.append("Wednesday")
+        dayPickerDataSource.append("Thursday")
+        dayPickerDataSource.append("Friday")
+        dayPickerDataSource.append("Saturday")
+        dayPickerDataSource.append("Sunday")
         
         
-        sectionTitles.append( RCConfigManager.getTranslation(name: "classDetail", defaultName: "Class Details") )
+        sectionTitles.append("Class Details")
         sectionTitles.append(" ") //Notifications
-        sectionTitles.append( RCConfigManager.getTranslation(name: "classTime", defaultName: "Class Time") )
-        sectionTitles.append( RCConfigManager.getTranslation(name: "classDay", defaultName: "Class Day") )
+        sectionTitles.append("Class Time")
+        sectionTitles.append("Class Day")
         sectionTitles.append( " " ) //save
         sectionTitles.append( " " ) //delete
         
@@ -107,12 +93,12 @@ class EditClassTableViewController: RCTableViewController, UITextFieldDelegate, 
         
         indexPath = IndexPath(row: 0, section: 2 )
         var cell = self.tableView.cellForRow(at: indexPath)
-        cell?.textLabel?.text = RCConfigManager.getTranslation(name: "start", defaultName: "Start")
+        cell?.textLabel?.text = "Start"
         cell?.detailTextLabel?.text = self.allTimestables[self.dayNo].timetable[self.classRow].timeStart
         
         indexPath = IndexPath(row: 1, section: 2 )
         cell = self.tableView.cellForRow(at: indexPath)
-        cell?.textLabel?.text = RCConfigManager.getTranslation(name: "end", defaultName: "End")
+        cell?.textLabel?.text = "End"
         cell?.detailTextLabel?.text = self.allTimestables[self.dayNo].timetable[self.classRow].timeEnd
         
         indexPath = IndexPath(row: 0, section: 3)
@@ -136,7 +122,6 @@ class EditClassTableViewController: RCTableViewController, UITextFieldDelegate, 
     }
     
     func minToHoursMinutes (minutes : Int) -> (Int, Int) {
-        PrintLn.strLine(functionName: "minToHoursMinutes", message: minutes)
         return (minutes / 60, (minutes % 60))
     }
 
@@ -303,7 +288,7 @@ class EditClassTableViewController: RCTableViewController, UITextFieldDelegate, 
             let showAlert = ShowAlert()
             showAlert.alertDelegate = self
             let messageArr = ["OK"]
-            let timeErrorMessage = RCConfigManager.getTranslation(name: "timeErrorMessage", defaultName: "End time is less than start time")
+            let timeErrorMessage = "End time is less than start time"
             showAlert.presentAlert(curView: self, title: "Error", message: timeErrorMessage, buttons: messageArr)
         }
 
@@ -330,8 +315,6 @@ class EditClassTableViewController: RCTableViewController, UITextFieldDelegate, 
             PrintLn.strLine(functionName: "segue", message: "going back")
             if let destinationVC = segue.destination as? DayTableViewController {
                 destinationVC.dayTimetable = self.allTimestables
-                PrintLn.strLine(functionName: "segue Edit", message: self.allTimestables.count)
-                PrintLn.strLine(functionName: "segue Edit1", message: destinationVC.dayTimetable.count)
             }
         }
     }

@@ -19,15 +19,13 @@ class HelpPageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //let values = Bundle.contentsOfFile(bundleName: "Settings.plist")
-        //print(values)
-        let values = RCConfigManager.getObjectProperties(className: "HelpPageViewController", objectName: "HelpURLs")
     
-        for index in 1...5 {
-            let key = "Help"+String(index)
-            pageHeaders.append(values[key]! as! String)
-        }
+        //print(values)
+        pageHeaders.append("https://timothybarnard.org/images/help/dit_timetable_help.png")
+        pageHeaders.append("https://timothybarnard.org/images/help/login_help.png")
+        pageHeaders.append("https://timothybarnard.org/images/help/notifications_help.png")
+        pageHeaders.append("https://timothybarnard.org/images/help/edit_class_help.png")
+        pageHeaders.append("https://timothybarnard.org/images/help/refresh_classes.png")
     
         // this class is the page view controller's data source itself
         self.dataSource = self

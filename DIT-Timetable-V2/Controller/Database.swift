@@ -99,7 +99,7 @@ class Database {
         
         var id = 0
         
-        let myClasses = self.realm?.objects(Class.self).sorted(byProperty: "id")
+        let myClasses = self.realm?.objects(Class.self).sorted(byKeyPath: "id")
         
         if (myClasses?.count)! > 0 {
             id = (myClasses?[(myClasses?.count)!-1].id)! + 1
@@ -113,7 +113,7 @@ class Database {
         
         let filterString = "day="+String(dayNo)
         
-        let myClasses = self.realm?.objects(Class.self).filter(filterString).sorted(byProperty: "timeStart")
+        let myClasses = self.realm?.objects(Class.self).filter(filterString).sorted(byKeyPath: "timeStart")
         
         for curClass in myClasses! {
             
@@ -143,7 +143,7 @@ class Database {
             allTimetables.append(newTimetable)
         }
         
-        let myClasses = self.realm?.objects(Class.self).sorted(byProperty: "timeStart")
+        let myClasses = self.realm?.objects(Class.self).sorted(byKeyPath: "timeStart")
         
         for curClass in myClasses! {
             

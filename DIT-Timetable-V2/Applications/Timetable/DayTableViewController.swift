@@ -10,9 +10,9 @@ import UIKit
 import RealmSwift
 
 
-class DayTableViewController: RCViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
+class DayTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
 
-    @IBOutlet weak var tableView: RCTableView!
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Data model for each walkthrough screen
     var index = 0               // the current page index
@@ -24,17 +24,13 @@ class DayTableViewController: RCViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupViewController(className: self, "DayTableViewController")
-        
-        days.append( RCConfigManager.getTranslation(name: "monday", defaultName: "Monday") )
-        days.append( RCConfigManager.getTranslation(name: "tuesday", defaultName: "Tuesday") )
-        days.append( RCConfigManager.getTranslation(name: "wednesday", defaultName: "Wednesday") )
-        days.append( RCConfigManager.getTranslation(name: "thursday", defaultName: "Thursday") )
-        days.append( RCConfigManager.getTranslation(name: "friday", defaultName: "Friday") )
-        days.append( RCConfigManager.getTranslation(name: "saturday", defaultName: "Saturday") )
-        days.append( RCConfigManager.getTranslation(name: "sunday", defaultName: "Sunday") )
-        
-        self.tableView.setupTableView(className: self, name: "tableView")
+        days.append("Monday")
+        days.append("Tuesday")
+        days.append("Wednesday")
+        days.append("Thursday")
+        days.append("Friday")
+        days.append("Saturday")
+        days.append("Sunday")
         
         self.tableView.tableFooterView = UIView()
         
@@ -103,8 +99,6 @@ class DayTableViewController: RCViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classIdentifier", for: indexPath) as! ClassTableViewCell
-
-        cell.setupCellView(className: self, name: "ClassTableViewCell")
         
         let cellTimetable = self.dayTimetable[self.index].timetable
         
@@ -137,7 +131,6 @@ class DayTableViewController: RCViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        TBAnalytics.send(self)
         if self.dayTimetable[self.index].timetable[indexPath.row].id != -1 {
         
             self.pickedRow = indexPath.row

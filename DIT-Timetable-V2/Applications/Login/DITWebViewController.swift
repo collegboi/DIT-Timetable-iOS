@@ -31,25 +31,27 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
         
         self.loginTimes = 0
         
-        let values = RCConfigManager.getObjectProperties(className: "DITWebViewController", objectName: "giphyURL")
+        let values = [
+        "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+        "https://media.giphy.com/media/wW95fEq09hOI8/giphy.gif",
+        "https://media.giphy.com/media/u3QHTS2lmwAKc/giphy.gif",
+        "https://media.giphy.com/media/ND6xkVPaj8tHO/giphy.gif",
+        "https://media.giphy.com/media/l0IyayMlfXiWKTJCM/giphy.gif"
+        ]
         
         if values.count >= 4 {
         
             for index in 1...4 {
-                let key = "giphy"+String(index)
-                gifURLs.append(values[key]! as! String)
+                gifURLs.append(values[index])
             }
         }
         
         self.showActivityIndicatory(uiView: self.view)
         self.ditWebView.delegate = self
         
-        self.ditURL = RCConfigManager.getMainSetting(name: "ditURL", defaultName: self.ditURL)
-        self.ditAuthn = RCConfigManager.getMainSetting(name: "ditAuthn", defaultName: self.ditAuthn)
-        
         self.imageTimer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(changeGIF), userInfo: nil, repeats: true)
         
-        self.ditWebView.loadRequest(NSURLRequest(url: NSURL(string: self.ditURL) as! URL) as URLRequest)
+        self.ditWebView.loadRequest(NSURLRequest(url: NSURL(string: self.ditURL)! as URL) as URLRequest)
         //self.sendRawTimetable(data: "")
     }
     
@@ -105,7 +107,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
             
                 self.ditWebView.stopLoading()
                 self.actInd!.stopAnimating()
-                let message = RCConfigManager.getTranslation(name: "incorrectMessage", defaultName: "Your credentials are incorrect. Try again")
+                let message = "Your credentials are incorrect. Try again"
                 self.showIncorrectCred(message: message)
             }
         }
@@ -119,7 +121,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
         
         let loadingMessage: UILabel = UILabel()
         loadingMessage.frame = CGRect(x: 0, y: 0, width: uiView.bounds.width, height: 50)
-        let message = RCConfigManager.getTranslation(name: "loadingMessage", defaultName: "Retrieving your timetable\n This may take a while....")
+        let message = "Retrieving your timetable\n This may take a while...."
         loadingMessage.text = message
         loadingMessage.lineBreakMode = NSLineBreakMode.byWordWrapping
         loadingMessage.numberOfLines = 2
@@ -170,6 +172,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
     }
     
     func cancelLogin() {
+        self.timetableLoaded = true
         self.ditWebView.stopLoading()
         //self.actInd!.stopAnimating()
         self.performSegue(withIdentifier: "unwindLogin", sender: self)
@@ -200,7 +203,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
                     self.actInd!.stopAnimating()
                     
                     if !HTTPConnection.parseJSONAndSave(data: data) {
-                        let message = RCConfigManager.getTranslation(name: "noClassesFound", defaultName: "No classes found! Go to DIT Timetable website and add your modules then try again")
+                        let message = "No classes found! Go to DIT Timetable website and add your modules then try again"
                         self.showIncorrectCred(message: message)
                     } else {
                         self.performSegue(withIdentifier: "backSegue", sender: self)
