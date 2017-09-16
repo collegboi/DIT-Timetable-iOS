@@ -8,6 +8,7 @@
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,7 +49,6 @@
                     <connections>
                         <segue destination="Y33-3N-FHd" kind="show" identifier="showHelpSegue" id="6Vb-aq-fYm"/>
                         <segue destination="rVK-6B-Z5S" kind="show" identifier="mainVCSegue" id="4y9-xU-Ttu"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginVCSegue" id="Ja5-7m-gHi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hiy-UP-fDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -58,7 +58,9 @@
         <!--Help Page View Controller-->
         <scene sceneID="Kfg-wL-zxg">
             <objects>
-                <pageViewController storyboardIdentifier="HelpPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Y33-3N-FHd" customClass="HelpPageViewController" customModule="DIT_Timetable" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="HelpPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Y33-3N-FHd" customClass="HelpPageViewController" customModule="DIT_Timetable" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLC-3U-eZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1289" y="-502"/>
@@ -128,12 +130,12 @@
                             <constraint firstItem="bD3-zw-bq1" firstAttribute="centerX" secondItem="W0b-m2-R7t" secondAttribute="centerX" id="sWb-bP-ZLR"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="BcQ-gy-cFA" id="nTv-ck-5S2"/>
                         <outlet property="nextButton" destination="bD3-zw-bq1" id="cKo-Kg-mRD"/>
                         <outlet property="pageControl" destination="W0b-m2-R7t" id="Rj5-q1-uTM"/>
                         <outlet property="startButton" destination="haf-Bq-CYm" id="zo8-VN-BTG"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="firstSegue" id="tRr-SJ-i3i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="poV-eb-nSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,18 +201,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="timetableLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2wb-W8-olw"/>
-                                    <segue destination="Y33-3N-FHd" kind="show" id="QOZ-Bw-g1k"/>
+                                    <action selector="helpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ORJ-J5-NX6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgu-h5-DER">
+                                <rect key="frame" x="134" y="466" width="106" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="wEW-uU-dlL"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <state key="normal" title="Feedback">
+                                    <color key="titleColor" name="selectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="feedbackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mdu-hd-i2S"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.37123889303734714" green="0.59671975398358046" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DQZ-DT-Mvv" firstAttribute="centerX" secondItem="1OI-9y-P3l" secondAttribute="centerX" id="7PZ-bL-1qc"/>
+                            <constraint firstItem="bgu-h5-DER" firstAttribute="top" secondItem="DQZ-DT-Mvv" secondAttribute="bottom" constant="21" id="CvE-30-eHs"/>
                             <constraint firstItem="Ewa-vh-frD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iuq-Ls-dOg"/>
                             <constraint firstItem="gin-YY-p5E" firstAttribute="leading" secondItem="1OI-9y-P3l" secondAttribute="leading" id="Jle-DR-MHt"/>
                             <constraint firstItem="DQZ-DT-Mvv" firstAttribute="top" secondItem="Ewa-vh-frD" secondAttribute="bottom" constant="27" id="OXj-7I-vnL"/>
                             <constraint firstItem="1OI-9y-P3l" firstAttribute="centerX" secondItem="Ewa-vh-frD" secondAttribute="centerX" id="TkD-6e-7hP"/>
+                            <constraint firstItem="bgu-h5-DER" firstAttribute="centerX" secondItem="1OI-9y-P3l" secondAttribute="centerX" id="XXK-FH-p94"/>
                             <constraint firstItem="gin-YY-p5E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="bos-WH-M3N"/>
                             <constraint firstItem="gin-YY-p5E" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="160" id="hMt-y4-uTw"/>
                             <constraint firstItem="Ewa-vh-frD" firstAttribute="top" secondItem="1OI-9y-P3l" secondAttribute="bottom" constant="78" id="mq6-XN-zUG"/>
@@ -224,6 +246,7 @@
                         <outlet property="studentPassword" destination="1OI-9y-P3l" id="8ue-ST-s3p"/>
                         <outlet property="timetableLogin" destination="Ewa-vh-frD" id="OF9-zH-bAc"/>
                         <segue destination="Gbq-qa-sPo" kind="show" identifier="ditWebSegue" id="mhS-TH-uoy"/>
+                        <segue destination="Y33-3N-FHd" kind="show" identifier="helpView" id="bu3-S1-ZJL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -264,6 +287,7 @@
                             <constraint firstItem="ECb-nN-qYO" firstAttribute="top" secondItem="JYy-ZV-8wS" secondAttribute="topMargin" constant="10" id="qnr-jb-IcX"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="ditWebView" destination="ECb-nN-qYO" id="dzj-PL-93a"/>
                         <segue destination="rVK-6B-Z5S" kind="showDetail" identifier="backSegue" id="mAh-Hu-loO"/>
@@ -280,14 +304,21 @@
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="fKI-wU-iUY" customClass="TimetableViewController" customModule="DIT_Timetable" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="S2s-uE-nPd">
-                        <barButtonItem key="leftBarButtonItem" image="notificationOn" id="MCV-a1-9WT">
-                            <connections>
-                                <action selector="toggleNotifications:" destination="fKI-wU-iUY" id="ozo-dV-zBD"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="add" id="mwE-hh-yaE">
+                                <connections>
+                                    <action selector="addClassButton:" destination="fKI-wU-iUY" id="XZ0-TJ-aq2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="notificationOn" id="MCV-a1-9WT">
+                                <connections>
+                                    <action selector="toggleNotifications:" destination="fKI-wU-iUY" id="ozo-dV-zBD"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="ycA-wB-qTT">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="refreshsegue" id="Oma-EA-51S"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="refreshsegue" id="Oma-EA-51S"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -524,29 +555,29 @@
                         <sections>
                             <tableViewSection headerTitle="Class Details" id="3zX-NB-OpP">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="editCell" id="29j-p9-v0h">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="editCell" id="29j-p9-v0h">
                                         <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="29j-p9-v0h" id="l5Y-Ho-gQr">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuP-K5-GgZ">
-                                                    <rect key="frame" x="8" y="11" width="359" height="27.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Module name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rz-Fe-s4M">
+                                                    <rect key="frame" x="8" y="8" width="359" height="33.5"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="PuP-K5-GgZ" firstAttribute="centerY" secondItem="l5Y-Ho-gQr" secondAttribute="centerY" id="3zw-F7-hIf"/>
-                                                <constraint firstItem="PuP-K5-GgZ" firstAttribute="top" secondItem="l5Y-Ho-gQr" secondAttribute="topMargin" constant="3" id="JlE-eq-Jbi"/>
-                                                <constraint firstItem="PuP-K5-GgZ" firstAttribute="trailing" secondItem="l5Y-Ho-gQr" secondAttribute="trailingMargin" id="jfu-d0-iih"/>
-                                                <constraint firstItem="PuP-K5-GgZ" firstAttribute="leading" secondItem="l5Y-Ho-gQr" secondAttribute="leadingMargin" id="ziy-0R-jFg"/>
+                                                <constraint firstAttribute="bottom" secondItem="5rz-Fe-s4M" secondAttribute="bottom" constant="8" id="0Cy-yJ-baS"/>
+                                                <constraint firstItem="5rz-Fe-s4M" firstAttribute="leading" secondItem="l5Y-Ho-gQr" secondAttribute="leading" constant="8" id="Pi9-CD-meD"/>
+                                                <constraint firstAttribute="trailing" secondItem="5rz-Fe-s4M" secondAttribute="trailing" constant="8" id="fzW-Xm-TsP"/>
+                                                <constraint firstItem="5rz-Fe-s4M" firstAttribute="top" secondItem="l5Y-Ho-gQr" secondAttribute="top" constant="8" id="qdD-AF-Jxt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="editCell" id="uO1-PE-eb4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="editCell" id="uO1-PE-eb4">
                                         <rect key="frame" x="0.0" y="78" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uO1-PE-eb4" id="LJG-Xd-YUm">
@@ -567,7 +598,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="editCell" id="Ss2-sm-cS8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="editCell" id="Ss2-sm-cS8">
                                         <rect key="frame" x="0.0" y="128" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ss2-sm-cS8" id="cRJ-6e-kQc">
@@ -588,7 +619,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="editCell" id="wpO-w9-aBx">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="editCell" id="wpO-w9-aBx">
                                         <rect key="frame" x="0.0" y="178" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wpO-w9-aBx" id="Klz-hN-qNH">
@@ -672,11 +703,11 @@
                                         <rect key="frame" x="0.0" y="444" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hDL-h1-nfg" id="3C7-qk-B0v">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="786-3X-bOj">
-                                                    <rect key="frame" x="16" y="13" width="37.5" height="25"/>
+                                                    <rect key="frame" x="15" y="13" width="37.5" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -696,11 +727,11 @@
                                         <rect key="frame" x="0.0" y="494" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dsl-8q-5j4" id="a5H-Vg-Ndb">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bxx-LL-B2d">
-                                                    <rect key="frame" x="16" y="13" width="33" height="25"/>
+                                                    <rect key="frame" x="15" y="13" width="33" height="25"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -749,11 +780,11 @@
                                         <rect key="frame" x="0.0" y="702" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jnr-Ba-Q9e" id="ayQ-eB-U6q">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jq6-eE-w3t">
-                                                    <rect key="frame" x="16" y="0.0" width="324" height="49.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -853,7 +884,7 @@
                         <outlet property="classRoom" destination="Yfb-E9-jWA" id="8T2-9w-UMM"/>
                         <outlet property="dayPicker" destination="l1X-vy-Sks" id="jlD-mg-aZU"/>
                         <outlet property="deleteLabel" destination="VJF-S6-q3B" id="IuB-LG-oJw"/>
-                        <outlet property="moduleName" destination="PuP-K5-GgZ" id="uQs-PZ-PfL"/>
+                        <outlet property="moduleName" destination="5rz-Fe-s4M" id="N47-dO-eRJ"/>
                         <outlet property="notifcationPicker" destination="6O6-fP-eqX" id="OS9-8d-LGC"/>
                         <outlet property="notificationLabel" destination="Quu-dz-I2D" id="5WK-zq-Hl4"/>
                         <outlet property="notificationSwitch" destination="3t2-uq-RuC" id="GQH-d2-yOZ"/>
@@ -865,7 +896,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Lb-TR-dbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="036-Rz-iLF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5020" y="541"/>
+            <point key="canvasLocation" x="5020" y="540.62968515742136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ia8-kq-mDD">
@@ -892,8 +923,7 @@
         <image name="notificationOn" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oma-EA-51S"/>
+        <segue reference="bu3-S1-ZJL"/>
         <segue reference="mAh-Hu-loO"/>
-        <segue reference="QOZ-Bw-g1k"/>
     </inferredMetricsTieBreakers>
 </document>

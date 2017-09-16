@@ -52,18 +52,9 @@ class HelpViewController: UIViewController {
     }
     
     @IBAction func startButton(_ sender: AnyObject) {
-        
         let userDefaults = UserDefaults.standard
-        let TimetableHelp = userDefaults.bool(forKey: "TimetableHelp")
-        
-        if TimetableHelp {
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            userDefaults.set(true, forKey: "TimetableHelp")
-            self.performSegue(withIdentifier: "firstSegue", sender: self)
-        }
-        
-        
+        userDefaults.set(true, forKey: "TimetableHelp")
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func nextButton(_ sender: AnyObject) {

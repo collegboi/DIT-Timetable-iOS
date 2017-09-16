@@ -25,7 +25,7 @@ extension String {
             
             dateFormatter1.dateFormat = "HH:mm"
             if let date12 = dateFormatter1.date(from: self) {
-                dateFormatter.dateFormat = "hh:mm a"
+                dateFormatter.dateFormat = "h:mm a"
                 let date22 = dateFormatter.string(from: date12)
                 print(date22)
                 resultStr = "\(date22)"
@@ -36,4 +36,41 @@ extension String {
         return resultStr
     }
     
+    func convertToCurrentTimeFormat() -> String {
+        
+        if(Utils.using12hClockFormat()) {
+            
+            return Utils.create12HourTimeStr(time: self)
+        }
+        
+        return self
+    }
+
+    
+    func convertTo24hrFomat() -> String {
+        
+        if(Utils.using12hClockFormat()) {
+            
+            let dateFormatter12 = DateFormatter()
+            dateFormatter12.dateFormat = "h:mm a"
+            if let date12HR = dateFormatter12.date(from: self) {
+                if(date12HR.minute() > 9) {
+                    return String(date12HR.hour()) + ":" + String(date12HR.minute())
+                } else {
+                    return String(date12HR.hour()) + ":0" + String(date12HR.minute())
+                }
+            }
+        }
+        
+        return self
+    }
+
+    
+    func convertToDate() -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.date(from: self)!
+    }
+
 }
+

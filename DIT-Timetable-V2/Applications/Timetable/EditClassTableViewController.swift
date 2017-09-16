@@ -41,7 +41,7 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
     let notificationManager = NotificationManager()
     var classRow : Int = 0
     var deleteClass : Bool = false
-    
+    var isEditMode = false
     var dayPickerDataSource = [String]()
 
 
@@ -75,41 +75,53 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         self.dayPicker.dataSource = self
         self.dayPicker.delegate = self
         
-        //self.deleteBreaks()
+        var startTime = "00:00"
+        var endTime = "00:00"
+        let dayNo = self.dayPickerDataSource[self.dayNo]
+        var notifHr = 0
+        var notifMin = 5
         
-        let myClass = self.database.getClass(classID: self.allTimestables[self.dayNo].timetable[self.classRow].id)
-        self.updateDayNo = self.dayNo
+        if self.classRow > 0 {
+            
+            isEditMode = true
+            
+            let myClass = self.database.getClass(classID: self.allTimestables[self.dayNo].timetable[self.classRow].id)
+            self.notificationPicked = ( myClass.notifOn > 0 )
+            self.updateDayNo = self.dayNo
+            
+            self.moduleName.text = self.allTimestables[self.dayNo].timetable[self.classRow].name
+            self.classLecture.text = self.allTimestables[self.dayNo].timetable[self.classRow].lecture
+            self.classRoom.text = self.allTimestables[self.dayNo].timetable[self.classRow].room
+            self.classGroups.text = self.allTimestables[self.dayNo].timetable[self.classRow].groups
+            
+            startTime = self.allTimestables[self.dayNo].timetable[self.classRow].timeStart.convertToCurrentTimeFormat()
+            endTime = self.allTimestables[self.dayNo].timetable[self.classRow].timeEnd.convertToCurrentTimeFormat()
+            
+            (notifHr, notifMin) = self.minToHoursMinutes(minutes: self.allTimestables[self.dayNo].timetable[self.classRow].notifOn )
+        }
         
-        self.notificationPicked = ( myClass.notifOn > 0 )
         self.notificationSwitch.isOn = self.notificationPicked
-       
-        
-        self.moduleName.text = self.allTimestables[self.dayNo].timetable[self.classRow].name
-        self.classLecture.text = self.allTimestables[self.dayNo].timetable[self.classRow].lecture
-        self.classRoom.text = self.allTimestables[self.dayNo].timetable[self.classRow].room
-        self.classGroups.text = self.allTimestables[self.dayNo].timetable[self.classRow].groups
         
         var indexPath = IndexPath(row: 0, section: 1 )
         
         indexPath = IndexPath(row: 0, section: 2 )
         var cell = self.tableView.cellForRow(at: indexPath)
         cell?.textLabel?.text = "Start"
-        cell?.detailTextLabel?.text = self.allTimestables[self.dayNo].timetable[self.classRow].timeStart
+        cell?.detailTextLabel?.text = startTime
         
         indexPath = IndexPath(row: 1, section: 2 )
         cell = self.tableView.cellForRow(at: indexPath)
         cell?.textLabel?.text = "End"
-        cell?.detailTextLabel?.text = self.allTimestables[self.dayNo].timetable[self.classRow].timeEnd
+        cell?.detailTextLabel?.text = endTime
         
         indexPath = IndexPath(row: 0, section: 3)
         cell = self.tableView.cellForRow(at: indexPath)
-        cell?.textLabel?.text = self.dayPickerDataSource[self.dayNo]
+        cell?.textLabel?.text = dayNo
         
-        let ( hr, min) = self.minToHoursMinutes(minutes: self.allTimestables[self.dayNo].timetable[self.classRow].notifOn )
         
         let components = NSDateComponents()
-        components.setValue(min, forComponent: .minute)
-        components.setValue(hr, forComponent: .hour)
+        components.setValue(notifMin, forComponent: .minute)
+        components.setValue(notifHr, forComponent: .hour)
         self.notifcationPicker.date = NSCalendar.current.date(from: components as DateComponents)!
     
         
@@ -156,20 +168,6 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
             return 0
         }
     }
-    
-    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        view.backgroundColor = UIColor.black
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.backgroundColor = UIColor.black
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.contentView.backgroundColor = UIColor.black
-        cell.textLabel?.textColor = UIColor.white
-    }
-  
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.indexPathSel = indexPath
@@ -222,11 +220,11 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         
         var indexPath = IndexPath(row: 0, section: 2 )
         var cell = self.tableView.cellForRow(at: indexPath)
-        let timeStart = (cell?.detailTextLabel?.text)!
+        let timeStart = (cell?.detailTextLabel?.text)!.convertTo24hrFomat()
         
         indexPath = IndexPath(row: 1, section: 2 )
         cell = self.tableView.cellForRow(at: indexPath)
-        let timeEnd = (cell?.detailTextLabel?.text)!
+        let timeEnd = (cell?.detailTextLabel?.text)!.convertTo24hrFomat()
         
         indexPath = IndexPath(row: 0, section: 3)
         cell = self.tableView.cellForRow(at: indexPath)
@@ -237,7 +235,7 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         
         
         if startTime! < endTime! {
-            
+        
             var notifytime = 0
             
             if self.notificationPicked {
@@ -245,39 +243,72 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
                 let min = self.notifcationPicker.date.minute()
                 notifytime = ( hr * 60) + min
             }
+
             
-            self.allTimestables[self.dayNo].timetable[self.classRow].lecture = self.classLecture.text!
-            self.allTimestables[self.dayNo].timetable[self.classRow].room = self.classRoom.text!
-            self.allTimestables[self.dayNo].timetable[self.classRow].groups = self.classGroups.text!
-            self.allTimestables[self.dayNo].timetable[self.classRow].notifOn = notifytime
-            self.allTimestables[self.dayNo].timetable[self.classRow].name = self.moduleName.text!
-            self.allTimestables[self.dayNo].timetable[self.classRow].dayNo = self.updateDayNo
-            self.allTimestables[self.dayNo].timetable[self.classRow].timeStart = timeStart
-            self.allTimestables[self.dayNo].timetable[self.classRow].timeEnd = timeEnd
-            self.allTimestables[self.dayNo].timetable[self.classRow].dayNo = dayIndex!
-            
-            self.database.updateTimetable(timetable: self.allTimestables[self.dayNo].timetable[self.classRow])
-            
-            //if day changed then delete previous and add new
-            if dayIndex != self.dayNo {
+            if self.isEditMode {
                 
-                PrintLn.strLine(functionName: "changeClassDay", message: dayNo)
-                self.allTimestables[self.dayNo].timetable[self.classRow].dayNo = dayNo
-                self.allTimestables[self.dayNo].timetable[self.classRow].markDeleted = true
-                self.updateDayNo = dayNo
+                self.allTimestables[self.dayNo].timetable[self.classRow].name = self.moduleName.text!
+                self.allTimestables[self.dayNo].timetable[self.classRow].lecture = self.classLecture.text!
+                self.allTimestables[self.dayNo].timetable[self.classRow].room = self.classRoom.text!
+                self.allTimestables[self.dayNo].timetable[self.classRow].groups = self.classGroups.text!
+                self.allTimestables[self.dayNo].timetable[self.classRow].notifOn = notifytime
+                self.allTimestables[self.dayNo].timetable[self.classRow].name = self.moduleName.text!
+                self.allTimestables[self.dayNo].timetable[self.classRow].dayNo = self.updateDayNo
+                self.allTimestables[self.dayNo].timetable[self.classRow].timeStart = timeStart
+                self.allTimestables[self.dayNo].timetable[self.classRow].timeEnd = timeEnd
+                self.allTimestables[self.dayNo].timetable[self.classRow].dayNo = dayIndex!
                 
-                let classChange = Timetable()
-                classChange.id = self.allTimestables[self.dayNo].timetable[self.classRow].id
-                classChange.groups = self.classGroups.text!
-                classChange.lecture = self.classLecture.text!
-                classChange.name = self.moduleName.text!
-                classChange.notifOn = notifytime
-                classChange.timeStart = timeStart
-                classChange.timeEnd = timeEnd
-                classChange.weeks = self.allTimestables[self.dayNo].timetable[self.classRow].weeks
-                classChange.markDeleted = false
-                classChange.dayNo = dayIndex!
-                self.allTimestables[dayIndex!].timetable.append(classChange)
+                self.database.updateTimetable(timetable: self.allTimestables[self.dayNo].timetable[self.classRow])
+                
+                //if day changed then delete previous and add new
+                if dayIndex != self.dayNo {
+                    
+                    PrintLn.strLine(functionName: "changeClassDay", message: dayNo)
+                    self.allTimestables[self.dayNo].timetable[self.classRow].dayNo = dayNo
+                    self.allTimestables[self.dayNo].timetable[self.classRow].markDeleted = true
+                    self.updateDayNo = dayNo
+                    
+                    let classChange = Timetable()
+                    classChange.id = self.allTimestables[self.dayNo].timetable[self.classRow].id
+                    classChange.groups = self.classGroups.text!
+                    classChange.lecture = self.classLecture.text!
+                    classChange.name = self.moduleName.text!
+                    classChange.notifOn = notifytime
+                    classChange.timeStart = timeStart
+                    classChange.timeEnd = timeEnd
+                    classChange.weeks = self.allTimestables[self.dayNo].timetable[self.classRow].weeks
+                    classChange.markDeleted = false
+                    classChange.dayNo = dayIndex!
+                    self.allTimestables[dayIndex!].timetable.append(classChange)
+                }
+            } else {
+                
+                let curTimetable = Class()
+                curTimetable.id = 0
+                curTimetable.day = self.updateDayNo
+                curTimetable.name = self.moduleName.text ?? ""
+                curTimetable.lecture = self.classLecture.text ?? ""
+                curTimetable.room = self.classRoom.text ?? ""
+                curTimetable.timeStart = timeStart
+                curTimetable.timeEnd = timeEnd
+                curTimetable.weeks = ""
+                curTimetable.groups = self.classGroups.text ?? ""
+                curTimetable.notifOn = notifytime
+                
+                let id  = self.database.saveClass( myClass: curTimetable)
+                
+                let newClass = Timetable()
+                newClass.id = id
+                newClass.lecture = curTimetable.lecture
+                newClass.timeStart = curTimetable.timeStart
+                newClass.timeEnd = curTimetable.timeEnd
+                newClass.dayNo = curTimetable.day
+                newClass.name = curTimetable.name
+                newClass.groups = curTimetable.groups
+                newClass.room = curTimetable.room
+                newClass.notifOn = notifytime
+                
+                self.allTimestables[self.dayNo].timetable.append(newClass)
             }
             
             self.updateNotifications()

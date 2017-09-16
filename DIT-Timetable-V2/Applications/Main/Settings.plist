@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FeedbackURL</key>
+	<string>https://timothybarnard.org/Scrap/email.php</string>
 	<key>Help5</key>
 	<string>https://timothybarnard.org/images/help/refresh_classes.png</string>
 	<key>Help4</key>

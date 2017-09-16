@@ -77,7 +77,14 @@ class iPadDaysTableViewController: UITableViewController {
         self.tableView.selectRow(at: self.firstIndex, animated: true, scrollPosition: .none)
         self.performSegue(withIdentifier: "showDetail", sender: self.firstIndex)
     }
+    @IBAction func refeshButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "refreshView", sender: nil)
+    }
     
+    @IBAction func addClassButton(_ sender: Any) {
+        let notificationName = Notification.Name("NotificationIdentifier")
+        NotificationCenter.default.post(name: notificationName, object: nil)
+    }
     
     @IBAction func allNotificaitonsOff(_ sender: AnyObject) {
         

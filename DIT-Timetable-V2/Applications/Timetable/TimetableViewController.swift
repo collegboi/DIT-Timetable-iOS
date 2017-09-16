@@ -37,6 +37,10 @@ class TimetableViewController: UIPageViewController {
         self.dataSource = self
         
     }
+    @IBAction func addClassButton(_ sender: Any) {
+        let notificationName = Notification.Name("NotificationIdentifier")
+        NotificationCenter.default.post(name: notificationName, object: nil)
+    }
 
     
     @IBAction func toggleNotifications(_ sender: AnyObject) {

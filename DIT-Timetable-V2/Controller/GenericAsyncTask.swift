@@ -12,6 +12,31 @@ import RealmSwift
 
 public class HTTPConnection {
     
+    class func getRequest(text: String) {
+        
+        let values = Bundle.contentsOfFile(plistName: "Settings.plist")
+        let networkURL = values["FeedbackURL"]! as! String
+        
+        let escapedString = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        print(escapedString!)
+        
+        let url = networkURL + "?text=" + escapedString!
+        
+        let nsURL = NSURL(string: url)!
+
+        
+        var urlRequest = URLRequest(url: nsURL as URL)
+        urlRequest.httpMethod = "GET"
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+          
+        })
+        task.resume()
+    }
+
+    
     class func httpRequest(params : Dictionary<String, String>, url : String, httpMethod: String, postCompleted : @escaping (_ succeeded: Bool, _ data: NSData) -> ()) {
         
         let request = NSMutableURLRequest(url: NSURL(string: url)! as URL)
@@ -76,7 +101,6 @@ public class HTTPConnection {
                 
             }
             
-            
         } catch let error as NSError {
             print(error)
         }
@@ -92,11 +116,15 @@ public class HTTPConnection {
             
             if let classes = parsedData["timetable"] as? NSArray {
                 
+                let database = Database()
+                
+                if(classes.count > 0) {
+                    database.removeAll()
+                }
+                
                 let notificationManager = NotificationManager()
                 notificationManager.registerForNotifications()
                 notificationManager.cancelAllNotifications()
-                
-                let database = Database()
             
                 for myClass in classes {
                     

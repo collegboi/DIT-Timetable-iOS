@@ -21,9 +21,14 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
     var pickedRow : Int = -1
     var deletedRow : Int = -1
     
+    let notificationName = Notification.Name("NotificationIdentifier")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Register to receive notification
+        NotificationCenter.default.addObserver(self, selector: #selector(DayTableViewController.addClass), name: notificationName, object: nil)
+    
         days.append("Monday")
         days.append("Tuesday")
         days.append("Wednesday")
@@ -44,6 +49,17 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.dataSource = self
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        // Stop listening notification
+        NotificationCenter.default.removeObserver(self, name: notificationName, object: nil);
+    }
+    
+    func addClass() {
+        print("testing alert")
+        self.pickedRow = -1
+        self.performSegue(withIdentifier: "editClassSegue", sender: self)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         self.pickedRow = -1
     
@@ -60,6 +76,7 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
             self.reloadTable()
         }
     }
+    
     
     
     func deleteClass() {
@@ -109,7 +126,7 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
             //cell.backgroundColor = UIColor.white
             cell.classLecture.text = " "+cellTimetable[indexPath.row].lecture
             cell.classLocation.text = cellTimetable[indexPath.row].room
-            cell.classTime.text = " "+cellTimetable[indexPath.row].timeStart.convert24HrTo12Hr() + "-"+cellTimetable[indexPath.row].timeEnd.convert24HrTo12Hr()
+            cell.classTime.text = " "+cellTimetable[indexPath.row].timeStart.convertToCurrentTimeFormat() + "-"+cellTimetable[indexPath.row].timeEnd.convertToCurrentTimeFormat()
             cell.classGroups.text = cellTimetable[indexPath.row].groups
         
             if checkIfClassNow(timeStart: cellTimetable[indexPath.row].timeStart, timeEnd: cellTimetable[indexPath.row].timeEnd) {
@@ -199,6 +216,13 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
                 destinationVC.classRow = self.pickedRow
                 PrintLn.strLine(functionName: "segue sending", message: self.dayTimetable.count)
             }
+        } else {
+            if let destinationVC = segue.destination as? EditClassTableViewController {
+                destinationVC.allTimestables = self.dayTimetable
+                destinationVC.dayNo = self.index
+                destinationVC.classRow = -1
+                PrintLn.strLine(functionName: "segue sending", message: self.dayTimetable.count)
+            }
         }
     }
     
@@ -256,7 +280,7 @@ extension DayTableViewController {
         detailClass.preferredContentSize = CGSize(width: 0.0, height: 300)
         
         detailClass.name = self.dayTimetable[self.index].timetable[indexPath.row].name
-        detailClass.time = self.dayTimetable[self.index].timetable[indexPath.row].timeStart+"-"+self.dayTimetable[self.index].timetable[indexPath.row].timeEnd
+        detailClass.time = self.dayTimetable[self.index].timetable[indexPath.row].timeStart.convertToCurrentTimeFormat()+" - "+self.dayTimetable[self.index].timetable[indexPath.row].timeEnd.convertToCurrentTimeFormat()
         detailClass.room = self.dayTimetable[self.index].timetable[indexPath.row].room
         detailClass.lecture = self.dayTimetable[self.index].timetable[indexPath.row].lecture
         detailClass.group = self.dayTimetable[self.index].timetable[indexPath.row].groups

@@ -8,8 +8,9 @@
 
 import UIKit
 import RealmSwift
+import MessageUI
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
 
     
     @IBOutlet weak var lanaugeButton: UIButton!
@@ -37,13 +38,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.studentID.delegate = self
         self.studentPassword.delegate = self
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.deleteAll()
-        }
-        
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func timetableLogin(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "ditWebSegue", sender: self)
@@ -55,18 +55,80 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ditWebSegue"
-        {
+        if segue.identifier == "ditWebSegue" {
             if let destinationVC = segue.destination as? DITWebViewController {
                 destinationVC.studentID = self.studentID.text!
                 destinationVC.studentPass = self.studentPassword.text!
             }
+        } else if segue.identifier == "helpView" {
+            print("going to helpview")
         }
     }
     //unwind segue function
     @IBAction func unwindToVC(_ segue:UIStoryboardSegue) {
         
     }
+    @IBAction func helpButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "helpView", sender: self)
+    }
+    
+    @IBAction func feedbackButton(_ sender: Any) {
+        
+        var versioNo = "Version no: Unknown"
+        
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            versioNo = "Version no: " + version
+        }
+        
+        let date = Date()
+        let dateString = date.toDateTimeString()
+        let deviceName = UIDevice.current.modelName
+
+        let body = "Device: " + deviceName + " <> " + versioNo + " <> " + dateString
+        
+        let alert = UIAlertController(title: "Feedback", message: "Fill in your student id and comments", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Student ID"
+        }
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Comments..."
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            
+            if let textFields = alert?.textFields {
+                if textFields.count > 1 {
+                    
+                    guard let studentID = textFields[0].text else {
+                        return
+                    }
+                    
+                    guard let comments = textFields[1].text else {
+                        return
+                    }
+                    
+                    let text = "Student ID: " + studentID + " <> Comments: " + comments + "<>" + body
+                    HTTPConnection.getRequest(text: text)
+                    
+                    let alert = UIAlertController(title: "", message:"Thank you for your feedback.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default) { _ in
+                    }
+                    alert.addAction(action)
+                    self.present(alert, animated: true){
+                    }
+                }
+                
+            }
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     //MARK: - TextView Delegate
     
@@ -136,6 +198,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-
+    
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        // Check the result or perform other tasks.
+        
+        // Dismiss the mail compose view controller.
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
 

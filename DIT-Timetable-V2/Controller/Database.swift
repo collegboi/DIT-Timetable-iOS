@@ -14,15 +14,36 @@ class Database {
     var realm : Realm?
     
     init() {
+    
+        let directory: NSURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.barnard.dit-timetable.today")! as NSURL
+        let realmURL = directory.appendingPathComponent("default.realm") //URLByAppendingPathComponent("default.realm")
+        var config = Realm.Configuration()
+        config.fileURL = realmURL?.absoluteURL
+        config.schemaVersion = 3
+        config.migrationBlock = { migration, oldSchemaVersion in
+            if (oldSchemaVersion < 3) {
+                
+            }
+        }
+        Realm.Configuration.defaultConfiguration = config
         self.realm = try! Realm()
     }
     
-    func saveClass( myClass : Class ) {
+    @discardableResult
+    func saveClass( myClass : Class ) -> Int {
         
         myClass.id = self.getNextPrimaryKeyID()
         
         try! realm?.write {
             self.realm?.add(myClass)
+        }
+        
+        return myClass.id
+    }
+    
+    func removeAll() {
+        try! realm?.write {
+            realm?.deleteAll()
         }
     }
     
@@ -133,6 +154,50 @@ class Database {
         
         return dayTimetable
     }
+
+    func getDayTimetableAfterNow( dayNo : Int ) ->[Timetable] {
+        var dayTimetable = [Timetable]()
+        
+        let filterString = "day="+String(dayNo)
+        
+        let myClasses = self.realm?.objects(Class.self).filter(filterString).sorted(byKeyPath: "timeStart")
+        
+        for curClass in myClasses! {
+            
+            let nowTime = Date()
+            let hour = nowTime.hour()
+            let classTimeParts = curClass.timeStart.components(separatedBy: ":")
+            let classTimeEndParts = curClass.timeEnd.components(separatedBy: ":")
+            
+            guard let classTimeHr = Int(classTimeParts[0]) else {
+                continue
+            }
+            
+            guard let classTimeEndHr = Int(classTimeEndParts[0]) else {
+                continue
+            }
+            
+            if(classTimeHr >= hour || classTimeEndHr < hour ) {
+                
+                let newClass = Timetable()
+                newClass.id = curClass.id
+                newClass.lecture = curClass.lecture
+                newClass.timeStart = curClass.timeStart
+                newClass.timeEnd = curClass.timeEnd
+                newClass.dayNo = curClass.day
+                newClass.name = curClass.name
+                newClass.groups = curClass.groups
+                newClass.room = curClass.room
+                newClass.notifOn = curClass.notifOn
+                
+                dayTimetable.append(newClass)
+            }
+        }
+        
+        return dayTimetable
+    }
+
+    
     
     func getAllTimetables() -> [AllTimetables] {
         
