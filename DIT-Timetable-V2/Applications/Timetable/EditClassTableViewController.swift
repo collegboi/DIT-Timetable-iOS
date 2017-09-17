@@ -47,6 +47,9 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.updateDayNo = self.dayNo
+        
         dayPickerDataSource.append("Monday")
         dayPickerDataSource.append("Tuesday")
         dayPickerDataSource.append("Wednesday")

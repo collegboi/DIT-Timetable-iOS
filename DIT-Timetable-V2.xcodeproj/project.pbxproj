@@ -20,6 +20,23 @@
 		152728E21F6D9FA100BDCD67 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
 		152728E31F6D9FB100BDCD67 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C037651D8B69AE00040840 /* Timetable.swift */; };
 		152728E41F6D9FCD00BDCD67 /* TodayCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453781F6B160100365690 /* TodayCellTableViewCell.swift */; };
+		152728EC1F6DA1BD00BDCD67 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152728EA1F6DA1BD00BDCD67 /* Interface.storyboard */; };
+		152728EE1F6DA1BD00BDCD67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152728ED1F6DA1BD00BDCD67 /* Assets.xcassets */; };
+		152728F51F6DA1BD00BDCD67 /* DIT Timetable Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 152728F41F6DA1BD00BDCD67 /* DIT Timetable Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		152728FC1F6DA1BD00BDCD67 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152728FB1F6DA1BD00BDCD67 /* InterfaceController.swift */; };
+		152728FE1F6DA1BD00BDCD67 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152728FD1F6DA1BD00BDCD67 /* ExtensionDelegate.swift */; };
+		152729001F6DA1BD00BDCD67 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152728FF1F6DA1BD00BDCD67 /* NotificationController.swift */; };
+		152729021F6DA1BD00BDCD67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 152729011F6DA1BD00BDCD67 /* Assets.xcassets */; };
+		152729061F6DA1BD00BDCD67 /* DIT Timetable.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 152728E81F6DA1BD00BDCD67 /* DIT Timetable.app */; };
+		152729141F6DA4F000BDCD67 /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
+		152729151F6DA4F400BDCD67 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1572F1B51F6D52560096C2C7 /* Utils.swift */; };
+		152729161F6DA4F900BDCD67 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
+		152729181F6DA65800BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
+		152729191F6DA65800BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
+		1527291A1F6DA65800BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
+		1527291B1F6DA66E00BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
+		1527291C1F6DA66E00BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
+		1527291D1F6DA67200BDCD67 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C037651D8B69AE00040840 /* Timetable.swift */; };
 		155EC5311F657D0D00B2CB45 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52E1F6579B500B2CB45 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		155EC5331F657D1000B2CB45 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52C1F6579B000B2CB45 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		155EC5341F657D5800B2CB45 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52C1F6579B000B2CB45 /* Realm.framework */; };
@@ -44,6 +61,25 @@
 		15C4537A1F6D509600365690 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
 		15C4537B1F6D509600365690 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
 		15C4537C1F6D509700365690 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
+		15E83FC81F6DAB1A00CE1B61 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DBB1D8EB7CD00ECE240 /* Database.swift */; };
+		15E83FC91F6DAB2100CE1B61 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
+		15E83FD21F6DB03200CE1B61 /* ClassRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E83FD11F6DB03200CE1B61 /* ClassRowController.swift */; };
+		15E83FD31F6DB03200CE1B61 /* ClassRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E83FD11F6DB03200CE1B61 /* ClassRowController.swift */; };
+		15E83FD41F6DB03200CE1B61 /* ClassRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E83FD11F6DB03200CE1B61 /* ClassRowController.swift */; };
+		15E83FDB1F6DB4B000CE1B61 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E83FDA1F6DB4B000CE1B61 /* Realm.framework */; };
+		15E83FDD1F6DB4BB00CE1B61 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E83FDC1F6DB4BB00CE1B61 /* RealmSwift.framework */; };
+		15E83FDE1F6DB4C600CE1B61 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E83FDC1F6DB4BB00CE1B61 /* RealmSwift.framework */; };
+		15E83FDF1F6DB4C600CE1B61 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15E83FDC1F6DB4BB00CE1B61 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15E83FE01F6DB4C600CE1B61 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15E83FDA1F6DB4B000CE1B61 /* Realm.framework */; };
+		15E83FE11F6DB4C600CE1B61 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15E83FDA1F6DB4B000CE1B61 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15E83FE31F6DD4DC00CE1B61 /* ConnectivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E83FE21F6DD4DC00CE1B61 /* ConnectivityHandler.swift */; };
+		15E83FE41F6DE4EC00CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
+		15E83FE51F6DE4ED00CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
+		15E83FE61F6DE4EE00CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
+		15E83FE71F6DE4EF00CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
+		15E83FE81F6DE4F000CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
+		15E83FEA1F6DF02000CE1B61 /* ClassDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E83FE91F6DF02000CE1B61 /* ClassDetailInterfaceController.swift */; };
+		15E83FEB1F6DF02000CE1B61 /* ClassDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E83FE91F6DF02000CE1B61 /* ClassDetailInterfaceController.swift */; };
 		15FAA3CB1E61A35A00AAB1C6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */; };
 		B20EEF501D99CD750034D0AF /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EEF4F1D99CD750034D0AF /* Plist.swift */; };
 		B20EEF521D99CE250034D0AF /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = B20EEF511D99CE250034D0AF /* Settings.plist */; };
@@ -91,6 +127,20 @@
 			remoteGlobalIDString = 152728CD1F6D9EF300BDCD67;
 			remoteInfo = "All Classes";
 		};
+		152728F61F6DA1BD00BDCD67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2C037251D8B0EFB00040840 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 152728F31F6DA1BD00BDCD67;
+			remoteInfo = "DIT Timetable Extension";
+		};
+		152729041F6DA1BD00BDCD67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2C037251D8B0EFB00040840 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 152728E71F6DA1BD00BDCD67;
+			remoteInfo = "DIT Timetable";
+		};
 		15C453671F6B0B9100365690 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B2C037251D8B0EFB00040840 /* Project object */;
@@ -115,6 +165,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1527290A1F6DA1BD00BDCD67 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				152728F51F6DA1BD00BDCD67 /* DIT Timetable Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1527290E1F6DA1BD00BDCD67 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				152729061F6DA1BD00BDCD67 /* DIT Timetable.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15E83FCA1F6DABB800CE1B61 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15E83FD91F6DB3A000CE1B61 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15E83FE11F6DB4C600CE1B61 /* Realm.framework in Embed Frameworks */,
+				15E83FDF1F6DB4C600CE1B61 /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B246ECAB1D8EEA000039E7CE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -148,6 +241,19 @@
 		152728D41F6D9EF300BDCD67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		152728D61F6D9EF300BDCD67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		152728E51F6DA08800BDCD67 /* All Classes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "All Classes.entitlements"; sourceTree = "<group>"; };
+		152728E81F6DA1BD00BDCD67 /* DIT Timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIT Timetable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		152728EB1F6DA1BD00BDCD67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		152728ED1F6DA1BD00BDCD67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		152728EF1F6DA1BD00BDCD67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		152728F41F6DA1BD00BDCD67 /* DIT Timetable Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DIT Timetable Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		152728FA1F6DA1BD00BDCD67 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		152728FB1F6DA1BD00BDCD67 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		152728FD1F6DA1BD00BDCD67 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		152728FF1F6DA1BD00BDCD67 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		152729011F6DA1BD00BDCD67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		152729031F6DA1BD00BDCD67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1527290F1F6DA1D100BDCD67 /* DIT Timetable Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIT Timetable Extension.entitlements"; sourceTree = "<group>"; };
+		152729171F6DA65800BDCD67 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		155EC52C1F6579B000B2CB45 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		155EC52E1F6579B500B2CB45 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		1572F1B51F6D52560096C2C7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -159,6 +265,11 @@
 		15C453721F6B0D0F00365690 /* Date-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Ext.swift"; sourceTree = "<group>"; };
 		15C453771F6B150F00365690 /* DIT-Timetable-today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIT-Timetable-today.entitlements"; sourceTree = "<group>"; };
 		15C453781F6B160100365690 /* TodayCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodayCellTableViewCell.swift; path = "DIT-Timetable-today/TodayCellTableViewCell.swift"; sourceTree = "<group>"; };
+		15E83FD11F6DB03200CE1B61 /* ClassRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassRowController.swift; sourceTree = "<group>"; };
+		15E83FDA1F6DB4B000CE1B61 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = watchOS/Realm.framework; sourceTree = "<group>"; };
+		15E83FDC1F6DB4BB00CE1B61 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = watchOS/RealmSwift.framework; sourceTree = "<group>"; };
+		15E83FE21F6DD4DC00CE1B61 /* ConnectivityHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityHandler.swift; sourceTree = "<group>"; };
+		15E83FE91F6DF02000CE1B61 /* ClassDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetailInterfaceController.swift; sourceTree = "<group>"; };
 		15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B20EEF4F1D99CD750034D0AF /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		B20EEF511D99CE250034D0AF /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
@@ -219,6 +330,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		152728F11F6DA1BD00BDCD67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15E83FE01F6DB4C600CE1B61 /* Realm.framework in Frameworks */,
+				15E83FDD1F6DB4BB00CE1B61 /* RealmSwift.framework in Frameworks */,
+				15E83FDB1F6DB4B000CE1B61 /* Realm.framework in Frameworks */,
+				15E83FDE1F6DB4C600CE1B61 /* RealmSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		15C4535A1F6B0B9100365690 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,6 +397,40 @@
 			path = "All Classes";
 			sourceTree = "<group>";
 		};
+		152728E91F6DA1BD00BDCD67 /* DIT Timetable */ = {
+			isa = PBXGroup;
+			children = (
+				152728EA1F6DA1BD00BDCD67 /* Interface.storyboard */,
+				152728ED1F6DA1BD00BDCD67 /* Assets.xcassets */,
+				152728EF1F6DA1BD00BDCD67 /* Info.plist */,
+			);
+			path = "DIT Timetable";
+			sourceTree = "<group>";
+		};
+		152728F81F6DA1BD00BDCD67 /* DIT Timetable Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1527290F1F6DA1D100BDCD67 /* DIT Timetable Extension.entitlements */,
+				152728FB1F6DA1BD00BDCD67 /* InterfaceController.swift */,
+				152728FD1F6DA1BD00BDCD67 /* ExtensionDelegate.swift */,
+				152728FF1F6DA1BD00BDCD67 /* NotificationController.swift */,
+				152729011F6DA1BD00BDCD67 /* Assets.xcassets */,
+				152729031F6DA1BD00BDCD67 /* Info.plist */,
+				152728F91F6DA1BD00BDCD67 /* Supporting Files */,
+				15E83FD11F6DB03200CE1B61 /* ClassRowController.swift */,
+				15E83FE91F6DF02000CE1B61 /* ClassDetailInterfaceController.swift */,
+			);
+			path = "DIT Timetable Extension";
+			sourceTree = "<group>";
+		};
+		152728F91F6DA1BD00BDCD67 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				152728FA1F6DA1BD00BDCD67 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		15C453601F6B0B9100365690 /* DIT-Timetable-today */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,9 +442,19 @@
 			path = "DIT-Timetable-today";
 			sourceTree = "<group>";
 		};
+		15E83FC11F6DAABE00CE1B61 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				15E83FDC1F6DB4BB00CE1B61 /* RealmSwift.framework */,
+				15E83FDA1F6DB4B000CE1B61 /* Realm.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
 		B21957391D8D844F00080E6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				15E83FC11F6DAABE00CE1B61 /* watchOS */,
 				155EC52E1F6579B500B2CB45 /* RealmSwift.framework */,
 				155EC52C1F6579B000B2CB45 /* Realm.framework */,
 				15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */,
@@ -311,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				B2C037651D8B69AE00040840 /* Timetable.swift */,
+				152729171F6DA65800BDCD67 /* Class.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,6 +530,7 @@
 				B2B049411E3FF3A700CD4FF8 /* CaughtException.m */,
 				B2B049401E3FF3A700CD4FF8 /* DIT-Timetable-V2-Bridging-Header.h */,
 				B2B049431E3FF3D700CD4FF8 /* CaughtException.h */,
+				15E83FE21F6DD4DC00CE1B61 /* ConnectivityHandler.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -406,6 +574,8 @@
 				152728C91F6D9E6300BDCD67 /* SharedTodayExtension */,
 				15C453601F6B0B9100365690 /* DIT-Timetable-today */,
 				152728D01F6D9EF300BDCD67 /* All Classes */,
+				152728E91F6DA1BD00BDCD67 /* DIT Timetable */,
+				152728F81F6DA1BD00BDCD67 /* DIT Timetable Extension */,
 				B21957391D8D844F00080E6E /* Frameworks */,
 				B2C0372E1D8B0EFC00040840 /* Products */,
 			);
@@ -419,6 +589,8 @@
 				B2C0374C1D8B0EFC00040840 /* DIT-Timetable-V2UITests.xctest */,
 				15C4535D1F6B0B9100365690 /* DIT-Timetable-today.appex */,
 				152728CE1F6D9EF300BDCD67 /* All Classes.appex */,
+				152728E81F6DA1BD00BDCD67 /* DIT Timetable.app */,
+				152728F41F6DA1BD00BDCD67 /* DIT Timetable Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -490,6 +662,43 @@
 			productReference = 152728CE1F6D9EF300BDCD67 /* All Classes.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		152728E71F6DA1BD00BDCD67 /* DIT Timetable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1527290B1F6DA1BD00BDCD67 /* Build configuration list for PBXNativeTarget "DIT Timetable" */;
+			buildPhases = (
+				152728E61F6DA1BD00BDCD67 /* Resources */,
+				1527290A1F6DA1BD00BDCD67 /* Embed App Extensions */,
+				15E83FCA1F6DABB800CE1B61 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				152728F71F6DA1BD00BDCD67 /* PBXTargetDependency */,
+			);
+			name = "DIT Timetable";
+			productName = "DIT Timetable";
+			productReference = 152728E81F6DA1BD00BDCD67 /* DIT Timetable.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		152728F31F6DA1BD00BDCD67 /* DIT Timetable Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152729071F6DA1BD00BDCD67 /* Build configuration list for PBXNativeTarget "DIT Timetable Extension" */;
+			buildPhases = (
+				152728F01F6DA1BD00BDCD67 /* Sources */,
+				152728F11F6DA1BD00BDCD67 /* Frameworks */,
+				152728F21F6DA1BD00BDCD67 /* Resources */,
+				15E83FD91F6DB3A000CE1B61 /* Embed Frameworks */,
+				15E83FCC1F6DABDC00CE1B61 /* Run Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DIT Timetable Extension";
+			productName = "DIT Timetable Extension";
+			productReference = 152728F41F6DA1BD00BDCD67 /* DIT Timetable Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		15C4535C1F6B0B9100365690 /* DIT-Timetable-today */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15C4536C1F6B0B9100365690 /* Build configuration list for PBXNativeTarget "DIT-Timetable-today" */;
@@ -517,12 +726,14 @@
 				B246ECAB1D8EEA000039E7CE /* Embed Frameworks */,
 				B21957401D8D86FF00080E6E /* ShellScript */,
 				B246ECDD1D8F1B740039E7CE /* Embed App Extensions */,
+				1527290E1F6DA1BD00BDCD67 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				15C453681F6B0B9100365690 /* PBXTargetDependency */,
 				152728D81F6D9EF300BDCD67 /* PBXTargetDependency */,
+				152729051F6DA1BD00BDCD67 /* PBXTargetDependency */,
 			);
 			name = "DIT-Timetable-V2";
 			productName = "DIT-Timetable-V2";
@@ -576,6 +787,26 @@
 				ORGANIZATIONNAME = "Timothy Barnard";
 				TargetAttributes = {
 					152728CD1F6D9EF300BDCD67 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4EU4PGMLU9;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					152728E71F6DA1BD00BDCD67 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 4EU4PGMLU9;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					152728F31F6DA1BD00BDCD67 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 4EU4PGMLU9;
 						ProvisioningStyle = Automatic;
@@ -639,6 +870,8 @@
 				B2C0374B1D8B0EFC00040840 /* DIT-Timetable-V2UITests */,
 				15C4535C1F6B0B9100365690 /* DIT-Timetable-today */,
 				152728CD1F6D9EF300BDCD67 /* All Classes */,
+				152728E71F6DA1BD00BDCD67 /* DIT Timetable */,
+				152728F31F6DA1BD00BDCD67 /* DIT Timetable Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -649,6 +882,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				152728D51F6D9EF300BDCD67 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152728E61F6DA1BD00BDCD67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152728EE1F6DA1BD00BDCD67 /* Assets.xcassets in Resources */,
+				152728EC1F6DA1BD00BDCD67 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152728F21F6DA1BD00BDCD67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152729021F6DA1BD00BDCD67 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,6 +939,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		15E83FCC1F6DABDC00CE1B61 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
 		B21957401D8D86FF00080E6E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -710,12 +974,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				152728E21F6D9FA100BDCD67 /* DateStr+Ext.swift in Sources */,
+				15E83FD31F6DB03200CE1B61 /* ClassRowController.swift in Sources */,
 				152728E01F6D9F9A00BDCD67 /* Date-Ext.swift in Sources */,
+				15E83FE81F6DE4F000CE1B61 /* Dictionary+Ext.swift in Sources */,
 				152728DF1F6D9F8D00BDCD67 /* Database.swift in Sources */,
 				152728D21F6D9EF300BDCD67 /* TodayAllClassesViewController.swift in Sources */,
+				15E83FEA1F6DF02000CE1B61 /* ClassDetailInterfaceController.swift in Sources */,
+				1527291A1F6DA65800BDCD67 /* Class.swift in Sources */,
 				152728E11F6D9F9D00BDCD67 /* Utils.swift in Sources */,
 				152728E41F6D9FCD00BDCD67 /* TodayCellTableViewCell.swift in Sources */,
 				152728E31F6D9FB100BDCD67 /* Timetable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152728F01F6DA1BD00BDCD67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15E83FE71F6DE4EF00CE1B61 /* Dictionary+Ext.swift in Sources */,
+				152729001F6DA1BD00BDCD67 /* NotificationController.swift in Sources */,
+				15E83FD41F6DB03200CE1B61 /* ClassRowController.swift in Sources */,
+				1527291D1F6DA67200BDCD67 /* Timetable.swift in Sources */,
+				152728FE1F6DA1BD00BDCD67 /* ExtensionDelegate.swift in Sources */,
+				15E83FC91F6DAB2100CE1B61 /* Class.swift in Sources */,
+				152729151F6DA4F400BDCD67 /* Utils.swift in Sources */,
+				152729141F6DA4F000BDCD67 /* Date-Ext.swift in Sources */,
+				152728FC1F6DA1BD00BDCD67 /* InterfaceController.swift in Sources */,
+				15E83FEB1F6DF02000CE1B61 /* ClassDetailInterfaceController.swift in Sources */,
+				15E83FC81F6DAB1A00CE1B61 /* Database.swift in Sources */,
+				152729161F6DA4F900BDCD67 /* DateStr+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,9 +1011,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				15C4536D1F6B0BB200365690 /* Database.swift in Sources */,
+				15E83FD21F6DB03200CE1B61 /* ClassRowController.swift in Sources */,
 				15C453791F6B160100365690 /* TodayCellTableViewCell.swift in Sources */,
+				15E83FE61F6DE4EE00CE1B61 /* Dictionary+Ext.swift in Sources */,
 				15C453761F6B0D0F00365690 /* Date-Ext.swift in Sources */,
 				1572F1B91F6D52560096C2C7 /* Utils.swift in Sources */,
+				152729191F6DA65800BDCD67 /* Class.swift in Sources */,
 				15C453621F6B0B9100365690 /* TodayViewController.swift in Sources */,
 				15C4536F1F6B0BD200365690 /* Timetable.swift in Sources */,
 				15C4537C1F6D509700365690 /* DateStr+Ext.swift in Sources */,
@@ -746,9 +1036,11 @@
 				B2C0375F1D8B2F0B00040840 /* DITWebViewController.swift in Sources */,
 				B278C3B71DD2931E005DA231 /* Strings+ext.swift in Sources */,
 				B280CB201DA0725D007202CD /* iPadDaysTableViewController.swift in Sources */,
+				15E83FE31F6DD4DC00CE1B61 /* ConnectivityHandler.swift in Sources */,
 				B2CC555F1D9963160053CCAA /* Integer.swift in Sources */,
 				B2753DBA1D8E9B6200ECE240 /* NotificationManager.swift in Sources */,
 				B2CC55571D9441350053CCAA /* FileManager.swift in Sources */,
+				152729181F6DA65800BDCD67 /* Class.swift in Sources */,
 				B2C037661D8B69AE00040840 /* Timetable.swift in Sources */,
 				B2B049481E40146600CD4FF8 /* DateStr+Ext.swift in Sources */,
 				B29F06B41DCBDA7D00EC786D /* LoadingViewController.swift in Sources */,
@@ -777,8 +1069,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C037461D8B0EFC00040840 /* DIT_Timetable_V2Tests.swift in Sources */,
+				15E83FE41F6DE4EC00CE1B61 /* Dictionary+Ext.swift in Sources */,
 				15C453741F6B0D0F00365690 /* Date-Ext.swift in Sources */,
 				15C4537A1F6D509600365690 /* DateStr+Ext.swift in Sources */,
+				1527291B1F6DA66E00BDCD67 /* Class.swift in Sources */,
 				1572F1B71F6D52560096C2C7 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -788,8 +1082,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C037511D8B0EFC00040840 /* DIT_Timetable_V2UITests.swift in Sources */,
+				15E83FE51F6DE4ED00CE1B61 /* Dictionary+Ext.swift in Sources */,
 				15C453751F6B0D0F00365690 /* Date-Ext.swift in Sources */,
 				15C4537B1F6D509600365690 /* DateStr+Ext.swift in Sources */,
+				1527291C1F6DA66E00BDCD67 /* Class.swift in Sources */,
 				1572F1B81F6D52560096C2C7 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,6 +1097,16 @@
 			isa = PBXTargetDependency;
 			target = 152728CD1F6D9EF300BDCD67 /* All Classes */;
 			targetProxy = 152728D71F6D9EF300BDCD67 /* PBXContainerItemProxy */;
+		};
+		152728F71F6DA1BD00BDCD67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 152728F31F6DA1BD00BDCD67 /* DIT Timetable Extension */;
+			targetProxy = 152728F61F6DA1BD00BDCD67 /* PBXContainerItemProxy */;
+		};
+		152729051F6DA1BD00BDCD67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 152728E71F6DA1BD00BDCD67 /* DIT Timetable */;
+			targetProxy = 152729041F6DA1BD00BDCD67 /* PBXContainerItemProxy */;
 		};
 		15C453681F6B0B9100365690 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -826,6 +1132,14 @@
 				152728D41F6D9EF300BDCD67 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		152728EA1F6DA1BD00BDCD67 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				152728EB1F6DA1BD00BDCD67 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		15C453631F6B0B9100365690 /* MainInterface.storyboard */ = {
@@ -894,6 +1208,92 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		152729081F6DA1BD00BDCD67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "DIT Timetable Extension/DIT Timetable Extension.entitlements";
+				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/watchOS/",
+					"$(PROJECT_DIR)/watchOS",
+				);
+				INFOPLIST_FILE = "DIT Timetable Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		152729091F6DA1BD00BDCD67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "DIT Timetable Extension/DIT Timetable Extension.entitlements";
+				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/watchOS/",
+					"$(PROJECT_DIR)/watchOS",
+				);
+				INFOPLIST_FILE = "DIT Timetable Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		1527290C1F6DA1BD00BDCD67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "DIT-Timetable-V2/DIT Timetable.entitlements";
+				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				IBSC_MODULE = DIT_Timetable_Extension;
+				INFOPLIST_FILE = "DIT Timetable/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		1527290D1F6DA1BD00BDCD67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "DIT-Timetable-V2/DIT Timetable.entitlements";
+				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				IBSC_MODULE = DIT_Timetable_Extension;
+				INFOPLIST_FILE = "DIT Timetable/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
@@ -1145,6 +1545,25 @@
 				152728DC1F6D9EF300BDCD67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		152729071F6DA1BD00BDCD67 /* Build configuration list for PBXNativeTarget "DIT Timetable Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152729081F6DA1BD00BDCD67 /* Debug */,
+				152729091F6DA1BD00BDCD67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1527290B1F6DA1BD00BDCD67 /* Build configuration list for PBXNativeTarget "DIT Timetable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1527290C1F6DA1BD00BDCD67 /* Debug */,
+				1527290D1F6DA1BD00BDCD67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		15C4536C1F6B0B9100365690 /* Build configuration list for PBXNativeTarget "DIT-Timetable-today" */ = {
 			isa = XCConfigurationList;

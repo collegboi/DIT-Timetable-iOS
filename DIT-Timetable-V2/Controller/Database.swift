@@ -7,26 +7,28 @@
 //
 
 import Foundation
-import RealmSwift
+import Realm
 
 class Database {
     
-    var realm : Realm?
+    var realm : RLMRealm?
     
     init() {
-    
+        
         let directory: NSURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.barnard.dit-timetable.today")! as NSURL
-        let realmURL = directory.appendingPathComponent("default.realm") //URLByAppendingPathComponent("default.realm")
-        var config = Realm.Configuration()
-        config.fileURL = realmURL?.absoluteURL
-        config.schemaVersion = 3
-        config.migrationBlock = { migration, oldSchemaVersion in
+        let realmPath = directory.appendingPathComponent("default.realm")
+        let realmConfig = RLMRealmConfiguration.default()
+        realmConfig.fileURL = realmPath
+        realmConfig.schemaVersion = 3
+        realmConfig.migrationBlock = { migration, oldSchemaVersion in
             if (oldSchemaVersion < 3) {
                 
             }
         }
-        Realm.Configuration.defaultConfiguration = config
-        self.realm = try! Realm()
+        
+        print(realmPath?.absoluteString)
+        self.realm = try! RLMRealm(configuration: realmConfig)
+        RLMRealmConfiguration.setDefault(realmConfig)
     }
     
     @discardableResult
@@ -34,30 +36,29 @@ class Database {
         
         myClass.id = self.getNextPrimaryKeyID()
         
-        try! realm?.write {
-            self.realm?.add(myClass)
-        }
+        if let realm = realm {
         
-        return myClass.id
+            realm.beginWriteTransaction()
+        
+            realm.add(myClass)
+            do {
+                try realm.commitWriteTransaction()
+            } catch {
+                print("not commiting transaction")
+            }
+            
+            return myClass.id
+            
+        } else {
+            return -1
+        }
     }
     
     func removeAll() {
-        try! realm?.write {
-            realm?.deleteAll()
-        }
-    }
-    
-    func backgroundAdd() {
-        // Import many items in a background thread
-        DispatchQueue.global().async {
-            // Get new realm and table since we are in a new thread
-            let realm = try! Realm()
-            realm.beginWrite()
-            for _ in 0..<5 {
-                // Add row via dictionary. Order is ignored.
-                
-            }
-            try! realm.commitWrite()
+        if let realm = realm {
+            realm.beginWriteTransaction()
+            realm.deleteAllObjects()
+            try! realm.commitWriteTransaction()
         }
     }
 
@@ -80,18 +81,20 @@ class Database {
     
     func deleteClass( classID : Int ) {
         
-        let filterString = "id="+String(classID)
+        /*let filterString = "id="+String(classID)
+        
+        var dataSource: RLMResults = Class.allObjects()
         
         let updateClass = self.realm?.objects(Class.self).filter(filterString)
         
         try! self.realm?.write {
             self.realm?.delete(updateClass!)
-        }
+        }*/
     }
     
     func getClass( classID : Int) -> Class {
         
-        let filterString = "id="+String(classID)
+        /*let filterString = "id="+String(classID)
         
         let returnClasses = self.realm?.objects(Class.self).filter(filterString)
         
@@ -99,45 +102,56 @@ class Database {
             return returnClasses![0]
         } else {
             return Class()
-        }
+        }*/
         
+        return Class()
     }
     
     func getSavedClassesCount() -> Int  {
         
-        let myClasses = self.realm?.objects(Class.self)
-        
-        return myClasses!.count
+        let results: RLMResults = Class.allObjects()
+        return Int(results.count)
     }
     
     func editClass( myClass: Class ) {
-        try! self.realm?.write {
+        /*try! self.realm?.write {
             self.realm?.add(myClass, update: true)
-        }
+        }*/
     }
     
     func getNextPrimaryKeyID() -> Int {
         
         var id = 0
         
-        let myClasses = self.realm?.objects(Class.self).sorted(byKeyPath: "id")
-        
-        if (myClasses?.count)! > 0 {
-            id = (myClasses?[(myClasses?.count)!-1].id)! + 1
+        guard let realm = self.realm else {
+            return id
         }
-        return id
-
+        
+        let dataSource: RLMResults = Class.allObjects(in: realm).sortedResults(usingKeyPath: "id", ascending: true)
+        
+        if (dataSource.count) > 0 {
+            let curClass = dataSource[(dataSource.count)-1] as! Class
+            id = curClass.id
+        }
+        return id + 1
     }
     
     func getDayTimetable( dayNo : Int ) ->[Timetable] {
         var dayTimetable = [Timetable]()
         
-        let filterString = "day="+String(dayNo)
+        //let filterString = "day="+String(dayNo)
         
-        let myClasses = self.realm?.objects(Class.self).filter(filterString).sorted(byKeyPath: "timeStart")
+        let predicate = NSPredicate(format: "day = %d", dayNo)
         
-        for curClass in myClasses! {
-            
+        guard let realm = self.realm else {
+            return [Timetable]()
+        }
+        
+        let dataSource: RLMResults = Class.allObjects(in: realm).sortedResults(usingKeyPath: "timeStart", ascending: true)
+        
+        for index in 0..<Int(dataSource.count) {
+            let curClass = dataSource[UInt(index)] as! Class
+                
             let newClass = Timetable()
             newClass.id = curClass.id
             newClass.lecture = curClass.lecture
@@ -158,11 +172,16 @@ class Database {
     func getDayTimetableAfterNow( dayNo : Int ) ->[Timetable] {
         var dayTimetable = [Timetable]()
         
-        let filterString = "day="+String(dayNo)
+        let predicate = NSPredicate(format: "day=", dayNo)
         
-        let myClasses = self.realm?.objects(Class.self).filter(filterString).sorted(byKeyPath: "timeStart")
+        guard let realm = self.realm else {
+            return [Timetable]()
+        }
         
-        for curClass in myClasses! {
+        let dataSource: RLMResults = Class.objects(in: realm, with: predicate).sortedResults(usingKeyPath: "timeStart", ascending: true)
+        
+        for index in 0..<Int(dataSource.count) {
+            let curClass = dataSource[UInt(index)] as! Class
             
             let nowTime = Date()
             let hour = nowTime.hour()
@@ -203,14 +222,19 @@ class Database {
         
         var allTimetables = [AllTimetables]()
         
+        guard let realm = self.realm else {
+            return [AllTimetables]()
+        }
+        
         for _ in 1...7 {
             let newTimetable = AllTimetables()
             allTimetables.append(newTimetable)
         }
         
-        let myClasses = self.realm?.objects(Class.self).sorted(byKeyPath: "timeStart")
+        let dataSource = Class.allObjects(in: realm).sortedResults(usingKeyPath: "timeStart", ascending: true)
         
-        for curClass in myClasses! {
+        for index in 0..<Int(dataSource.count) {
+            let curClass = dataSource[UInt(index)] as! Class
             
             let newClass = Timetable()
             newClass.id = curClass.id

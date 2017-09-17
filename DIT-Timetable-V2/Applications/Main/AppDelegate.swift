@@ -9,16 +9,19 @@
 import UIKit
 import RealmSwift
 import UserNotifications
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var connectivityHandler : ConnectivityHandler?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
      
-
+        let database = Database()
+        
         //238, 50, 51
         let navColor = UIColor(red: 44.0/255, green: 153.0/255, blue: 206.0/255, alpha: 0.5)
         
@@ -29,6 +32,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName: UIFont(name: "Avenir Next", size: 22)!]
        
         UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        if WCSession.isSupported() {
+            self.connectivityHandler = ConnectivityHandler()
+            connectivityHandler?.setupDatabase(database: database)
+            connectivityHandler?.session.sendMessage(["msg" : "Message \(0)"], replyHandler: nil) { (error) in
+                NSLog("%@", "Error sending message: \(error)")
+            }
+            
+        } else {
+            NSLog("WCSession not supported (f.e. on iPad).")
+        }
         
         return true
     }
