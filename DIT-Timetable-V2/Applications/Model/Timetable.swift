@@ -8,18 +8,43 @@
 import Foundation
 
 class Timetable {
+    
     var id : Int = 0
     var dayNo : Int = 0
     var name : String = ""
     var lecture: String = ""
     var room : String = ""
+    var roomNo: String = ""
+    var timeStartDate = Date()
+    var timeEndDate = Date()
     var timeStart : String = ""
     var timeEnd : String = ""
+    var moduleCode: String = ""
+    var moduleName: String = ""
     var groups : String = ""
     var weeks : String = ""
     var notifOn : Int = 0
     var markDeleted : Bool = false
     
+    init() {
+    }
+    
+    init(dict: [String: AnyObject]) {
+        
+        id = dict.tryConvert(forKey: "id")
+        dayNo = dict.tryConvert(forKey: "dayNo")
+        name = dict.tryConvert(forKey: "name")
+        lecture = dict.tryConvert(forKey: "lecture")
+        room = dict.tryConvert(forKey: "room")
+        roomNo = dict.tryConvert(forKey: "roomNo")
+        timeStart = dict.tryConvert(forKey: "timeStart")
+        timeEnd = dict.tryConvert(forKey: "timeEnd")
+        moduleCode = dict.tryConvert(forKey: "moduleCode")
+        moduleName = dict.tryConvert(forKey: "moduleName")
+        groups = dict.tryConvert(forKey: "groups")
+        weeks = dict.tryConvert(forKey: "weeks")
+        notifOn = dict.tryConvert(forKey: "notifOn")
+    }
     
     func toJSON() -> [String: AnyObject] {
         var dict : [String: AnyObject] = [:]

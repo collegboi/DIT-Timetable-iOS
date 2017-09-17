@@ -134,7 +134,7 @@ public class HTTPConnection {
                 
                     let currentClass = myClass as! [String:Any]
                 
-                    curTimetable.id = 0
+                    curTimetable.id = -1
                     curTimetable.day = currentClass["dayNo"] as! Int
                     curTimetable.name = currentClass["name"] as! String
                     curTimetable.lecture = currentClass["lecture"] as! String

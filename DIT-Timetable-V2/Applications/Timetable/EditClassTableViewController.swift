@@ -43,10 +43,14 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
     var deleteClass : Bool = false
     var isEditMode = false
     var dayPickerDataSource = [String]()
+    
+    var connectivityHandler: ConnectivityHandler?
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.connectivityHandler = (UIApplication.shared.delegate as? AppDelegate)?.connectivityHandler
         
         self.updateDayNo = self.dayNo
         
@@ -84,7 +88,7 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         var notifHr = 0
         var notifMin = 5
         
-        if self.classRow > 0 {
+        if self.classRow >= 0 {
             
             isEditMode = true
             
@@ -130,6 +134,7 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         
         //self.tableView.reloadData()
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -213,6 +218,17 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         cell?.detailTextLabel?.text = strDate
     }
     
+    func sendClassToConnectivityHandler(timetable: Timetable) {
+        
+        if let connectivityHandler = self.connectivityHandler {
+            
+            let timetableObject = timetable.toJSON()
+        
+            connectivityHandler.session.sendMessage(["timetable" : timetableObject], replyHandler: nil) { (error) in
+                NSLog("%@", "Error sending message: \(error)")
+            }
+        }
+    }
     
 
     func saveCurrentClass() {
@@ -263,6 +279,8 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
                 
                 self.database.updateTimetable(timetable: self.allTimestables[self.dayNo].timetable[self.classRow])
                 
+                self.sendClassToConnectivityHandler(timetable: self.allTimestables[self.dayNo].timetable[self.classRow])
+                
                 //if day changed then delete previous and add new
                 if dayIndex != self.dayNo {
                     
@@ -287,7 +305,7 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
             } else {
                 
                 let curTimetable = Class()
-                curTimetable.id = 0
+                curTimetable.id = -1
                 curTimetable.day = self.updateDayNo
                 curTimetable.name = self.moduleName.text ?? ""
                 curTimetable.lecture = self.classLecture.text ?? ""
@@ -312,6 +330,8 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
                 newClass.notifOn = notifytime
                 
                 self.allTimestables[self.dayNo].timetable.append(newClass)
+                
+                self.sendClassToConnectivityHandler(timetable: newClass)
             }
             
             self.updateNotifications()

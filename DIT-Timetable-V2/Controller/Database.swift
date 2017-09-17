@@ -11,9 +11,13 @@ import Realm
 
 class Database {
     
+    var backgroundQueue: DispatchQueue?
+    
     var realm : RLMRealm?
     
     init() {
+        
+        self.backgroundQueue = DispatchQueue(label: "com.realm.queue", qos: .background, target: nil)
         
         let directory: NSURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.barnard.dit-timetable.today")! as NSURL
         let realmPath = directory.appendingPathComponent("default.realm")
@@ -34,7 +38,9 @@ class Database {
     @discardableResult
     func saveClass( myClass : Class ) -> Int {
         
-        myClass.id = self.getNextPrimaryKeyID()
+        if(myClass.id == -1 ) {
+            myClass.id = self.getNextPrimaryKeyID()
+        }
         
         if let realm = realm {
         
@@ -136,10 +142,67 @@ class Database {
         return id + 1
     }
     
+    func parseTimetable(module: String, room: String) -> (name: String, code: String, room: String) {
+        
+        var name: String = module
+        var code: String = ""
+        var roomVal: String = room
+        
+        let moduleParts = module.components(separatedBy: " ")
+        
+        if(moduleParts.count >= 3 ) {
+        
+            code = moduleParts[moduleParts.count-2] + " " +   moduleParts[moduleParts.count-1]
+            let moduleNameParts = module.components(separatedBy: code)
+            if(moduleNameParts.count >= 2) {
+                name = moduleNameParts[0]
+            }
+        }
+        
+        let roomsParts = room.components(separatedBy: ",")
+        if(roomsParts.count >= 2) {
+            let roomNo = roomsParts[1]
+            
+            let roomNameParts = roomsParts[0].components(separatedBy: " ")
+            for roomPart in roomNameParts {
+                roomVal += roomPart[0]
+            }
+            
+            roomVal += " " + roomNo
+            
+        } else {
+            roomVal = room
+        }
+        
+        return(name, code, roomVal)
+    }
+    
+    func makeTimetablFormClass(curClass: Class) -> Timetable {
+        
+        let newClass = Timetable()
+        newClass.id = curClass.id
+        newClass.lecture = curClass.lecture
+        newClass.timeStart = curClass.timeStart
+        newClass.timeEnd = curClass.timeEnd
+        newClass.dayNo = curClass.day
+        newClass.name = curClass.name
+        newClass.groups = curClass.groups
+        newClass.room = curClass.room
+        newClass.notifOn = curClass.notifOn
+        
+        newClass.timeStartDate = newClass.timeStart.convertToDate()
+        newClass.timeEndDate = newClass.timeEnd.convertToDate()
+        
+        let timetableParts = parseTimetable(module: newClass.name, room: newClass.room)
+        newClass.moduleCode = timetableParts.code
+        newClass.moduleName = timetableParts.name
+        newClass.roomNo = timetableParts.room
+        
+        return newClass
+    }
+    
     func getDayTimetable( dayNo : Int ) ->[Timetable] {
         var dayTimetable = [Timetable]()
-        
-        //let filterString = "day="+String(dayNo)
         
         let predicate = NSPredicate(format: "day = %d", dayNo)
         
@@ -147,23 +210,14 @@ class Database {
             return [Timetable]()
         }
         
-        let dataSource: RLMResults = Class.allObjects(in: realm).sortedResults(usingKeyPath: "timeStart", ascending: true)
+        let dataSource: RLMResults = Class.objects(in: realm, with: predicate).sortedResults(usingKeyPath: "timeStart", ascending: true)
         
         for index in 0..<Int(dataSource.count) {
             let curClass = dataSource[UInt(index)] as! Class
-                
-            let newClass = Timetable()
-            newClass.id = curClass.id
-            newClass.lecture = curClass.lecture
-            newClass.timeStart = curClass.timeStart
-            newClass.timeEnd = curClass.timeEnd
-            newClass.dayNo = curClass.day
-            newClass.name = curClass.name
-            newClass.groups = curClass.groups
-            newClass.room = curClass.room
-            newClass.notifOn = curClass.notifOn
             
-            dayTimetable.append(newClass)
+            let timetable = self.makeTimetablFormClass(curClass: curClass)
+            
+            dayTimetable.append(timetable)
         }
         
         return dayTimetable
@@ -198,18 +252,9 @@ class Database {
             
             if(classTimeHr >= hour || classTimeEndHr < hour ) {
                 
-                let newClass = Timetable()
-                newClass.id = curClass.id
-                newClass.lecture = curClass.lecture
-                newClass.timeStart = curClass.timeStart
-                newClass.timeEnd = curClass.timeEnd
-                newClass.dayNo = curClass.day
-                newClass.name = curClass.name
-                newClass.groups = curClass.groups
-                newClass.room = curClass.room
-                newClass.notifOn = curClass.notifOn
+                let timetable = self.makeTimetablFormClass(curClass: curClass)
                 
-                dayTimetable.append(newClass)
+                dayTimetable.append(timetable)
             }
         }
         
@@ -236,18 +281,9 @@ class Database {
         for index in 0..<Int(dataSource.count) {
             let curClass = dataSource[UInt(index)] as! Class
             
-            let newClass = Timetable()
-            newClass.id = curClass.id
-            newClass.lecture = curClass.lecture
-            newClass.timeStart = curClass.timeStart
-            newClass.timeEnd = curClass.timeEnd
-            newClass.dayNo = curClass.day
-            newClass.name = curClass.name
-            newClass.groups = curClass.groups
-            newClass.room = curClass.room
-            newClass.notifOn = curClass.notifOn
+            let timetable = self.makeTimetablFormClass(curClass: curClass)
             
-            allTimetables[curClass.day].timetable.append(newClass)
+            allTimetables[curClass.day].timetable.append(timetable)
             
         }
         

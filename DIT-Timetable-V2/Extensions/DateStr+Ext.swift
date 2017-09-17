@@ -50,16 +50,7 @@ extension String {
     func convertTo24hrFomat() -> String {
         
         if(Utils.using12hClockFormat()) {
-            
-            let dateFormatter12 = DateFormatter()
-            dateFormatter12.dateFormat = "h:mm a"
-            if let date12HR = dateFormatter12.date(from: self) {
-                if(date12HR.minute() > 9) {
-                    return String(date12HR.hour()) + ":" + String(date12HR.minute())
-                } else {
-                    return String(date12HR.hour()) + ":0" + String(date12HR.minute())
-                }
-            }
+            return Utils.create12HourTo24HourStr(time: self)
         }
         
         return self

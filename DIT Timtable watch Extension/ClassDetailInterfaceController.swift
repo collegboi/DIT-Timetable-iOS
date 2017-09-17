@@ -25,7 +25,7 @@ class ClassDetailInterfaceController: WKInterfaceController {
     
             guard let timetable = timetable else { return }
      
-            moduleNameLabel.setText(timetable.name)
+            moduleNameLabel.setText(timetable.moduleName)
             lectureLabel.setText(timetable.lecture)
             timeStartLabel.setText(timetable.timeStart)
             timeEndLabel.setText(timetable.timeEnd)

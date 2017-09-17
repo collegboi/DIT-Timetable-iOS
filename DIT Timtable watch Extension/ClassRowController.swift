@@ -19,13 +19,11 @@ class ClassRowController: NSObject {
     var timetable: Timetable? {
 
         didSet {
-
             guard let timetable = timetable else { return }
 
-            moduleNameLabel.setText(timetable.name)
+            moduleNameLabel.setText(timetable.moduleName)
             timeStartLabel.setText(timetable.timeStart)
-            roomLabel.setText(timetable.room)
+            roomLabel.setText(timetable.roomNo)
         }
     }
-
 }

@@ -25,6 +25,44 @@ class Utils {
         return !(pmRange == nil && amRange == nil)
     }
     
+    class func create12HourTo24HourStr(time: String) -> String {
+        
+        let timeParts1 = time.components(separatedBy: " ")
+        if(timeParts1.count >= 2) {
+            
+            let amPM = timeParts1[1]
+            let timePart = timeParts1[0]
+            
+            let timeParts = timePart.components(separatedBy: ":")
+            if(timeParts.count == 2) {
+                
+                guard let hour = Int(timeParts[0]) else {
+                    return time
+                }
+                guard let min = Int(timeParts[1]) else {
+                    return time
+                }
+                
+                var newHour = hour
+                if(amPM.lowercased() == "p.m.") {
+                    newHour = hour + 12
+                }
+                
+                return String(newHour) + ":" + String(min)
+                
+                
+            } else {
+                return time
+            }
+
+            
+            
+        } else {
+            return time
+        }
+    }
+
+    
     
     class func create12HourTimeStr(time: String) -> String {
         let timeParts = time.components(separatedBy: ":")

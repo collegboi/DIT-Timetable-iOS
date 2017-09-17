@@ -1,8 +1,8 @@
 //
 //  NotificationController.swift
-//  DIT Timetable Extension
+//  DIT Timtable watch Extension
 //
-//  Created by Timothy Barnard on 16/09/2017.
+//  Created by Timothy Barnard on 17/09/2017.
 //  Copyright © 2017 Timothy Barnard. All rights reserved.
 //
 

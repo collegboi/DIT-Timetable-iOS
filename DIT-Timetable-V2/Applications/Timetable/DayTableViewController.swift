@@ -25,9 +25,6 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Register to receive notification
-        NotificationCenter.default.addObserver(self, selector: #selector(DayTableViewController.addClass), name: notificationName, object: nil)
     
         days.append("Monday")
         days.append("Tuesday")
@@ -61,6 +58,10 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        // Register to receive notification
+        NotificationCenter.default.addObserver(self, selector: #selector(DayTableViewController.addClass), name: notificationName, object: nil)
+        
         self.pickedRow = -1
     
         self.deleteClass()

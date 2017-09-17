@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gW1-Mq-USo">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
+    </dependencies>
+    <scenes>
+        <!--Timetable-->
+        <scene sceneID="I0y-FU-Tfu">
+            <objects>
+                <controller identifier="DITTimetable" title="Timetable" id="gW1-Mq-USo" customClass="InterfaceController" customModule="DIT_Timtable_watch_Extension">
+                    <items>
+                        <table alignment="left" id="AZs-16-nAV">
+                            <items>
+                                <tableRow identifier="timetableRow" id="k0a-hg-nRF" customClass="ClassRowController" customModule="DIT_Timtable_watch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="Yuy-zB-yz1">
+                                        <items>
+                                            <separator height="1" alignment="left" id="P9o-CJ-VXA">
+                                                <color key="color" red="0.017874253810000001" green="0.84656330960000004" blue="0.050965663809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </separator>
+                                            <group width="1" alignment="left" layout="vertical" spacing="4" id="VeP-AJ-9ov">
+                                                <items>
+                                                    <label alignment="left" text="Class one" id="KWM-md-Maf">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                    <group width="1" alignment="left" id="nJP-cv-UUb">
+                                                        <items>
+                                                            <label alignment="left" text="10:00" id="67W-Ge-gaf">
+                                                                <color key="textColor" red="0.60933452070000005" green="0.0" blue="0.066383275529999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                            <label alignment="right" text="Room 1" id="K0Q-a8-kri">
+                                                                <color key="textColor" red="0.39720351459999997" green="0.60933452070000005" blue="0.34179375649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="moduleNameLabel" destination="KWM-md-Maf" id="2t8-VX-14h"/>
+                                        <outlet property="roomLabel" destination="K0Q-a8-kri" id="Wc8-oU-a7Y"/>
+                                        <outlet property="separator" destination="P9o-CJ-VXA" id="mdf-6a-GBp"/>
+                                        <outlet property="timeStartLabel" destination="67W-Ge-gaf" id="5YE-th-dlz"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Request Info" id="fd2-Tk-U1U">
+                            <connections>
+                                <action selector="requestInfoButton" destination="gW1-Mq-USo" id="cLP-By-AAB"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="classTableView" destination="AZs-16-nAV" id="6eL-az-4Xk"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="t9R-qH-1Vk">
+            <objects>
+                <notificationController id="G6g-AS-cYb">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="SCh-fK-F2r"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="2ez-6P-a5J"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="SCh-fK-F2r" id="twt-M8-Wrt"/>
+                        <segue destination="8Hp-P5-ySM" kind="relationship" relationship="dynamicNotificationInterface" id="cfA-gM-hBl"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--ViewClass-->
+        <scene sceneID="Cbd-5F-2ZG">
+            <objects>
+                <controller identifier="ViewClass" spacing="5" id="ORl-C0-RSJ" customClass="ClassDetailInterfaceController" customModule="DIT_Timtable_watch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="aPH-c4-kjk">
+                            <items>
+                                <label alignment="left" text="Maths 101" numberOfLines="3" id="QuF-1w-Bda">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Room 1" numberOfLines="2" id="R3c-zU-8NF">
+                            <color key="textColor" red="0.39720351459999997" green="0.60933452070000005" blue="0.34179375649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                        <label alignment="left" text="Timothy Barnard" numberOfLines="2" id="vdS-2b-NgB">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <group width="1" alignment="left" id="YIB-F8-O6H">
+                            <items>
+                                <label alignment="left" text="10:00" id="RY9-uW-tqY">
+                                    <color key="textColor" red="0.60933452070000005" green="0.0" blue="0.066383275529999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                </label>
+                                <label alignment="right" text="11:00" id="03y-kD-NG7">
+                                    <color key="textColor" red="0.60933452070000005" green="0.0" blue="0.066383275529999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="lectureLabel" destination="vdS-2b-NgB" id="3dZ-DK-LQa"/>
+                        <outlet property="moduleNameLabel" destination="QuF-1w-Bda" id="zqJ-6t-6OI"/>
+                        <outlet property="roomLabel" destination="R3c-zU-8NF" id="k12-vC-pCC"/>
+                        <outlet property="timeEndLabel" destination="03y-kD-NG7" id="0oY-a8-iwB"/>
+                        <outlet property="timeStartLabel" destination="RY9-uW-tqY" id="XmV-rm-ADf"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="471" y="349"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="cTL-S4-H7N">
+            <objects>
+                <controller id="8Hp-P5-ySM" customClass="NotificationController" customModule="DIT_Timtable_watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
