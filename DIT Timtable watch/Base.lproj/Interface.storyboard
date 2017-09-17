@@ -25,17 +25,17 @@
                                             <group width="1" alignment="left" layout="vertical" spacing="4" id="VeP-AJ-9ov">
                                                 <items>
                                                     <label alignment="left" text="Class one" id="KWM-md-Maf">
-                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                     </label>
                                                     <group width="1" alignment="left" id="nJP-cv-UUb">
                                                         <items>
                                                             <label alignment="left" text="10:00" id="67W-Ge-gaf">
                                                                 <color key="textColor" red="0.60933452070000005" green="0.0" blue="0.066383275529999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                             </label>
                                                             <label alignment="right" text="Room 1" id="K0Q-a8-kri">
                                                                 <color key="textColor" red="0.39720351459999997" green="0.60933452070000005" blue="0.34179375649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                             </label>
                                                         </items>
                                                     </group>

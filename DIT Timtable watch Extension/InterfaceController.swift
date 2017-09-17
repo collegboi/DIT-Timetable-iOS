@@ -22,13 +22,11 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    var database: Database?
-    
     var session: WCSession?
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        database = Database()
+        
         self.reloadTableData()
         self.requestUpdate()
     }
@@ -42,14 +40,13 @@ class InterfaceController: WKInterfaceController {
     }
     
     func reloadTableData() {
-        guard let database = self.database else {
-            return
-        }
         
+        let database = Database()
+    
         let today = Date()
         let day = today.weekday()
         let indexVal = (day+5) % 7
-        self.todayClasses = database.getDayTimetable(dayNo: 0)
+        self.todayClasses = database.getDayTimetable(dayNo: indexVal)
         self.reloadTable()
     }
     @IBAction func requestInfoButton() {
@@ -81,7 +78,7 @@ class InterfaceController: WKInterfaceController {
         let classSelected = self.todayClasses[rowIndex]
         presentController(withName: "ViewClass", context: classSelected)
     }
-
+    
 }
 
 extension InterfaceController: WCSessionDelegate {
@@ -90,24 +87,21 @@ extension InterfaceController: WCSessionDelegate {
         
         print("Message: \(message)")
         
-        guard let dict = message["timetable"] as? [String: AnyObject] else {
+        if let dict = message["add"] as? [String: AnyObject] {
+            
+            let database = Database()
+            let timetable = Timetable(dict: dict)
+            let newClass = database.makeClass(timetable: timetable)
+            database.saveClass(myClass: newClass)
+        } else if let dict = message["edit"] as? [String: AnyObject] {
+            
+            let database = Database()
+            let timetable = Timetable(dict: dict)
+            let editClass = database.makeClass(timetable: timetable)
+            database.editClass(myClass: editClass )
+        } else {
             return
         }
-        
-        let database = Database()
-        let timetable = Timetable(dict: dict)
-        let newClass = Class()
-        newClass.id = timetable.id
-        newClass.lecture = timetable.lecture
-        newClass.room = timetable.room
-        newClass.timeStart = timetable.timeStart
-        newClass.timeEnd = timetable.timeEnd
-        newClass.notifOn = timetable.notifOn
-        newClass.name = timetable.name
-        newClass.groups = timetable.groups
-        newClass.day = timetable.dayNo
-        
-        database.saveClass(myClass: newClass)
         
         self.reloadTableData()
     }

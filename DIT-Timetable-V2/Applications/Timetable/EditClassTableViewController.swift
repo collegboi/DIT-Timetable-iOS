@@ -218,13 +218,13 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         cell?.detailTextLabel?.text = strDate
     }
     
-    func sendClassToConnectivityHandler(timetable: Timetable) {
+    func sendClassToConnectivityHandler(timetable: Timetable, message: String) {
         
         if let connectivityHandler = self.connectivityHandler {
             
             let timetableObject = timetable.toJSON()
         
-            connectivityHandler.session.sendMessage(["timetable" : timetableObject], replyHandler: nil) { (error) in
+            connectivityHandler.session.sendMessage([message : timetableObject], replyHandler: nil) { (error) in
                 NSLog("%@", "Error sending message: \(error)")
             }
         }
@@ -279,7 +279,7 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
                 
                 self.database.updateTimetable(timetable: self.allTimestables[self.dayNo].timetable[self.classRow])
                 
-                self.sendClassToConnectivityHandler(timetable: self.allTimestables[self.dayNo].timetable[self.classRow])
+                self.sendClassToConnectivityHandler(timetable: self.allTimestables[self.dayNo].timetable[self.classRow], message: "edit")
                 
                 //if day changed then delete previous and add new
                 if dayIndex != self.dayNo {
@@ -331,7 +331,7 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
                 
                 self.allTimestables[self.dayNo].timetable.append(newClass)
                 
-                self.sendClassToConnectivityHandler(timetable: newClass)
+                self.sendClassToConnectivityHandler(timetable: newClass, message: "add")
             }
             
             self.updateNotifications()

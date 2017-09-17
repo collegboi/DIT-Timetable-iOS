@@ -33,7 +33,7 @@ class ComplicationHandler {
             
             case .modularLarge:
                 let template = CLKComplicationTemplateModularLargeStandardBody()
-                template.headerTextProvider = CLKSimpleTextProvider(text: "??:??")
+                template.headerTextProvider = CLKSimpleTextProvider(text: "??:??-??:??")
                 template.body1TextProvider = CLKSimpleTextProvider(text: "class name")
                 template.body2TextProvider = CLKSimpleTextProvider(text: "class room")
                 return template
@@ -50,34 +50,42 @@ class ComplicationHandler {
     
     func getCurrentTimelineEntry(complication: CLKComplication) -> CLKComplicationTimelineEntry? {
         
-        guard let timetables = database?.getDayTimetable(dayNo: 0) else {
-            return nil
+        var smallTime = "??:??"
+        var largeTime = "??:??-??:??"
+        var largeText1 = "No classes"
+        var largeText2 = "-------"
+        
+        if let timetable = database?.getClassNow() {
+            smallTime = timetable.timeStart
+            largeTime = timetable.timeStart + "-" + timetable.timeEnd
+            largeText1 = timetable.moduleName
+            largeText2 = timetable.roomNo
         }
         
         switch complication.family {
             
             case .modularSmall:
                 let template = CLKComplicationTemplateModularSmallSimpleText()
-                template.textProvider = CLKSimpleTextProvider(text: timetables[0].timeStart)
+                template.textProvider = CLKSimpleTextProvider(text: smallTime)
                 let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
                 return entry
                 
             case .utilitarianSmall:
                 let template = CLKComplicationTemplateUtilitarianSmallRingText()
-                template.textProvider = CLKSimpleTextProvider(text: timetables[0].timeStart)
+                template.textProvider = CLKSimpleTextProvider(text: smallTime)
                 let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
                 return entry
                 
             case .modularLarge:
                 let template = CLKComplicationTemplateModularLargeStandardBody()
-                template.headerTextProvider = CLKSimpleTextProvider(text: timetables[0].timeStart)
-                template.body1TextProvider = CLKSimpleTextProvider(text: timetables[0].moduleName)
-                template.body2TextProvider = CLKSimpleTextProvider(text: timetables[0].roomNo)
+                template.headerTextProvider = CLKSimpleTextProvider(text: largeTime)
+                template.body1TextProvider = CLKSimpleTextProvider(text: largeText1)
+                template.body2TextProvider = CLKSimpleTextProvider(text: largeText2)
                 let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
                 return entry
             case .utilitarianLarge:
                 let template = CLKComplicationTemplateUtilitarianLargeFlat()
-                template.textProvider = CLKSimpleTextProvider(text: timetables[0].timeStart)
+                template.textProvider = CLKSimpleTextProvider(text: smallTime)
                 let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
                 return entry
             default:
@@ -94,41 +102,46 @@ class ComplicationHandler {
         let day = today.weekday()
         let indexVal = (day+5) % 7
         
-        guard let timetables = database?.getDayTimetable(dayNo: 0) else {
+        guard let timetables = database?.getDayTimetable(dayNo: indexVal) else {
             return entries
         }
         
         for (index, timetable ) in timetables.enumerated() {
             
-            let calendar = Calendar.current
-            let date = calendar.date(byAdding: .hour, value: index, to: Date())
+            let smallTime = timetable.timeStart
+            let largeTime = timetable.timeStart + "-" + timetable.timeEnd
+            let largeText1 = timetable.moduleName
+            let largeText2 = timetable.roomNo
+            
+            //let calendar = Calendar.current
+            //let date = calendar.date(byAdding: .hour, value: index, to: Date())
         
             switch complication.family {
                 
                 case .modularSmall:
                     let template = CLKComplicationTemplateModularSmallSimpleText()
-                    template.textProvider = CLKSimpleTextProvider(text: timetable.timeStart)
-                    let entry = CLKComplicationTimelineEntry(date: date!, complicationTemplate: template)
+                    template.textProvider = CLKSimpleTextProvider(text: smallTime)
+                    let entry = CLKComplicationTimelineEntry(date: timetable.timeStartDate, complicationTemplate: template)
                     entries.append(entry)
                     
                 case .utilitarianSmall:
                     let template = CLKComplicationTemplateUtilitarianSmallRingText()
-                    template.textProvider = CLKSimpleTextProvider(text: timetable.timeStart)
-                    let entry = CLKComplicationTimelineEntry(date: date!, complicationTemplate: template)
+                    template.textProvider = CLKSimpleTextProvider(text: smallTime)
+                    let entry = CLKComplicationTimelineEntry(date: timetable.timeStartDate, complicationTemplate: template)
                     entries.append(entry)
                     
                 case .modularLarge:
                     let template = CLKComplicationTemplateModularLargeStandardBody()
-                    template.headerTextProvider = CLKSimpleTextProvider(text: timetable.timeStart)
-                    template.body1TextProvider = CLKSimpleTextProvider(text: timetable.moduleName)
-                    template.body2TextProvider = CLKSimpleTextProvider(text: timetable.roomNo)
-                    let entry = CLKComplicationTimelineEntry(date: date!, complicationTemplate: template)
+                    template.headerTextProvider = CLKSimpleTextProvider(text: largeTime)
+                    template.body1TextProvider = CLKSimpleTextProvider(text: largeText1)
+                    template.body2TextProvider = CLKSimpleTextProvider(text: largeText2)
+                    let entry = CLKComplicationTimelineEntry(date: timetable.timeStartDate, complicationTemplate: template)
                     entries.append(entry)
                 
                 case .utilitarianLarge:
                     let template = CLKComplicationTemplateUtilitarianLargeFlat()
-                    template.textProvider = CLKSimpleTextProvider(text: timetable.timeStart)
-                    let entry = CLKComplicationTimelineEntry(date: date!, complicationTemplate: template)
+                    template.textProvider = CLKSimpleTextProvider(text: smallTime)
+                    let entry = CLKComplicationTimelineEntry(date: timetable.timeStartDate, complicationTemplate: template)
                     entries.append(entry)
 
                 default:

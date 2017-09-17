@@ -35,14 +35,30 @@ class Database {
         RLMRealmConfiguration.setDefault(realmConfig)
     }
     
+    private func createNewRealmInstance() -> RLMRealm? {
+        
+        let directory: NSURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.barnard.dit-timetable.today")! as NSURL
+        let realmPath = directory.appendingPathComponent("default.realm")
+        let realmConfig = RLMRealmConfiguration.default()
+        realmConfig.fileURL = realmPath
+        realmConfig.schemaVersion = 3
+        realmConfig.migrationBlock = { migration, oldSchemaVersion in
+            if (oldSchemaVersion < 3) {
+                
+            }
+        }
+        print(realmPath?.absoluteString)
+        return  try! RLMRealm(configuration: realmConfig)
+    }
+    
     @discardableResult
     func saveClass( myClass : Class ) -> Int {
         
         if(myClass.id == -1 ) {
             myClass.id = self.getNextPrimaryKeyID()
         }
-        
-        if let realm = realm {
+            
+        if let realm = self.createNewRealmInstance() {
         
             realm.beginWriteTransaction()
         
@@ -52,12 +68,8 @@ class Database {
             } catch {
                 print("not commiting transaction")
             }
-            
-            return myClass.id
-            
-        } else {
-            return -1
         }
+        return myClass.id
     }
     
     func removeAll() {
@@ -84,6 +96,23 @@ class Database {
         
         self.editClass( myClass: updateClass)
     }
+    
+    func makeClass( timetable : Timetable) -> Class {
+        
+        let updateClass = Class()
+        updateClass.id = timetable.id
+        updateClass.lecture = timetable.lecture
+        updateClass.room = timetable.room
+        updateClass.timeStart = timetable.timeStart
+        updateClass.timeEnd = timetable.timeEnd
+        updateClass.notifOn = timetable.notifOn
+        updateClass.name = timetable.name
+        updateClass.groups = timetable.groups
+        updateClass.day = timetable.dayNo
+        
+        return updateClass
+    }
+
     
     func deleteClass( classID : Int ) {
         
@@ -120,9 +149,22 @@ class Database {
     }
     
     func editClass( myClass: Class ) {
-        /*try! self.realm?.write {
-            self.realm?.add(myClass, update: true)
-        }*/
+        
+        if let realm = self.createNewRealmInstance() {
+            
+            if(realm.inWriteTransaction) {
+                realm.cancelWriteTransaction()
+            }
+            
+            realm.beginWriteTransaction()
+            
+            realm.addOrUpdate(myClass)
+            do {
+                try realm.commitWriteTransaction()
+            } catch {
+                print("edit: not commiting transaction")
+            }
+        }
     }
     
     func getNextPrimaryKeyID() -> Int {
@@ -221,6 +263,36 @@ class Database {
         }
         
         return dayTimetable
+    }
+    
+    func getClassNow() -> Timetable? {
+        
+        let today = Date()
+        let day = today.weekday()
+        let indexVal = (day+5) % 7
+        
+        let predicate = NSPredicate(format: "day = %d", indexVal)
+        
+        guard let realm = self.realm else {
+            return nil
+        }
+        
+        let dataSource: RLMResults = Class.objects(in: realm, with: predicate).sortedResults(usingKeyPath: "timeStart", ascending: true)
+        
+        for index in 0..<Int(dataSource.count) {
+            let curClass = dataSource[UInt(index)] as! Class
+            
+            let timetable = self.makeTimetablFormClass(curClass: curClass)
+            let startHour = timetable.timeStartDate.hour()
+            let endHour = timetable.timeEndDate.hour()
+            let nowHour = today.hour()
+            
+            if(nowHour >= startHour && nowHour <= endHour ) {
+                return timetable
+            }
+        }
+        
+        return nil
     }
 
     func getDayTimetableAfterNow( dayNo : Int ) ->[Timetable] {
