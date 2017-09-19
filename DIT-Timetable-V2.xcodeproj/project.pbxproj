@@ -1549,6 +1549,7 @@
 				159E37FF1F6EB551006D2EC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		159E38011F6EB551006D2EC7 /* Build configuration list for PBXNativeTarget "DIT Timtable watch" */ = {
 			isa = XCConfigurationList;
@@ -1557,6 +1558,7 @@
 				159E38031F6EB551006D2EC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		15C4536C1F6B0B9100365690 /* Build configuration list for PBXNativeTarget "DIT-Timetable-today" */ = {
 			isa = XCConfigurationList;

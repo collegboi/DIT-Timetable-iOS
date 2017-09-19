@@ -24,7 +24,7 @@
                                             </separator>
                                             <group width="1" alignment="left" layout="vertical" spacing="4" id="VeP-AJ-9ov">
                                                 <items>
-                                                    <label alignment="left" text="Class one" id="KWM-md-Maf">
+                                                    <label alignment="left" text="Class one" numberOfLines="2" id="KWM-md-Maf">
                                                         <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                     </label>
                                                     <group width="1" alignment="left" id="nJP-cv-UUb">
@@ -63,7 +63,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="160" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="t9R-qH-1Vk">
@@ -79,7 +79,7 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="96" y="638"/>
         </scene>
         <!--ViewClass-->
         <scene sceneID="Cbd-5F-2ZG">
@@ -89,13 +89,13 @@
                         <group width="1" alignment="left" id="aPH-c4-kjk">
                             <items>
                                 <label alignment="left" text="Maths 101" numberOfLines="3" id="QuF-1w-Bda">
-                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
                             </items>
                         </group>
                         <label alignment="left" text="Room 1" numberOfLines="2" id="R3c-zU-8NF">
                             <color key="textColor" red="0.39720351459999997" green="0.60933452070000005" blue="0.34179375649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
                         </label>
                         <label alignment="left" text="Timothy Barnard" numberOfLines="2" id="vdS-2b-NgB">
                             <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
@@ -104,11 +104,11 @@
                             <items>
                                 <label alignment="left" text="10:00" id="RY9-uW-tqY">
                                     <color key="textColor" red="0.60933452070000005" green="0.0" blue="0.066383275529999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                 </label>
                                 <label alignment="right" text="11:00" id="03y-kD-NG7">
                                     <color key="textColor" red="0.60933452070000005" green="0.0" blue="0.066383275529999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                 </label>
                             </items>
                         </group>
@@ -122,14 +122,14 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="471" y="349"/>
+            <point key="canvasLocation" x="528" y="638"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="cTL-S4-H7N">
             <objects>
                 <controller id="8Hp-P5-ySM" customClass="NotificationController" customModule="DIT_Timtable_watch" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="313" y="638"/>
         </scene>
     </scenes>
 </document>

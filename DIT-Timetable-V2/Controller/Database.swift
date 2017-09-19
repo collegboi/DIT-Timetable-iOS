@@ -17,8 +17,6 @@ class Database {
     
     init() {
         
-        self.backgroundQueue = DispatchQueue(label: "com.realm.queue", qos: .background, target: nil)
-        
         let directory: NSURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.barnard.dit-timetable.today")! as NSURL
         let realmPath = directory.appendingPathComponent("default.realm")
         let realmConfig = RLMRealmConfiguration.default()
@@ -30,7 +28,6 @@ class Database {
             }
         }
         
-        print(realmPath?.absoluteString)
         self.realm = try! RLMRealm(configuration: realmConfig)
         RLMRealmConfiguration.setDefault(realmConfig)
     }
@@ -47,7 +44,7 @@ class Database {
                 
             }
         }
-        print(realmPath?.absoluteString)
+    
         return  try! RLMRealm(configuration: realmConfig)
     }
     
@@ -116,30 +113,52 @@ class Database {
     
     func deleteClass( classID : Int ) {
         
-        /*let filterString = "id="+String(classID)
+        let predicate = NSPredicate(format: "id = %d", classID)
         
-        var dataSource: RLMResults = Class.allObjects()
+        guard let realm = self.createNewRealmInstance() else {
+            return
+        }
         
-        let updateClass = self.realm?.objects(Class.self).filter(filterString)
+        let dataSource: RLMResults = Class.objects(in: realm, with: predicate)
         
-        try! self.realm?.write {
-            self.realm?.delete(updateClass!)
-        }*/
+        if(Int(dataSource.count) > 0) {
+            guard let deleteClass = dataSource[UInt(0)] as? Class else {
+                return
+            }
+            if(realm.inWriteTransaction) {
+                realm.cancelWriteTransaction()
+            }
+            
+            realm.beginWriteTransaction()
+            
+            realm.delete(deleteClass)
+            do {
+                try realm.commitWriteTransaction()
+            } catch {
+                print("edit: not commiting transaction")
+            }
+
+        }
     }
     
     func getClass( classID : Int) -> Class {
         
-        /*let filterString = "id="+String(classID)
+        let predicate = NSPredicate(format: "id = %d", classID)
         
-        let returnClasses = self.realm?.objects(Class.self).filter(filterString)
+        guard let realm = self.createNewRealmInstance() else {
+            return Class()
+        }
         
-        if (returnClasses?.count)! > 0 {
-            return returnClasses![0]
+        let dataSource: RLMResults = Class.objects(in: realm, with: predicate)
+        
+        if(Int(dataSource.count) > 0) {
+            guard let curClass = dataSource[UInt(0)] as? Class else {
+                return Class()
+            }
+            return curClass
         } else {
             return Class()
-        }*/
-        
-        return Class()
+        }
     }
     
     func getSavedClassesCount() -> Int  {
@@ -298,7 +317,7 @@ class Database {
     func getDayTimetableAfterNow( dayNo : Int ) ->[Timetable] {
         var dayTimetable = [Timetable]()
         
-        let predicate = NSPredicate(format: "day=", dayNo)
+        let predicate = NSPredicate(format: "day = %d", dayNo)
         
         guard let realm = self.realm else {
             return [Timetable]()
