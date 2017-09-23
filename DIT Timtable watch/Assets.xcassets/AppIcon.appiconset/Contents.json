@@ -33,6 +33,7 @@
     {
       "size" : "40x40",
       "idiom" : "watch",
+      "filename" : "Apple Watch Home Screen@2x.png",
       "scale" : "2x",
       "role" : "appLauncher",
       "subtype" : "38mm"
@@ -52,6 +53,12 @@
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "watch-marketing",
+      "filename" : "Timetable1024.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

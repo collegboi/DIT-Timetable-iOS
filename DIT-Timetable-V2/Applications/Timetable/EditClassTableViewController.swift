@@ -218,14 +218,29 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         cell?.detailTextLabel?.text = strDate
     }
     
-    func sendClassToConnectivityHandler(timetable: Timetable, message: String) {
+    func sendClassToConnectivityHandler() {
         
-        if let connectivityHandler = self.connectivityHandler {
+        let today = Date()
+        if(today.weekDayIndex() == self.dayNo) {
+        
+            if let connectivityHandler = self.connectivityHandler {
+                
+                var timetables = self.allTimestables[self.dayNo].timetable
+                
+                if(self.classRow < 0) {
+                    self.classRow = 0
+                }
+                
+                let timetable = self.allTimestables[self.dayNo].timetable[self.classRow]
+                if(timetable.markDeleted) {
+                    timetables.remove(at: self.classRow)
+                }
+                
+                let jsonObject = MyJSONMapper.toJSON(timetables: timetables)
             
-            let timetableObject = timetable.toJSON()
-        
-            connectivityHandler.session.sendMessage([message : timetableObject], replyHandler: nil) { (error) in
-                NSLog("%@", "Error sending message: \(error)")
+                connectivityHandler.session.sendMessage(["refresh" : jsonObject], replyHandler: nil) { (error) in
+                    NSLog("%@", "Error sending message: \(error)")
+                }
             }
         }
     }
@@ -279,8 +294,6 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
                 
                 self.database.updateTimetable(timetable: self.allTimestables[self.dayNo].timetable[self.classRow])
                 
-                self.sendClassToConnectivityHandler(timetable: self.allTimestables[self.dayNo].timetable[self.classRow], message: "edit")
-                
                 //if day changed then delete previous and add new
                 if dayIndex != self.dayNo {
                     
@@ -330,9 +343,9 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
                 newClass.notifOn = notifytime
                 
                 self.allTimestables[self.dayNo].timetable.append(newClass)
-                
-                self.sendClassToConnectivityHandler(timetable: newClass, message: "add")
             }
+            
+            self.sendClassToConnectivityHandler()
             
             self.updateNotifications()
             //self.updateClass = true
@@ -359,6 +372,7 @@ class EditClassTableViewController: UITableViewController, UITextFieldDelegate, 
         self.deleteClass = true
         self.allTimestables[self.dayNo].timetable[self.classRow].markDeleted = true
         self.updateNotifications()
+        self.sendClassToConnectivityHandler()
         self.performSegue(withIdentifier: "unwindSegue", sender: self)
     }
     

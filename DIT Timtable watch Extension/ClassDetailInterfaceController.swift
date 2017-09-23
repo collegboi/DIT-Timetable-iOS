@@ -27,8 +27,8 @@ class ClassDetailInterfaceController: WKInterfaceController {
      
             moduleNameLabel.setText(timetable.moduleName)
             lectureLabel.setText(timetable.lecture)
-            timeStartLabel.setText(timetable.timeStart)
-            timeEndLabel.setText(timetable.timeEnd)
+            timeStartLabel.setText(timetable.timeStart.convertToCurrentTimeFormat())
+            timeEndLabel.setText(timetable.timeEnd.convertToCurrentTimeFormat())
             roomLabel.setText(timetable.room)
         }
     }

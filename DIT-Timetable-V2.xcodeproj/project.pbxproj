@@ -8,12 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		150A42C51E6CA21900D8C476 /* Device+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150A42C41E6CA21900D8C476 /* Device+Ext.swift */; };
+		152602E41F73099800566A4F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E11F7308AD00566A4F /* Realm.framework */; };
+		152602E51F73099800566A4F /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E11F7308AD00566A4F /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		152602E61F73099800566A4F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E01F7308AD00566A4F /* RealmSwift.framework */; };
+		152602E71F73099800566A4F /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E01F7308AD00566A4F /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		152602F21F730AB800566A4F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E11F7308AD00566A4F /* Realm.framework */; };
+		152602F31F730AB800566A4F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E11F7308AD00566A4F /* Realm.framework */; };
+		152602F51F730ABA00566A4F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E11F7308AD00566A4F /* Realm.framework */; };
+		152602F61F730ABC00566A4F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E01F7308AD00566A4F /* RealmSwift.framework */; };
+		152602F71F730ABC00566A4F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E01F7308AD00566A4F /* RealmSwift.framework */; };
+		152602F91F730ABE00566A4F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E01F7308AD00566A4F /* RealmSwift.framework */; };
+		152603061F73129A00566A4F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C4535E1F6B0B9100365690 /* NotificationCenter.framework */; };
+		152603091F73129A00566A4F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152603081F73129A00566A4F /* TodayViewController.swift */; };
+		1526030C1F73129A00566A4F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1526030A1F73129A00566A4F /* MainInterface.storyboard */; };
+		152603101F73129A00566A4F /* Classes Left.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 152603051F73129A00566A4F /* Classes Left.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		152603141F73130A00566A4F /* TodayCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453781F6B160100365690 /* TodayCellTableViewCell.swift */; };
+		152603151F73131700566A4F /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DBB1D8EB7CD00ECE240 /* Database.swift */; };
+		152603161F73132100566A4F /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C037651D8B69AE00040840 /* Timetable.swift */; };
+		152603171F73132300566A4F /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
+		152603181F73135D00566A4F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E11F7308AD00566A4F /* Realm.framework */; };
+		152603191F73135F00566A4F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E01F7308AD00566A4F /* RealmSwift.framework */; };
+		1526031A1F73138100566A4F /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
+		1526031B1F73138400566A4F /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
+		1526031C1F73138700566A4F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1572F1B51F6D52560096C2C7 /* Utils.swift */; };
+		1526031D1F73138A00566A4F /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
+		1526031E1F73138C00566A4F /* Strings+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B61DD2931E005DA231 /* Strings+ext.swift */; };
 		152728CF1F6D9EF300BDCD67 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C4535E1F6B0B9100365690 /* NotificationCenter.framework */; };
 		152728D21F6D9EF300BDCD67 /* TodayAllClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152728D11F6D9EF300BDCD67 /* TodayAllClassesViewController.swift */; };
 		152728D51F6D9EF300BDCD67 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 152728D31F6D9EF300BDCD67 /* MainInterface.storyboard */; };
 		152728D91F6D9EF300BDCD67 /* All Classes.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 152728CE1F6D9EF300BDCD67 /* All Classes.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		152728DD1F6D9F0E00BDCD67 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52E1F6579B500B2CB45 /* RealmSwift.framework */; };
-		152728DE1F6D9F1100BDCD67 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52C1F6579B000B2CB45 /* Realm.framework */; };
 		152728DF1F6D9F8D00BDCD67 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DBB1D8EB7CD00ECE240 /* Database.swift */; };
 		152728E01F6D9F9A00BDCD67 /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
 		152728E11F6D9F9D00BDCD67 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1572F1B51F6D52560096C2C7 /* Utils.swift */; };
@@ -21,18 +44,12 @@
 		152728E31F6D9FB100BDCD67 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C037651D8B69AE00040840 /* Timetable.swift */; };
 		152728E41F6D9FCD00BDCD67 /* TodayCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453781F6B160100365690 /* TodayCellTableViewCell.swift */; };
 		152729181F6DA65800BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
-		152729191F6DA65800BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
 		1527291A1F6DA65800BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
 		1527291B1F6DA66E00BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
 		1527291C1F6DA66E00BDCD67 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
-		155EC5311F657D0D00B2CB45 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52E1F6579B500B2CB45 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		155EC5331F657D1000B2CB45 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52C1F6579B000B2CB45 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		155EC5341F657D5800B2CB45 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52C1F6579B000B2CB45 /* Realm.framework */; };
-		155EC5351F657D5800B2CB45 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52E1F6579B500B2CB45 /* RealmSwift.framework */; };
 		1572F1B61F6D52560096C2C7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1572F1B51F6D52560096C2C7 /* Utils.swift */; };
 		1572F1B71F6D52560096C2C7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1572F1B51F6D52560096C2C7 /* Utils.swift */; };
 		1572F1B81F6D52560096C2C7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1572F1B51F6D52560096C2C7 /* Utils.swift */; };
-		1572F1B91F6D52560096C2C7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1572F1B51F6D52560096C2C7 /* Utils.swift */; };
 		159E37E01F6EB551006D2EC7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 159E37DE1F6EB551006D2EC7 /* Interface.storyboard */; };
 		159E37E21F6EB551006D2EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159E37E11F6EB551006D2EC7 /* Assets.xcassets */; };
 		159E37E91F6EB551006D2EC7 /* DIT Timtable watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 159E37E81F6EB551006D2EC7 /* DIT Timtable watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -41,50 +58,28 @@
 		159E37F61F6EB551006D2EC7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159E37F51F6EB551006D2EC7 /* ComplicationController.swift */; };
 		159E37F81F6EB551006D2EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159E37F71F6EB551006D2EC7 /* Assets.xcassets */; };
 		159E37FC1F6EB551006D2EC7 /* DIT Timtable watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 159E37DC1F6EB551006D2EC7 /* DIT Timtable watch.app */; };
-		159E38081F6EB789006D2EC7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159E38071F6EB789006D2EC7 /* RealmSwift.framework */; };
-		159E38091F6EB789006D2EC7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159E38071F6EB789006D2EC7 /* RealmSwift.framework */; };
-		159E380B1F6EB793006D2EC7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159E380A1F6EB793006D2EC7 /* Realm.framework */; };
-		159E380C1F6EB793006D2EC7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159E380A1F6EB793006D2EC7 /* Realm.framework */; };
-		159E380D1F6EB7A0006D2EC7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159E380A1F6EB793006D2EC7 /* Realm.framework */; };
-		159E380E1F6EB7A0006D2EC7 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 159E380A1F6EB793006D2EC7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		159E380F1F6EB7A0006D2EC7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 159E38071F6EB789006D2EC7 /* RealmSwift.framework */; };
-		159E38101F6EB7A0006D2EC7 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 159E38071F6EB789006D2EC7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		159E38171F6EB955006D2EC7 /* ClassDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159E38141F6EB955006D2EC7 /* ClassDetailInterfaceController.swift */; };
 		159E38181F6EB955006D2EC7 /* ClassRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159E38151F6EB955006D2EC7 /* ClassRowController.swift */; };
 		159E38191F6EB955006D2EC7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159E38161F6EB955006D2EC7 /* InterfaceController.swift */; };
 		159E381A1F6EB986006D2EC7 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C037651D8B69AE00040840 /* Timetable.swift */; };
-		159E381B1F6EB98A006D2EC7 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
-		159E381C1F6EB98F006D2EC7 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DBB1D8EB7CD00ECE240 /* Database.swift */; };
 		159E381D1F6EB995006D2EC7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1572F1B51F6D52560096C2C7 /* Utils.swift */; };
 		159E381E1F6EB9A8006D2EC7 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
 		159E381F1F6EB9AC006D2EC7 /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
 		159E38201F6EB9BE006D2EC7 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
 		159E38221F6ECB82006D2EC7 /* ComplicationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159E38211F6ECB82006D2EC7 /* ComplicationHandler.swift */; };
 		159E38231F6EFCF7006D2EC7 /* Strings+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B61DD2931E005DA231 /* Strings+ext.swift */; };
-		159E38241F6EFCF9006D2EC7 /* Strings+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B61DD2931E005DA231 /* Strings+ext.swift */; };
 		159E38251F6EFCF9006D2EC7 /* Strings+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B61DD2931E005DA231 /* Strings+ext.swift */; };
 		159E38261F6EFCFA006D2EC7 /* Strings+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B61DD2931E005DA231 /* Strings+ext.swift */; };
 		159E38271F6EFCFA006D2EC7 /* Strings+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B61DD2931E005DA231 /* Strings+ext.swift */; };
-		15C4535F1F6B0B9100365690 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C4535E1F6B0B9100365690 /* NotificationCenter.framework */; };
-		15C453621F6B0B9100365690 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453611F6B0B9100365690 /* TodayViewController.swift */; };
-		15C453651F6B0B9100365690 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C453631F6B0B9100365690 /* MainInterface.storyboard */; };
-		15C453691F6B0B9100365690 /* DIT-Timetable-today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 15C4535D1F6B0B9100365690 /* DIT-Timetable-today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		15C4536D1F6B0BB200365690 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DBB1D8EB7CD00ECE240 /* Database.swift */; };
-		15C4536F1F6B0BD200365690 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C037651D8B69AE00040840 /* Timetable.swift */; };
-		15C453701F6B0C8800365690 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52E1F6579B500B2CB45 /* RealmSwift.framework */; };
-		15C453711F6B0C8B00365690 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 155EC52C1F6579B000B2CB45 /* Realm.framework */; };
 		15C453731F6B0D0F00365690 /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
 		15C453741F6B0D0F00365690 /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
 		15C453751F6B0D0F00365690 /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
-		15C453761F6B0D0F00365690 /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
-		15C453791F6B160100365690 /* TodayCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453781F6B160100365690 /* TodayCellTableViewCell.swift */; };
 		15C4537A1F6D509600365690 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
 		15C4537B1F6D509600365690 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
-		15C4537C1F6D509700365690 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
+		15DF2D3C1F76D79F00FE61C6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF2D3B1F76D79F00FE61C6 /* SessionManager.swift */; };
 		15E83FE31F6DD4DC00CE1B61 /* ConnectivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E83FE21F6DD4DC00CE1B61 /* ConnectivityHandler.swift */; };
 		15E83FE41F6DE4EC00CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
 		15E83FE51F6DE4ED00CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
-		15E83FE61F6DE4EE00CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
 		15E83FE81F6DE4F000CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
 		15FAA3CB1E61A35A00AAB1C6 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */; };
 		B20EEF501D99CD750034D0AF /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20EEF4F1D99CD750034D0AF /* Plist.swift */; };
@@ -126,6 +121,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1526030E1F73129A00566A4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2C037251D8B0EFB00040840 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 152603041F73129A00566A4F;
+			remoteInfo = "Classes Left";
+		};
 		152728D71F6D9EF300BDCD67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B2C037251D8B0EFB00040840 /* Project object */;
@@ -147,13 +149,6 @@
 			remoteGlobalIDString = 159E37DB1F6EB551006D2EC7;
 			remoteInfo = "DIT Timtable watch";
 		};
-		15C453671F6B0B9100365690 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2C037251D8B0EFB00040840 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 15C4535C1F6B0B9100365690;
-			remoteInfo = "DIT-Timetable-today";
-		};
 		B2C037421D8B0EFC00040840 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B2C037251D8B0EFB00040840 /* Project object */;
@@ -171,6 +166,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		152602E81F73099800566A4F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				152602E71F73099800566A4F /* RealmSwift.framework in Embed Frameworks */,
+				152602E51F73099800566A4F /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		152602ED1F7309A700566A4F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1527290E1F6DA1BD00BDCD67 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -199,20 +216,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				159E38101F6EB7A0006D2EC7 /* RealmSwift.framework in Embed Frameworks */,
-				159E380E1F6EB7A0006D2EC7 /* Realm.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B246ECAB1D8EEA000039E7CE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				155EC5331F657D1000B2CB45 /* Realm.framework in Embed Frameworks */,
-				155EC5311F657D0D00B2CB45 /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,7 +227,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				152728D91F6D9EF300BDCD67 /* All Classes.appex in Embed App Extensions */,
-				15C453691F6B0B9100365690 /* DIT-Timetable-today.appex in Embed App Extensions */,
+				152603101F73129A00566A4F /* Classes Left.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,14 +236,19 @@
 
 /* Begin PBXFileReference section */
 		150A42C41E6CA21900D8C476 /* Device+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+Ext.swift"; sourceTree = "<group>"; };
+		152602E01F7308AD00566A4F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		152602E11F7308AD00566A4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/iOS/Realm.framework; sourceTree = "<group>"; };
+		152603051F73129A00566A4F /* Classes Left.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Classes Left.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		152603081F73129A00566A4F /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		1526030B1F73129A00566A4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		1526030D1F73129A00566A4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1526031F1F73140300566A4F /* Classes Left.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Classes Left.entitlements"; sourceTree = "<group>"; };
 		152728CE1F6D9EF300BDCD67 /* All Classes.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "All Classes.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		152728D11F6D9EF300BDCD67 /* TodayAllClassesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayAllClassesViewController.swift; sourceTree = "<group>"; };
 		152728D41F6D9EF300BDCD67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		152728D61F6D9EF300BDCD67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		152728E51F6DA08800BDCD67 /* All Classes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "All Classes.entitlements"; sourceTree = "<group>"; };
 		152729171F6DA65800BDCD67 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
-		155EC52C1F6579B000B2CB45 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		155EC52E1F6579B500B2CB45 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		1572F1B51F6D52560096C2C7 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		159E37DC1F6EB551006D2EC7 /* DIT Timtable watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DIT Timtable watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		159E37DF1F6EB551006D2EC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -253,22 +261,16 @@
 		159E37F51F6EB551006D2EC7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		159E37F71F6EB551006D2EC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		159E37F91F6EB551006D2EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		159E38071F6EB789006D2EC7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = watchOS/RealmSwift.framework; sourceTree = "<group>"; };
-		159E380A1F6EB793006D2EC7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = watchOS/Realm.framework; sourceTree = "<group>"; };
 		159E38121F6EB7E5006D2EC7 /* DIT Timtable watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIT Timtable watch Extension.entitlements"; sourceTree = "<group>"; };
 		159E38131F6EB7EF006D2EC7 /* DIT Timtable watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIT Timtable watch.entitlements"; sourceTree = "<group>"; };
 		159E38141F6EB955006D2EC7 /* ClassDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDetailInterfaceController.swift; sourceTree = "<group>"; };
 		159E38151F6EB955006D2EC7 /* ClassRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassRowController.swift; sourceTree = "<group>"; };
 		159E38161F6EB955006D2EC7 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		159E38211F6ECB82006D2EC7 /* ComplicationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationHandler.swift; sourceTree = "<group>"; };
-		15C4535D1F6B0B9100365690 /* DIT-Timetable-today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DIT-Timetable-today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C4535E1F6B0B9100365690 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		15C453611F6B0B9100365690 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		15C453641F6B0B9100365690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		15C453661F6B0B9100365690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15C453721F6B0D0F00365690 /* Date-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Ext.swift"; sourceTree = "<group>"; };
-		15C453771F6B150F00365690 /* DIT-Timetable-today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DIT-Timetable-today.entitlements"; sourceTree = "<group>"; };
 		15C453781F6B160100365690 /* TodayCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodayCellTableViewCell.swift; path = "DIT-Timetable-today/TodayCellTableViewCell.swift"; sourceTree = "<group>"; };
+		15DF2D3B1F76D79F00FE61C6 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		15E83FE21F6DD4DC00CE1B61 /* ConnectivityHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityHandler.swift; sourceTree = "<group>"; };
 		15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		B20EEF4F1D99CD750034D0AF /* Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
@@ -320,13 +322,23 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		152603021F73129A00566A4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152603181F73135D00566A4F /* Realm.framework in Frameworks */,
+				152603061F73129A00566A4F /* NotificationCenter.framework in Frameworks */,
+				152603191F73135F00566A4F /* RealmSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		152728CB1F6D9EF300BDCD67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				152728DE1F6D9F1100BDCD67 /* Realm.framework in Frameworks */,
-				152728DD1F6D9F0E00BDCD67 /* RealmSwift.framework in Frameworks */,
+				152602F51F730ABA00566A4F /* Realm.framework in Frameworks */,
 				152728CF1F6D9EF300BDCD67 /* NotificationCenter.framework in Frameworks */,
+				152602F91F730ABE00566A4F /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,20 +346,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				159E380D1F6EB7A0006D2EC7 /* Realm.framework in Frameworks */,
-				159E380C1F6EB793006D2EC7 /* Realm.framework in Frameworks */,
-				159E380F1F6EB7A0006D2EC7 /* RealmSwift.framework in Frameworks */,
-				159E38091F6EB789006D2EC7 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		15C4535A1F6B0B9100365690 /* Frameworks */ = {
+		2615057C81E320D399327588 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15C453711F6B0C8B00365690 /* Realm.framework in Frameworks */,
-				15C453701F6B0C8800365690 /* RealmSwift.framework in Frameworks */,
-				15C4535F1F6B0B9100365690 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,11 +360,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				155EC5341F657D5800B2CB45 /* Realm.framework in Frameworks */,
-				155EC5351F657D5800B2CB45 /* RealmSwift.framework in Frameworks */,
-				159E38081F6EB789006D2EC7 /* RealmSwift.framework in Frameworks */,
+				152602E41F73099800566A4F /* Realm.framework in Frameworks */,
 				15FAA3CB1E61A35A00AAB1C6 /* UserNotifications.framework in Frameworks */,
-				159E380B1F6EB793006D2EC7 /* Realm.framework in Frameworks */,
+				152602E61F73099800566A4F /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +370,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152602F61F730ABC00566A4F /* RealmSwift.framework in Frameworks */,
+				152602F21F730AB800566A4F /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,12 +379,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152602F71F730ABC00566A4F /* RealmSwift.framework in Frameworks */,
+				152602F31F730AB800566A4F /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152602DB1F73073300566A4F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				152602E11F7308AD00566A4F /* Realm.framework */,
+				152602E01F7308AD00566A4F /* RealmSwift.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		152603071F73129A00566A4F /* Classes Left */ = {
+			isa = PBXGroup;
+			children = (
+				1526031F1F73140300566A4F /* Classes Left.entitlements */,
+				152603081F73129A00566A4F /* TodayViewController.swift */,
+				1526030A1F73129A00566A4F /* MainInterface.storyboard */,
+				1526030D1F73129A00566A4F /* Info.plist */,
+			);
+			path = "Classes Left";
+			sourceTree = "<group>";
+		};
 		152728C91F6D9E6300BDCD67 /* SharedTodayExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +440,7 @@
 		159E37EC1F6EB551006D2EC7 /* DIT Timtable watch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				15DF2D3B1F76D79F00FE61C6 /* SessionManager.swift */,
 				159E38141F6EB955006D2EC7 /* ClassDetailInterfaceController.swift */,
 				159E38151F6EB955006D2EC7 /* ClassRowController.swift */,
 				159E38161F6EB955006D2EC7 /* InterfaceController.swift */,
@@ -436,32 +464,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		15C453601F6B0B9100365690 /* DIT-Timetable-today */ = {
-			isa = PBXGroup;
-			children = (
-				15C453771F6B150F00365690 /* DIT-Timetable-today.entitlements */,
-				15C453611F6B0B9100365690 /* TodayViewController.swift */,
-				15C453631F6B0B9100365690 /* MainInterface.storyboard */,
-				15C453661F6B0B9100365690 /* Info.plist */,
-			);
-			path = "DIT-Timetable-today";
-			sourceTree = "<group>";
-		};
-		15E83FC11F6DAABE00CE1B61 /* watchOS */ = {
-			isa = PBXGroup;
-			children = (
-				159E380A1F6EB793006D2EC7 /* Realm.framework */,
-				159E38071F6EB789006D2EC7 /* RealmSwift.framework */,
-			);
-			name = watchOS;
-			sourceTree = "<group>";
-		};
 		B21957391D8D844F00080E6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				15E83FC11F6DAABE00CE1B61 /* watchOS */,
-				155EC52E1F6579B500B2CB45 /* RealmSwift.framework */,
-				155EC52C1F6579B000B2CB45 /* Realm.framework */,
+				152602DB1F73073300566A4F /* iOS */,
 				15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */,
 				B219573A1D8D845000080E6E /* libc++.tbd */,
 				15C4535E1F6B0B9100365690 /* NotificationCenter.framework */,
@@ -577,10 +583,10 @@
 				B2C037441D8B0EFC00040840 /* DIT-Timetable-V2Tests */,
 				B2C0374F1D8B0EFC00040840 /* DIT-Timetable-V2UITests */,
 				152728C91F6D9E6300BDCD67 /* SharedTodayExtension */,
-				15C453601F6B0B9100365690 /* DIT-Timetable-today */,
 				152728D01F6D9EF300BDCD67 /* All Classes */,
 				159E37DD1F6EB551006D2EC7 /* DIT Timtable watch */,
 				159E37EC1F6EB551006D2EC7 /* DIT Timtable watch Extension */,
+				152603071F73129A00566A4F /* Classes Left */,
 				B21957391D8D844F00080E6E /* Frameworks */,
 				B2C0372E1D8B0EFC00040840 /* Products */,
 			);
@@ -592,10 +598,10 @@
 				B2C0372D1D8B0EFC00040840 /* DIT Timetable.app */,
 				B2C037411D8B0EFC00040840 /* DIT-Timetable-V2Tests.xctest */,
 				B2C0374C1D8B0EFC00040840 /* DIT-Timetable-V2UITests.xctest */,
-				15C4535D1F6B0B9100365690 /* DIT-Timetable-today.appex */,
 				152728CE1F6D9EF300BDCD67 /* All Classes.appex */,
 				159E37DC1F6EB551006D2EC7 /* DIT Timtable watch.app */,
 				159E37E81F6EB551006D2EC7 /* DIT Timtable watch Extension.appex */,
+				152603051F73129A00566A4F /* Classes Left.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -650,6 +656,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		152603041F73129A00566A4F /* Classes Left */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 152603111F73129A00566A4F /* Build configuration list for PBXNativeTarget "Classes Left" */;
+			buildPhases = (
+				152603011F73129A00566A4F /* Sources */,
+				152603021F73129A00566A4F /* Frameworks */,
+				152603031F73129A00566A4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Classes Left";
+			productName = "Classes Left";
+			productReference = 152603051F73129A00566A4F /* Classes Left.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		152728CD1F6D9EF300BDCD67 /* All Classes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 152728DA1F6D9EF300BDCD67 /* Build configuration list for PBXNativeTarget "All Classes" */;
@@ -673,6 +696,8 @@
 			buildPhases = (
 				159E37DA1F6EB551006D2EC7 /* Resources */,
 				159E38001F6EB551006D2EC7 /* Embed App Extensions */,
+				2615057C81E320D399327588 /* Frameworks */,
+				152602ED1F7309A700566A4F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -702,41 +727,24 @@
 			productReference = 159E37E81F6EB551006D2EC7 /* DIT Timtable watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
-		15C4535C1F6B0B9100365690 /* DIT-Timetable-today */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 15C4536C1F6B0B9100365690 /* Build configuration list for PBXNativeTarget "DIT-Timetable-today" */;
-			buildPhases = (
-				15C453591F6B0B9100365690 /* Sources */,
-				15C4535A1F6B0B9100365690 /* Frameworks */,
-				15C4535B1F6B0B9100365690 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "DIT-Timetable-today";
-			productName = "DIT-Timetable-today";
-			productReference = 15C4535D1F6B0B9100365690 /* DIT-Timetable-today.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		B2C0372C1D8B0EFC00040840 /* DIT-Timetable-V2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2C037551D8B0EFC00040840 /* Build configuration list for PBXNativeTarget "DIT-Timetable-V2" */;
 			buildPhases = (
 				B2C037291D8B0EFC00040840 /* Sources */,
 				B2C0372A1D8B0EFC00040840 /* Frameworks */,
+				152602E81F73099800566A4F /* Embed Frameworks */,
 				B2C0372B1D8B0EFC00040840 /* Resources */,
-				B246ECAB1D8EEA000039E7CE /* Embed Frameworks */,
-				B21957401D8D86FF00080E6E /* ShellScript */,
 				B246ECDD1D8F1B740039E7CE /* Embed App Extensions */,
 				1527290E1F6DA1BD00BDCD67 /* Embed Watch Content */,
+				B21957401D8D86FF00080E6E /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				15C453681F6B0B9100365690 /* PBXTargetDependency */,
 				152728D81F6D9EF300BDCD67 /* PBXTargetDependency */,
 				159E37FB1F6EB551006D2EC7 /* PBXTargetDependency */,
+				1526030F1F73129A00566A4F /* PBXTargetDependency */,
 			);
 			name = "DIT-Timetable-V2";
 			productName = "DIT-Timetable-V2";
@@ -785,10 +793,20 @@
 		B2C037251D8B0EFB00040840 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Timothy Barnard";
 				TargetAttributes = {
+					152603041F73129A00566A4F = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = 4EU4PGMLU9;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					152728CD1F6D9EF300BDCD67 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 4EU4PGMLU9;
@@ -810,16 +828,6 @@
 						};
 					};
 					159E37E71F6EB551006D2EC7 = {
-						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 4EU4PGMLU9;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					15C4535C1F6B0B9100365690 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 4EU4PGMLU9;
 						ProvisioningStyle = Automatic;
@@ -871,8 +879,8 @@
 				B2C0372C1D8B0EFC00040840 /* DIT-Timetable-V2 */,
 				B2C037401D8B0EFC00040840 /* DIT-Timetable-V2Tests */,
 				B2C0374B1D8B0EFC00040840 /* DIT-Timetable-V2UITests */,
-				15C4535C1F6B0B9100365690 /* DIT-Timetable-today */,
 				152728CD1F6D9EF300BDCD67 /* All Classes */,
+				152603041F73129A00566A4F /* Classes Left */,
 				159E37DB1F6EB551006D2EC7 /* DIT Timtable watch */,
 				159E37E71F6EB551006D2EC7 /* DIT Timtable watch Extension */,
 			);
@@ -880,6 +888,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		152603031F73129A00566A4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1526030C1F73129A00566A4F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		152728CC1F6D9EF300BDCD67 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -902,14 +918,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				159E37F81F6EB551006D2EC7 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		15C4535B1F6B0B9100365690 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				15C453651F6B0B9100365690 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,6 +966,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		152603011F73129A00566A4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				152603151F73131700566A4F /* Database.swift in Sources */,
+				152603161F73132100566A4F /* Timetable.swift in Sources */,
+				1526031B1F73138400566A4F /* Date-Ext.swift in Sources */,
+				152603091F73129A00566A4F /* TodayViewController.swift in Sources */,
+				1526031D1F73138A00566A4F /* Dictionary+Ext.swift in Sources */,
+				152603171F73132300566A4F /* Class.swift in Sources */,
+				152603141F73130A00566A4F /* TodayCellTableViewCell.swift in Sources */,
+				1526031A1F73138100566A4F /* DateStr+Ext.swift in Sources */,
+				1526031E1F73138C00566A4F /* Strings+ext.swift in Sources */,
+				1526031C1F73138700566A4F /* Utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		152728CA1F6D9EF300BDCD67 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -979,38 +1004,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15DF2D3C1F76D79F00FE61C6 /* SessionManager.swift in Sources */,
 				159E37F41F6EB551006D2EC7 /* NotificationController.swift in Sources */,
 				159E38181F6EB955006D2EC7 /* ClassRowController.swift in Sources */,
 				159E381E1F6EB9A8006D2EC7 /* DateStr+Ext.swift in Sources */,
 				159E38171F6EB955006D2EC7 /* ClassDetailInterfaceController.swift in Sources */,
 				159E38221F6ECB82006D2EC7 /* ComplicationHandler.swift in Sources */,
 				159E38191F6EB955006D2EC7 /* InterfaceController.swift in Sources */,
-				159E381B1F6EB98A006D2EC7 /* Class.swift in Sources */,
 				159E38201F6EB9BE006D2EC7 /* Dictionary+Ext.swift in Sources */,
 				159E381D1F6EB995006D2EC7 /* Utils.swift in Sources */,
 				159E37F61F6EB551006D2EC7 /* ComplicationController.swift in Sources */,
-				159E381C1F6EB98F006D2EC7 /* Database.swift in Sources */,
 				159E381F1F6EB9AC006D2EC7 /* Date-Ext.swift in Sources */,
 				159E37F21F6EB551006D2EC7 /* ExtensionDelegate.swift in Sources */,
 				159E38231F6EFCF7006D2EC7 /* Strings+ext.swift in Sources */,
 				159E381A1F6EB986006D2EC7 /* Timetable.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		15C453591F6B0B9100365690 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				15C4536D1F6B0BB200365690 /* Database.swift in Sources */,
-				15C453791F6B160100365690 /* TodayCellTableViewCell.swift in Sources */,
-				15E83FE61F6DE4EE00CE1B61 /* Dictionary+Ext.swift in Sources */,
-				15C453761F6B0D0F00365690 /* Date-Ext.swift in Sources */,
-				1572F1B91F6D52560096C2C7 /* Utils.swift in Sources */,
-				152729191F6DA65800BDCD67 /* Class.swift in Sources */,
-				15C453621F6B0B9100365690 /* TodayViewController.swift in Sources */,
-				15C4536F1F6B0BD200365690 /* Timetable.swift in Sources */,
-				159E38241F6EFCF9006D2EC7 /* Strings+ext.swift in Sources */,
-				15C4537C1F6D509700365690 /* DateStr+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,6 +1093,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1526030F1F73129A00566A4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 152603041F73129A00566A4F /* Classes Left */;
+			targetProxy = 1526030E1F73129A00566A4F /* PBXContainerItemProxy */;
+		};
 		152728D81F6D9EF300BDCD67 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 152728CD1F6D9EF300BDCD67 /* All Classes */;
@@ -1101,11 +1113,6 @@
 			target = 159E37DB1F6EB551006D2EC7 /* DIT Timtable watch */;
 			targetProxy = 159E37FA1F6EB551006D2EC7 /* PBXContainerItemProxy */;
 		};
-		15C453681F6B0B9100365690 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 15C4535C1F6B0B9100365690 /* DIT-Timetable-today */;
-			targetProxy = 15C453671F6B0B9100365690 /* PBXContainerItemProxy */;
-		};
 		B2C037431D8B0EFC00040840 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B2C0372C1D8B0EFC00040840 /* DIT-Timetable-V2 */;
@@ -1119,6 +1126,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1526030A1F73129A00566A4F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1526030B1F73129A00566A4F /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		152728D31F6D9EF300BDCD67 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1133,14 +1148,6 @@
 				159E37DF1F6EB551006D2EC7 /* Base */,
 			);
 			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-		15C453631F6B0B9100365690 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				15C453641F6B0B9100365690 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		B2C037391D8B0EFC00040840 /* LaunchScreen.storyboard */ = {
@@ -1164,6 +1171,70 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		152603121F73129A00566A4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Classes Left/Classes Left.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Classes Left/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.Classes-Left";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		152603131F73129A00566A4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "Classes Left/Classes Left.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Classes Left/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.Classes-Left";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		152728DB1F6D9EF300BDCD67 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1172,10 +1243,10 @@
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
 				);
 				INFOPLIST_FILE = "All Classes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.All-Classes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1192,10 +1263,10 @@
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
 				);
 				INFOPLIST_FILE = "All Classes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.All-Classes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1213,7 +1284,7 @@
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/watchOS",
+					"$(PROJECT_DIR)/Frameworks/watchOS",
 				);
 				INFOPLIST_FILE = "DIT Timtable watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1236,7 +1307,7 @@
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/watchOS",
+					"$(PROJECT_DIR)/Frameworks/watchOS",
 				);
 				INFOPLIST_FILE = "DIT Timtable watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1258,8 +1329,10 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "DIT Timtable watch/DIT Timtable watch.entitlements";
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks/watchOS";
 				IBSC_MODULE = DIT_Timtable_watch_Extension;
 				INFOPLIST_FILE = "DIT Timtable watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1278,8 +1351,10 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = "DIT Timtable watch/DIT Timtable watch.entitlements";
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks/watchOS";
 				IBSC_MODULE = DIT_Timtable_watch_Extension;
 				INFOPLIST_FILE = "DIT Timtable watch/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1287,46 +1362,6 @@
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
-			};
-			name = Release;
-		};
-		15C4536A1F6B0B9100365690 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "DIT-Timetable-today/DIT-Timetable-today.entitlements";
-				DEVELOPMENT_TEAM = 4EU4PGMLU9;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "DIT-Timetable-today/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.DIT-Timetable-today";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		15C4536B1F6B0B9100365690 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "DIT-Timetable-today/DIT-Timetable-today.entitlements";
-				DEVELOPMENT_TEAM = 4EU4PGMLU9;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "DIT-Timetable-today/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.DIT-Timetable-today";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1377,6 +1412,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1420,6 +1456,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1432,16 +1469,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "DIT-Timetable-V2/DIT Timetable.entitlements";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/watchOS",
+					"$(PROJECT_DIR)/Frameworks/iOS",
 				);
 				INFOPLIST_FILE = "DIT-Timetable-V2/Applications/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable";
 				PRODUCT_NAME = "DIT Timetable";
@@ -1458,16 +1494,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "DIT-Timetable-V2/DIT Timetable.entitlements";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 4EU4PGMLU9;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/watchOS",
+					"$(PROJECT_DIR)/Frameworks/iOS",
 				);
 				INFOPLIST_FILE = "DIT-Timetable-V2/Applications/Main/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable";
 				PRODUCT_NAME = "DIT Timetable";
@@ -1481,6 +1516,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
 				INFOPLIST_FILE = "DIT-Timetable-V2Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable-V2Tests";
@@ -1495,6 +1534,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
 				INFOPLIST_FILE = "DIT-Timetable-V2Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable-V2Tests";
@@ -1508,6 +1551,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
 				INFOPLIST_FILE = "DIT-Timetable-V2UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable-V2UITests";
@@ -1521,6 +1568,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
 				INFOPLIST_FILE = "DIT-Timetable-V2UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable-V2UITests";
@@ -1533,6 +1584,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		152603111F73129A00566A4F /* Build configuration list for PBXNativeTarget "Classes Left" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				152603121F73129A00566A4F /* Debug */,
+				152603131F73129A00566A4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		152728DA1F6D9EF300BDCD67 /* Build configuration list for PBXNativeTarget "All Classes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1556,15 +1616,6 @@
 			buildConfigurations = (
 				159E38021F6EB551006D2EC7 /* Debug */,
 				159E38031F6EB551006D2EC7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		15C4536C1F6B0B9100365690 /* Build configuration list for PBXNativeTarget "DIT-Timetable-today" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				15C4536A1F6B0B9100365690 /* Debug */,
-				15C4536B1F6B0B9100365690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -26,8 +26,6 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        self.reloadTableData()
         self.requestUpdate()
     }
     
@@ -40,14 +38,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     func reloadTableData() {
-        
-        let database = Database()
-    
-        let today = Date()
-        let day = today.weekday()
-        let indexVal = (day+5) % 7
-        self.todayClasses = database.getDayTimetable(dayNo: indexVal)
-        self.reloadTable()
+        self.requestUpdate()
     }
     @IBAction func requestInfoButton() {
         self.requestUpdate()
@@ -79,68 +70,52 @@ class InterfaceController: WKInterfaceController {
         presentController(withName: "ViewClass", context: classSelected)
     }
     
+    func reloadComplications() {
+        let server = CLKComplicationServer.sharedInstance()
+        guard let complications = server.activeComplications, complications.count > 0 else {
+            return
+        }
+        
+        for complication in complications  {
+            server.reloadTimeline(for: complication)
+        }
+    }
+    
 }
 
 extension InterfaceController: WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         
-        print("Message: \(message)")
-        
-        if let dict = message["add"] as? [String: AnyObject] {
+        if let objects = message["refresh"] as? [AnyObject] {
+            let defaults = UserDefaults()
+            defaults.set(objects, forKey: "todaytimetable")
             
-            let database = Database()
-            let timetable = Timetable(dict: dict)
-            let newClass = database.makeClass(timetable: timetable)
-            database.saveClass(myClass: newClass)
-        } else if let dict = message["edit"] as? [String: AnyObject] {
-            
-            let database = Database()
-            let timetable = Timetable(dict: dict)
-            let editClass = database.makeClass(timetable: timetable)
-            database.editClass(myClass: editClass )
-        } else {
-            return
+            self.todayClasses = MyJSONMapper.toObjects(array: objects)
+
+            // reload complication data
+            reloadComplications()
         }
-        
-        self.reloadTableData()
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
-        /*session.sendMessage(["update" : "now"],
+        session.sendMessage(["update" : "now"],
                              replyHandler: { (response) in
                             
                             guard let array = response["update"] as? [AnyObject] else {
                                 return
                             }
                                 
-                            let database = Database()
-                            database.removeAll()
-                            
-                            let timetables = MyJSONMapper.toObjects(array: array)
-                            for timetable in timetables {
+                            let defaults = UserDefaults()
+                            defaults.set(array, forKey: "todaytimetable")
                                 
-                                let newClass = Class()
-                                newClass.id = timetable.id
-                                newClass.lecture = timetable.lecture
-                                newClass.room = timetable.room
-                                newClass.timeStart = timetable.timeStart
-                                newClass.timeEnd = timetable.timeEnd
-                                newClass.notifOn = timetable.notifOn
-                                newClass.name = timetable.name
-                                newClass.groups = timetable.groups
-                                newClass.day = timetable.dayNo
-                                
-                                database.saveClass(myClass: newClass)
-                            }
-
-                            self.reloadTableData()
+                            self.todayClasses = MyJSONMapper.toObjects(array: array)
                         },
                          errorHandler: { (error) in
                             print("Error sending message: %@", error)
                 }
-        )*/
+        )
         
     }
 }

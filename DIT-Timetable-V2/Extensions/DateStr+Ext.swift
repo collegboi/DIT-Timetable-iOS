@@ -36,11 +36,11 @@ extension String {
         return resultStr
     }
     
-    func convertToCurrentTimeFormat() -> String {
+    func convertToCurrentTimeFormat(_ show12Extension: Bool = true ) -> String {
         
         if(Utils.using12hClockFormat()) {
             
-            return Utils.create12HourTimeStr(time: self)
+            return Utils.create12HourTimeStr(time: self, showAMPM: show12Extension)
         }
         
         return self

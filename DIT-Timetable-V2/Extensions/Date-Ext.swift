@@ -54,5 +54,11 @@ extension Date {
         return minute
     }
     
+    func weekDayIndex() -> Int {
+        let calendar = Calendar.current
+        let day = calendar.component(.weekday, from: self as Date)
+        return (day+5) % 7
+    }
+    
     
 }

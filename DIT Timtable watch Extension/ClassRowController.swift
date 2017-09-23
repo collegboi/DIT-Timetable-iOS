@@ -22,7 +22,7 @@ class ClassRowController: NSObject {
             guard let timetable = timetable else { return }
 
             moduleNameLabel.setText(timetable.moduleName)
-            timeStartLabel.setText(timetable.timeStart)
+            timeStartLabel.setText(timetable.timeStart.convertToCurrentTimeFormat())
             roomLabel.setText(timetable.roomNo)
         }
     }

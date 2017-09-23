@@ -64,7 +64,7 @@ class Utils {
 
     
     
-    class func create12HourTimeStr(time: String) -> String {
+    class func create12HourTimeStr(time: String, showAMPM: Bool = true) -> String {
         let timeParts = time.components(separatedBy: ":")
         if(timeParts.count == 2) {
             
@@ -91,8 +91,11 @@ class Utils {
                 newMinString = "0" + String(min)
             }
             
-            return String(newHour) + ":" + newMinString + " " + amPM
-            
+            if(showAMPM) {
+                return String(newHour) + ":" + newMinString + " " + amPM
+            } else {
+                return String(newHour) + ":" + newMinString
+            }
             
         } else {
             return time

@@ -341,7 +341,7 @@ class Database {
                 continue
             }
             
-            if(classTimeHr >= hour || classTimeEndHr < hour ) {
+            if(classTimeHr >= hour || hour < classTimeEndHr ) {
                 
                 let timetable = self.makeTimetablFormClass(curClass: curClass)
                 

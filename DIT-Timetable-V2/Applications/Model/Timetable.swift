@@ -11,16 +11,60 @@ class Timetable {
     
     var id : Int = 0
     var dayNo : Int = 0
-    var name : String = ""
-    var lecture: String = ""
-    var room : String = ""
-    var roomNo: String = ""
-    var timeStartDate = Date()
-    var timeEndDate = Date()
-    var timeStart : String = ""
-    var timeEnd : String = ""
     var moduleCode: String = ""
     var moduleName: String = ""
+    var name : String = "" {
+        didSet {
+            let moduleParts = name.components(separatedBy: " ")
+            moduleName = name
+            if(moduleParts.count >= 3 ) {
+                
+                moduleCode = moduleParts[moduleParts.count-2] + " " +   moduleParts[moduleParts.count-1]
+                let moduleNameParts = name.components(separatedBy: moduleCode)
+                if(moduleNameParts.count >= 2) {
+                    moduleName = moduleNameParts[0]
+                }
+            }
+        }
+    }
+    var lecture: String = ""
+    var roomNo: String = ""
+    var room : String = "" {
+        didSet {
+            var roomVal = ""
+            let roomsParts = room.components(separatedBy: ",")
+            if(roomsParts.count >= 2) {
+                let roomNo = roomsParts[1]
+                
+                let roomNameParts = roomsParts[0].components(separatedBy: " ")
+                for roomPart in roomNameParts {
+                    roomVal += roomPart[0]
+                }
+                
+                roomVal += " " + roomNo
+                
+            } else {
+                roomVal = room
+            }
+            roomNo = roomVal
+        }
+    }
+    var timeStartDate = Date()
+    var timeEndDate = Date()
+    var timeStart : String = "" {
+        didSet {
+            if timeStart.characters.count < 5 && !Utils.using12hClockFormat() {
+                timeStart += "0"
+            }
+        }
+    }
+    var timeEnd : String = "" {
+        didSet {
+            if timeStart.characters.count < 5 && !Utils.using12hClockFormat() {
+                timeEnd += "0"
+            }
+        }
+    }
     var groups : String = ""
     var weeks : String = ""
     var notifOn : Int = 0
@@ -44,6 +88,11 @@ class Timetable {
         groups = dict.tryConvert(forKey: "groups")
         weeks = dict.tryConvert(forKey: "weeks")
         notifOn = dict.tryConvert(forKey: "notifOn")
+        
+        let timetableParts = parseTimetable(module: name, room: room)
+        moduleCode = timetableParts.code
+        moduleName = timetableParts.name
+        roomNo = timetableParts.room
     }
     
     func toJSON() -> [String: AnyObject] {
@@ -59,6 +108,41 @@ class Timetable {
         dict["weeks"] = (self.weeks) as AnyObject
         dict["notifOn"] = (self.notifOn) as AnyObject
         return dict
+    }
+    
+    func parseTimetable(module: String, room: String) -> (name: String, code: String, room: String) {
+        
+        var name: String = module
+        var code: String = ""
+        var roomVal: String = room
+        
+        let moduleParts = module.components(separatedBy: " ")
+        
+        if(moduleParts.count >= 3 ) {
+            
+            code = moduleParts[moduleParts.count-2] + " " +   moduleParts[moduleParts.count-1]
+            let moduleNameParts = module.components(separatedBy: code)
+            if(moduleNameParts.count >= 2) {
+                name = moduleNameParts[0]
+            }
+        }
+        
+        let roomsParts = room.components(separatedBy: ",")
+        if(roomsParts.count >= 2) {
+            let roomNo = roomsParts[1]
+            
+            let roomNameParts = roomsParts[0].components(separatedBy: " ")
+            for roomPart in roomNameParts {
+                roomVal += roomPart[0]
+            }
+            
+            roomVal += " " + roomNo
+            
+        } else {
+            roomVal = room
+        }
+        
+        return(name, code, roomVal)
     }
 }
 
@@ -92,28 +176,25 @@ class AllTimetables {
 
 class MyJSONMapper {
     
-    class func toJSON(timetables: [AllTimetables]) -> [AnyObject] {
+    class func toJSON(timetables: [Timetable]) -> [AnyObject] {
         
         var timetablesObject = [AnyObject]()
         
-        for timetable in timetables {
-        
-            for dayTimetable in timetable.timetable {
-                var dict : [String: AnyObject] = [:]
-                
-                dict["id"] = (dayTimetable.id) as AnyObject
-                dict["dayNo"] = (dayTimetable.dayNo) as AnyObject
-                dict["name"] = (dayTimetable.name) as AnyObject
-                dict["lecture"] = (dayTimetable.lecture) as AnyObject
-                dict["room"] = (dayTimetable.room) as AnyObject
-                dict["timeStart"] = (dayTimetable.timeStart) as AnyObject
-                dict["timeEnd"] = (dayTimetable.timeEnd) as AnyObject
-                dict["groups"] = (dayTimetable.groups) as AnyObject
-                dict["weeks"] = (dayTimetable.weeks) as AnyObject
-                dict["notifOn"] = (dayTimetable.notifOn) as AnyObject
-                
-                timetablesObject.append(dict as AnyObject)
-            }
+        for dayTimetable in timetables {
+            var dict : [String: AnyObject] = [:]
+            
+            dict["id"] = (dayTimetable.id) as AnyObject
+            dict["dayNo"] = (dayTimetable.dayNo) as AnyObject
+            dict["name"] = (dayTimetable.name) as AnyObject
+            dict["lecture"] = (dayTimetable.lecture) as AnyObject
+            dict["room"] = (dayTimetable.room) as AnyObject
+            dict["timeStart"] = (dayTimetable.timeStart) as AnyObject
+            dict["timeEnd"] = (dayTimetable.timeEnd) as AnyObject
+            dict["groups"] = (dayTimetable.groups) as AnyObject
+            dict["weeks"] = (dayTimetable.weeks) as AnyObject
+            dict["notifOn"] = (dayTimetable.notifOn) as AnyObject
+            
+            timetablesObject.append(dict as AnyObject)
         }
         return timetablesObject
         

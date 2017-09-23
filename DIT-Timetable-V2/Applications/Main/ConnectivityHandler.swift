@@ -52,9 +52,13 @@ class ConnectivityHandler : NSObject, WCSessionDelegate {
         if message["update"] as? String == "now" {
             
            if let database = self.database  {
-                
+            
+                let today = Date()
+                let day = today.weekday()
+                let indexVal = (day+5) % 7
+            
                 DispatchQueue.main.async {
-                    let timetables = database.getAllTimetables()
+                    let timetables = database.getDayTimetable(dayNo: indexVal)
                     let timetableObjects = MyJSONMapper.toJSON(timetables: timetables)
                     
                     replyHandler(["update" : timetableObjects])
