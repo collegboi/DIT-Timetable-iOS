@@ -11,7 +11,7 @@ import WatchConnectivity
 
 class ConnectivityHandler : NSObject, WCSessionDelegate {
     
-    var session = WCSession.default()
+    var session = WCSession.default
     
     var database: Database?
     

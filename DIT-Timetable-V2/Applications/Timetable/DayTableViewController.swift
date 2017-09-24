@@ -51,7 +51,7 @@ class DayTableViewController: UIViewController, UITableViewDelegate, UITableView
         NotificationCenter.default.removeObserver(self, name: notificationName, object: nil);
     }
     
-    func addClass() {
+    @objc func addClass() {
         print("testing alert")
         self.pickedRow = -1
         self.performSegue(withIdentifier: "editClassSegue", sender: self)

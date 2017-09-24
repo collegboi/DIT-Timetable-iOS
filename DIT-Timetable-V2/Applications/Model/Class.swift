@@ -10,16 +10,16 @@ import Realm
 import Foundation
 // Class model
 class Class: RLMObject {
-    dynamic var id = 0
-    dynamic var name = ""
-    dynamic var day = 0
-    dynamic var lecture = ""
-    dynamic var room = ""
-    dynamic var timeStart = ""
-    dynamic var timeEnd = ""
-    dynamic var groups = ""
-    dynamic var weeks = ""
-    dynamic var notifOn = 0
+    @objc dynamic var id = 0
+    @objc dynamic var name = ""
+    @objc dynamic var day = 0
+    @objc dynamic var lecture = ""
+    @objc dynamic var room = ""
+    @objc dynamic var timeStart = ""
+    @objc dynamic var timeEnd = ""
+    @objc dynamic var groups = ""
+    @objc dynamic var weeks = ""
+    @objc dynamic var notifOn = 0
     
     override static func primaryKey() -> String? {
         return "id"

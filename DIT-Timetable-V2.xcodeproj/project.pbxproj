@@ -1324,7 +1324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.Classes-Left";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1356,7 +1356,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.Classes-Left";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1377,7 +1377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.All-Classes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1397,7 +1397,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.All-Classes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1418,7 +1418,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
@@ -1441,7 +1441,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
@@ -1520,7 +1520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.iMessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1554,7 +1554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.iMessage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1677,7 +1677,7 @@
 				PRODUCT_NAME = "DIT Timetable";
 				SWIFT_OBJC_BRIDGING_HEADER = "DIT-Timetable-V2/Applications/Main/DIT-Timetable-V2-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1701,7 +1701,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable";
 				PRODUCT_NAME = "DIT Timetable";
 				SWIFT_OBJC_BRIDGING_HEADER = "DIT-Timetable-V2/Applications/Main/DIT-Timetable-V2-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1718,7 +1718,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable-V2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DIT-Timetable-V2.app/DIT-Timetable-V2";
 			};
 			name = Debug;
@@ -1736,7 +1736,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable-V2Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DIT-Timetable-V2.app/DIT-Timetable-V2";
 			};
 			name = Release;
@@ -1753,7 +1753,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable-V2UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "DIT-Timetable-V2";
 			};
 			name = Debug;
@@ -1770,7 +1770,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable-V2UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "DIT-Timetable-V2";
 			};
 			name = Release;

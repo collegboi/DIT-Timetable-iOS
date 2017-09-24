@@ -24,7 +24,7 @@ class SessionManager: NSObject {
     
     private func update() {
         if WCSession.isSupported() {
-            session = WCSession.default()
+            session = WCSession.default
             session?.delegate = self
             session?.activate()
         }

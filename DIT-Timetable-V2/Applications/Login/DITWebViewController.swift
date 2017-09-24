@@ -127,7 +127,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
-    func changeGIF() {
+    @objc func changeGIF() {
         self.gifImage.image = UIImage.gifImageWithURL(gifUrl: String(describing: self.gifURLs.randomValue()))
     }
     
@@ -185,7 +185,7 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
         self.actInd!.startAnimating()
     }
     
-    func cancelLogin() {
+    @objc func cancelLogin() {
         self.timetableLoaded = true
         self.ditWebView.stopLoading()
         //self.actInd!.stopAnimating()
