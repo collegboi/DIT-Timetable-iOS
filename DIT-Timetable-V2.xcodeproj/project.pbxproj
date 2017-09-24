@@ -76,6 +76,22 @@
 		15C453751F6B0D0F00365690 /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
 		15C4537A1F6D509600365690 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
 		15C4537B1F6D509600365690 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
+		15CF563B1F7726DA007FCE72 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15CF563A1F7726DA007FCE72 /* Messages.framework */; };
+		15CF563E1F7726DA007FCE72 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CF563D1F7726DA007FCE72 /* MessagesViewController.swift */; };
+		15CF56411F7726DA007FCE72 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15CF563F1F7726DA007FCE72 /* MainInterface.storyboard */; };
+		15CF56431F7726DA007FCE72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15CF56421F7726DA007FCE72 /* Assets.xcassets */; };
+		15CF56471F7726DA007FCE72 /* iMessage.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 15CF56391F7726DA007FCE72 /* iMessage.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		15CF564C1F772B47007FCE72 /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C037651D8B69AE00040840 /* Timetable.swift */; };
+		15CF564D1F772B4A007FCE72 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152729171F6DA65800BDCD67 /* Class.swift */; };
+		15CF564E1F772B50007FCE72 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2753DBB1D8EB7CD00ECE240 /* Database.swift */; };
+		15CF564F1F772B56007FCE72 /* Strings+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B61DD2931E005DA231 /* Strings+ext.swift */; };
+		15CF56501F772B5A007FCE72 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
+		15CF56511F772B5D007FCE72 /* DateStr+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B049471E40146600CD4FF8 /* DateStr+Ext.swift */; };
+		15CF56521F772B60007FCE72 /* Date-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C453721F6B0D0F00365690 /* Date-Ext.swift */; };
+		15CF56531F772B63007FCE72 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1572F1B51F6D52560096C2C7 /* Utils.swift */; };
+		15CF56541F772C5D007FCE72 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E11F7308AD00566A4F /* Realm.framework */; };
+		15CF56551F772C60007FCE72 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 152602E01F7308AD00566A4F /* RealmSwift.framework */; };
+		15CF56581F772EC8007FCE72 /* IMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CF56571F772EC8007FCE72 /* IMessageCell.swift */; };
 		15DF2D3C1F76D79F00FE61C6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF2D3B1F76D79F00FE61C6 /* SessionManager.swift */; };
 		15E83FE31F6DD4DC00CE1B61 /* ConnectivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E83FE21F6DD4DC00CE1B61 /* ConnectivityHandler.swift */; };
 		15E83FE41F6DE4EC00CE1B61 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B278C3B81DD48ECC005DA231 /* Dictionary+Ext.swift */; };
@@ -148,6 +164,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 159E37DB1F6EB551006D2EC7;
 			remoteInfo = "DIT Timtable watch";
+		};
+		15CF56451F7726DA007FCE72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2C037251D8B0EFB00040840 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15CF56381F7726DA007FCE72;
+			remoteInfo = iMessage;
 		};
 		B2C037421D8B0EFC00040840 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -227,6 +250,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				152728D91F6D9EF300BDCD67 /* All Classes.appex in Embed App Extensions */,
+				15CF56471F7726DA007FCE72 /* iMessage.appex in Embed App Extensions */,
 				152603101F73129A00566A4F /* Classes Left.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -270,6 +294,14 @@
 		15C4535E1F6B0B9100365690 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		15C453721F6B0D0F00365690 /* Date-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Ext.swift"; sourceTree = "<group>"; };
 		15C453781F6B160100365690 /* TodayCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodayCellTableViewCell.swift; path = "DIT-Timetable-today/TodayCellTableViewCell.swift"; sourceTree = "<group>"; };
+		15CF56391F7726DA007FCE72 /* iMessage.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessage.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		15CF563A1F7726DA007FCE72 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		15CF563D1F7726DA007FCE72 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		15CF56401F7726DA007FCE72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		15CF56421F7726DA007FCE72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		15CF56441F7726DA007FCE72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15CF56561F772CF3007FCE72 /* iMessage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iMessage.entitlements; sourceTree = "<group>"; };
+		15CF56571F772EC8007FCE72 /* IMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMessageCell.swift; sourceTree = "<group>"; };
 		15DF2D3B1F76D79F00FE61C6 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		15E83FE21F6DD4DC00CE1B61 /* ConnectivityHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityHandler.swift; sourceTree = "<group>"; };
 		15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -346,6 +378,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15CF56361F7726DA007FCE72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15CF56541F772C5D007FCE72 /* Realm.framework in Frameworks */,
+				15CF563B1F7726DA007FCE72 /* Messages.framework in Frameworks */,
+				15CF56551F772C60007FCE72 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +506,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		15CF563C1F7726DA007FCE72 /* iMessage */ = {
+			isa = PBXGroup;
+			children = (
+				15CF56561F772CF3007FCE72 /* iMessage.entitlements */,
+				15CF563D1F7726DA007FCE72 /* MessagesViewController.swift */,
+				15CF563F1F7726DA007FCE72 /* MainInterface.storyboard */,
+				15CF56421F7726DA007FCE72 /* Assets.xcassets */,
+				15CF56441F7726DA007FCE72 /* Info.plist */,
+				15CF56571F772EC8007FCE72 /* IMessageCell.swift */,
+			);
+			path = iMessage;
+			sourceTree = "<group>";
+		};
 		B21957391D8D844F00080E6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +526,7 @@
 				15FAA3CA1E61A35A00AAB1C6 /* UserNotifications.framework */,
 				B219573A1D8D845000080E6E /* libc++.tbd */,
 				15C4535E1F6B0B9100365690 /* NotificationCenter.framework */,
+				15CF563A1F7726DA007FCE72 /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -587,6 +643,7 @@
 				159E37DD1F6EB551006D2EC7 /* DIT Timtable watch */,
 				159E37EC1F6EB551006D2EC7 /* DIT Timtable watch Extension */,
 				152603071F73129A00566A4F /* Classes Left */,
+				15CF563C1F7726DA007FCE72 /* iMessage */,
 				B21957391D8D844F00080E6E /* Frameworks */,
 				B2C0372E1D8B0EFC00040840 /* Products */,
 			);
@@ -602,6 +659,7 @@
 				159E37DC1F6EB551006D2EC7 /* DIT Timtable watch.app */,
 				159E37E81F6EB551006D2EC7 /* DIT Timtable watch Extension.appex */,
 				152603051F73129A00566A4F /* Classes Left.appex */,
+				15CF56391F7726DA007FCE72 /* iMessage.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -727,6 +785,23 @@
 			productReference = 159E37E81F6EB551006D2EC7 /* DIT Timtable watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		15CF56381F7726DA007FCE72 /* iMessage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15CF564A1F7726DA007FCE72 /* Build configuration list for PBXNativeTarget "iMessage" */;
+			buildPhases = (
+				15CF56351F7726DA007FCE72 /* Sources */,
+				15CF56361F7726DA007FCE72 /* Frameworks */,
+				15CF56371F7726DA007FCE72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMessage;
+			productName = iMessage;
+			productReference = 15CF56391F7726DA007FCE72 /* iMessage.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		B2C0372C1D8B0EFC00040840 /* DIT-Timetable-V2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2C037551D8B0EFC00040840 /* Build configuration list for PBXNativeTarget "DIT-Timetable-V2" */;
@@ -745,6 +820,7 @@
 				152728D81F6D9EF300BDCD67 /* PBXTargetDependency */,
 				159E37FB1F6EB551006D2EC7 /* PBXTargetDependency */,
 				1526030F1F73129A00566A4F /* PBXTargetDependency */,
+				15CF56461F7726DA007FCE72 /* PBXTargetDependency */,
 			);
 			name = "DIT-Timetable-V2";
 			productName = "DIT-Timetable-V2";
@@ -837,6 +913,16 @@
 							};
 						};
 					};
+					15CF56381F7726DA007FCE72 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = 4EU4PGMLU9;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					B2C0372C1D8B0EFC00040840 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4EU4PGMLU9;
@@ -883,6 +969,7 @@
 				152603041F73129A00566A4F /* Classes Left */,
 				159E37DB1F6EB551006D2EC7 /* DIT Timtable watch */,
 				159E37E71F6EB551006D2EC7 /* DIT Timtable watch Extension */,
+				15CF56381F7726DA007FCE72 /* iMessage */,
 			);
 		};
 /* End PBXProject section */
@@ -918,6 +1005,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				159E37F81F6EB551006D2EC7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15CF56371F7726DA007FCE72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15CF56431F7726DA007FCE72 /* Assets.xcassets in Resources */,
+				15CF56411F7726DA007FCE72 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,6 +1117,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		15CF56351F7726DA007FCE72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15CF564D1F772B4A007FCE72 /* Class.swift in Sources */,
+				15CF56581F772EC8007FCE72 /* IMessageCell.swift in Sources */,
+				15CF563E1F7726DA007FCE72 /* MessagesViewController.swift in Sources */,
+				15CF56501F772B5A007FCE72 /* Dictionary+Ext.swift in Sources */,
+				15CF564E1F772B50007FCE72 /* Database.swift in Sources */,
+				15CF56531F772B63007FCE72 /* Utils.swift in Sources */,
+				15CF564F1F772B56007FCE72 /* Strings+ext.swift in Sources */,
+				15CF56521F772B60007FCE72 /* Date-Ext.swift in Sources */,
+				15CF564C1F772B47007FCE72 /* Timetable.swift in Sources */,
+				15CF56511F772B5D007FCE72 /* DateStr+Ext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2C037291D8B0EFC00040840 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1113,6 +1226,11 @@
 			target = 159E37DB1F6EB551006D2EC7 /* DIT Timtable watch */;
 			targetProxy = 159E37FA1F6EB551006D2EC7 /* PBXContainerItemProxy */;
 		};
+		15CF56461F7726DA007FCE72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15CF56381F7726DA007FCE72 /* iMessage */;
+			targetProxy = 15CF56451F7726DA007FCE72 /* PBXContainerItemProxy */;
+		};
 		B2C037431D8B0EFC00040840 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B2C0372C1D8B0EFC00040840 /* DIT-Timetable-V2 */;
@@ -1148,6 +1266,14 @@
 				159E37DF1F6EB551006D2EC7 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		15CF563F1F7726DA007FCE72 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15CF56401F7726DA007FCE72 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		B2C037391D8B0EFC00040840 /* LaunchScreen.storyboard */ = {
@@ -1362,6 +1488,74 @@
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		15CF56481F7726DA007FCE72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = iMessage/iMessage.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = iMessage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.iMessage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		15CF56491F7726DA007FCE72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = iMessage/iMessage.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4EU4PGMLU9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = iMessage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "barnard.com.DIT-Timetable.iMessage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1616,6 +1810,15 @@
 			buildConfigurations = (
 				159E38021F6EB551006D2EC7 /* Debug */,
 				159E38031F6EB551006D2EC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15CF564A1F7726DA007FCE72 /* Build configuration list for PBXNativeTarget "iMessage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15CF56481F7726DA007FCE72 /* Debug */,
+				15CF56491F7726DA007FCE72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

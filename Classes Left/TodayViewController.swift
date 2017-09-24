@@ -80,8 +80,6 @@ class TodayClassesLeftViewController: UIViewController, NCWidgetProviding {
         self.tableView.backgroundView = messageLabel;
         self.tableView.separatorStyle = .none;
     }
-    
-    
 }
 
 // MARK: - TableView Data Source
