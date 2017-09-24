@@ -29,7 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = navColor
         UINavigationBar.appearance().isTranslucent = false
         
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName: UIFont(name: "Avenir Next", size: 22)!]
+        let attrs = [
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: UIFont(name: "Avenir-Next", size: 21)!
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = attrs
        
         UIApplication.shared.applicationIconBadgeNumber = 0
         
