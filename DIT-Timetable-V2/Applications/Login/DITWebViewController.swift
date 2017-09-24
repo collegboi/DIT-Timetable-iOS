@@ -116,6 +116,13 @@ class DITWebViewController: UIViewController, UIWebViewDelegate {
                     self.sendRawTimetable(data: doc!)
                 }
             }
+            
+            if currentURL.contains("/Error?aspxerrorpath=/CMISGo/") {
+                self.ditWebView.stopLoading()
+                self.actInd!.stopAnimating()
+                let message = "DIT Timetable site is down. Try again later"
+                self.showIncorrectCred(message: message)
+            }
     
             if ( loginTimes != 0 && currentURL as String == self.ditAuthn ) {
             

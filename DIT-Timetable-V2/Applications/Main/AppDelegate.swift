@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let attrs = [
             NSAttributedStringKey.foregroundColor: UIColor.white,
-            NSAttributedStringKey.font: UIFont(name: "Avenir-Next", size: 21)!
+            NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 21)!
         ]
         
         UINavigationBar.appearance().titleTextAttributes = attrs
